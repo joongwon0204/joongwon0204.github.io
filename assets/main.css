@@ -1,8 +1,8 @@
 :root {
-  --bg: #0b0f14;
-  --panel: #0f1620;
-  --text: #e6edf3;
-  --muted: #9aa7b2;
+  --bg: #f6f6f6;
+  --panel: #dfdfdf;
+  --text: #000000;
+  --muted: #333333;
   --accent: #4da3ff;
   --border: rgba(255,255,255,0.08);
 }
@@ -37,7 +37,7 @@ a:hover { color: var(--accent); }
 .brand {
   font-weight: 800;
   letter-spacing: 0.2px;
-  font-size: 18px;
+  font-size: 30px;
   margin-bottom: 12px;
 }
 .brand small {
