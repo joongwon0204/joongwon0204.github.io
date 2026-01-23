@@ -1,0 +1,28 @@
+<div class="brand">
+  <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+  <small>{{ site.description }}</small>
+</div>
+
+<div class="cat-title">Categories</div>
+
+<div class="cat-list">
+  <!-- “전체” -->
+  <a href="{{ '/' | relative_url }}">All</a>
+
+  {% assign order = site.sidebar_categories %}
+  {% if order %}
+    {% for c in order %}
+      {% if site.categories[c] %}
+        <a href="{{ '/category/' | append: c | append: '/' | relative_url }}">
+          {{ c }} <span class="pill">{{ site.categories[c].size }}</span>
+        </a>
+      {% endif %}
+    {% endfor %}
+  {% else %}
+    {% for c in site.categories %}
+      <a href="{{ '/category/' | append: c[0] | append: '/' | relative_url }}">
+        {{ c[0] }} <span class="pill">{{ c[1].size }}</span>
+      </a>
+    {% endfor %}
+  {% endif %}
+</div>
