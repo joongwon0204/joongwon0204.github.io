@@ -1,2 +1,23 @@
-title: "JoongWon SHIN"
-theme: minima
+title: "Joongwon SHIN"
+description: "CV"
+permalink: /:categories/:title/
+markdown: kramdown
+
+# 사이드바에 보여줄 카테고리 순서(원하는대로 수정)
+sidebar_categories:
+  - research
+  - project
+  - study
+  - award
+  - etc
+
+# 오른쪽 위 GitHub 버튼 링크
+github_url: "https://github.com/joongwon0204"
+
+# 글 기본값 (매번 layout 쓰기 귀찮으면)
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
