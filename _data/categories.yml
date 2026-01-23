@@ -1,0 +1,9 @@
+# _data/categories.yml
+- key: cv
+  name: CV
+- key: projects
+  name: Projects
+- key: study
+  name: Study
+- key: notes
+  name: Notes

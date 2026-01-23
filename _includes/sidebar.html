@@ -25,21 +25,25 @@
           {% endif %}
         {% endif %}
       {% endfor %}
+      
+      <div class="sidebar-nav-item" style="margin-top: 1rem;">
+        <span class="sidebar-nav-item" style="opacity: .7;">Categories</span>
+        <div style="margin-top: .5rem;">
+          {% for c in site.data.categories %}
+            {% assign cnt = site.categories[c.key] | size %}
+            <a class="sidebar-nav-item"
+              href="{{ '/categories/#' | append: c.key | relative_url }}">
+              {{ c.name }}{% if cnt and cnt > 0 %} ({{ cnt }}){% endif %}
+            </a>
+          {% endfor %}
+        </div>
+      </div>
 
       <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>
-      <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
+      <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub</a>
       <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
     </nav>
 
     <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
   </div>
 </div>
-
-<h3>Categories</h3>
-<ul>
-  {% for cat in site.categories %}
-    <li>
-      <a href="/categories/#{{ cat[0] }}">{{ cat[0] }} ({{ cat[1].size }})</a>
-    </li>
-  {% endfor %}
-</ul>
