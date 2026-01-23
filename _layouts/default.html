@@ -1,21 +1,15 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ page.title }} · {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
-</head>
-<body>
-  <div class="container">
-    <aside class="sidebar">
-      {% include sidebar.html %}
-    </aside>
+<!DOCTYPE html>
+<html lang="en-us">
 
-    <main class="main">
-      {% include header.html %}
+  {% include head.html %}
+
+  <body>
+
+    {% include sidebar.html %}
+
+    <div class="content container">
       {{ content }}
-    </main>
-  </div>
-</body>
+    </div>
+
+  </body>
 </html>

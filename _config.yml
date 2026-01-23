@@ -1,23 +1,25 @@
-title: "Joongwon SHIN"
-description: "SNU CSE"
-permalink: /:categories/:title/
+# Dependencies
+#markdown:         redcarpet
+#highlighter:      pygments
+
+# Permalinks
+#permalink:        pretty
+#relative_permalinks: true
+
+# Setup
+title:            JoongWon SHIN
+tagline:          'CV / Timeline'
+description:      'SNU CSE.'
+url:              "https://joongwon0204.github.io"
+baseurl:          ""
+
 markdown: kramdown
+highlighter: rouge
+permalink: pretty
 
-# 사이드바에 보여줄 카테고리 순서(원하는대로 수정)
-sidebar_categories:
-  - research
-  - project
-  - study
-  - award
-  - etc
+paginate:         5
 
-# 오른쪽 위 GitHub 버튼 링크
-github_url: "https://github.com/joongwon0204"
+# Custom vars
 
-# 글 기본값 (매번 layout 쓰기 귀찮으면)
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
+github:
+  repo:           https://github.com/joongwon0204/joongwon0204.github.io
