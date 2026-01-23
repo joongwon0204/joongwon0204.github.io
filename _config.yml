@@ -9,9 +9,9 @@
 # Setup
 title:            JoongWon SHIN
 tagline:          'CV / Timeline'
-description:      'SNU CSE.'
+description:      'SNU CSE'
 url:              "https://joongwon0204.github.io"
-baseurl:          ""
+baseurl:          "https://joongwon0204.github.io"
 
 markdown: kramdown
 highlighter: rouge
@@ -22,4 +22,4 @@ paginate:         5
 # Custom vars
 
 github:
-  repo:           https://github.com/joongwon0204/joongwon0204.github.io
+  repo:           https://github.com/joongwon0204/
