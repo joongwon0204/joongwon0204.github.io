@@ -32,7 +32,7 @@
           {% for c in site.data.categories %}
             {% assign cnt = site.categories[c.key] | size %}
             <a class="sidebar-nav-item"
-              href="{{ '/category/' | append: c.key | append: '/' | relative_url }}"
+              href="{{ '/categories/' | append: c.key | append: '/' | relative_url }}"
               {{ c.name }}{% if cnt and cnt > 0 %} ({{ cnt }}){% endif %}
             </a>
           {% endfor %}
