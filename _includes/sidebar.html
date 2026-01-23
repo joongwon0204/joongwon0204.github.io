@@ -2,52 +2,58 @@
   <div class="container sidebar-sticky">
     <div class="sidebar-about">
       <h1>
-        <a href="{{ '/' | relative_url }}">
-          {{ site.title }}
-        </a>
+        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
       </h1>
       <p class="lead">{{ site.description }}</p>
     </div>
 
     <nav class="sidebar-nav">
-      <a class="sidebar-nav-item" href="{{ '/' | relative_url }}">Home</a>
-      
-      {% comment %}
-        The code below dynamically generates a sidebar nav of pages with
-        `layout: page` in the front-matter. See readme for usage.
-      {% endcomment %}
+      <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
 
-      {% assign pages_list = site.pages %}
+      {% comment %}
+        Pages with `layout: page` appear here
+      {% endcomment %}
+      {% assign pages_list = site.pages | sort: "title" %}
       {% for node in pages_list %}
-        {% if node.title != null %}
-          {% if node.layout == "page" %}
-            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
-          {% endif %}
+        {% if node.title and node.layout == "page" %}
+          <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}"
+             href="{{ node.url | relative_url }}">{{ node.title }}</a>
         {% endif %}
       {% endfor %}
 
+      <!-- Categories -->
       <div class="sidebar-nav-item" style="margin-top: 1rem;">
-        <span class="sidebar-nav-item" style="opacity: .7;">Categories</span>
+        <span style="opacity: .7;">Categories</span>
         <div style="margin-top: .5rem;">
-          {% for c in site.data.categories %}
-            {% assign cnt = site.categories[c.key] | size %}
-            <a class="sidebar-nav-item"
-              href="{{ '/categories/' | append: c.key | append: '/' | relative_url }}"
-              {{ c.name }}{% if cnt and cnt > 0 %} ({{ cnt }}){% endif %}
-            </a>
-          {% endfor %}
+          {% if site.data.categories %}
+            {% for c in site.data.categories %}
+              {% assign cnt = site.categories[c.key] | size %}
+              <a class="sidebar-nav-item"
+                 href="{{ '/categories/' | append: c.key | append: '/' | relative_url }}">
+                {{ c.name }}{% if cnt and cnt > 0 %} ({{ cnt }}){% endif %}
+              </a>
+            {% endfor %}
+          {% else %}
+            <span style="opacity: .7; font-size: 0.9em;">_data/categories.yml 없음</span>
+          {% endif %}
         </div>
       </div>
-      
+
+      <!-- Links -->
       <div class="sidebar-nav-item" style="margin-top: 1rem;">
-        <span class="sidebar-nav-item" style="opacity: .7;">Links</span>
-        <div style="margin-top: .5rem;"></div>
-          <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub</a>
+        <span style="opacity: .7;">Links</span>
+        <div style="margin-top: .5rem;">
+          {% if site.github.repo %}
+            <!-- 버튼 느낌 싫으면 sidebar-nav-item 클래스 빼기 -->
+            <a href="{{ site.github.repo }}">GitHub</a>
+          {% else %}
+            <a href="https://github.com/joongwon0204">GitHub</a>
+          {% endif %}
         </div>
       </div>
-      
     </nav>
 
-    <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+    <!-- Footer (맨 아래로 밀기: CSS에서 처리) -->
+    <p class="sidebar-footer">&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
   </div>
 </div>
