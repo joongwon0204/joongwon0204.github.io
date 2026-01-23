@@ -10,8 +10,8 @@
 title:            JoongWon SHIN
 tagline:          'CV / Timeline'
 description:      'SNU CSE'
-url:              "https://joongwon0204.github.io"
-baseurl:          ""
+url: "https://joongwon0204.github.io"
+baseurl: ""
 
 markdown: kramdown
 highlighter: rouge
