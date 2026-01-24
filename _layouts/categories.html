@@ -5,6 +5,8 @@ layout: page
 {% assign key = page.category_key %}
 {% assign posts = site.categories[key] %}
 
+<div style="height: 48px;"></div>
+
 {% if posts and posts.size > 0 %}
   <ul>
     {% for post in posts %}
