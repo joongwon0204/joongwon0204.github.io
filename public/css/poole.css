@@ -346,7 +346,7 @@ tbody tr:nth-child(odd) th {
 }
 
 .post-subtitle {
-  margin-top: -1rem;
+  margin-top: -1.1rem;
   margin-bottom: 0.3rem;
   color: #313131;
 }
