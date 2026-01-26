@@ -346,6 +346,7 @@ tbody tr:nth-child(odd) th {
 
 .post-subtitle {
   margin-top: 0.15rem !important;
+  color: #313131;
 }
 
 /* Meta data line below post title */
