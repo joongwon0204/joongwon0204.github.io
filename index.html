@@ -11,7 +11,9 @@ title: Home
         {{ post.title }}
       </a>
     </h1>
-    <p>{{ post.subtitle }}</p>
+    {% if page.subtitle %}
+      <p class="post-subtitle">{{ page.subtitle }}</p>
+    {% endif %}
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
 
