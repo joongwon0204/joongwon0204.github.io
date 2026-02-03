@@ -26,14 +26,14 @@ B.S. in **[Computer Science and Engineering](https://cse.snu.ac.kr)**, 2022–Pr
 <ul class="cv-posts">
     {% for post in projects %}
         <li>
-            <div class="post">
+            <div class="cv-post">
                 <h3 class="post-title">
                 <a href="{{ post.url }}">
                     {{ post.title }}
                 </a>
                 </h3>
                 {{ post.subtitle }}
-                <span class="post-date">{{ post.date | date_to_string }}</span>
+                <span class="post-date">{{ post.date | "%Y.%m" }}</span>
             </div>
         </li>
     {% endfor %}
