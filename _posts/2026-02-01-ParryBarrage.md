@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ParryBarrage - 바이브 코딩으로 게임 제작"
+title: "ParryFire Survivors - 바이브 코딩으로 게임 제작"
 subtitle: "Unity | C# | vive coding"
 categories: [project]
 ---
@@ -8,7 +8,7 @@ categories: [project]
 
 ## 개요
 
-**ParryBarrage**는 2D 탄막 기반 액션 게임 프로토타입이다. 기본 플레이는 *탄막 회피*에 기반하되, 일부 위협 탄(유도/거의 즉발 성격)은 **패링(Parry)**으로만 안정적으로 대응하도록 설계했다.  
+**ParryFire Survivors**는 2D 탄막 기반 액션 게임 프로토타입이다. 기본 플레이는 *탄막 회피*에 기반하되, 일부 위협 탄(유도/거의 즉발 성격)은 **패링(Parry)**으로만 안정적으로 대응하도록 설계했다.  
 회피 중심의 공간 판단 위에, 예측 가능한 타이밍 입력을 요구하는 리듬 요소를 얹는 것이 목표다.
 
 ---
