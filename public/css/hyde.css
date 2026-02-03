@@ -248,3 +248,30 @@ a.sidebar-nav-item:focus {
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536;
 }
+
+
+
+
+
+.cv-posts { 
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.cv-posts .cv-post {
+  margin: 0 0 0.8rem 0;   /* 포스트(항목) 사이 간격 */
+}
+
+.cv-posts .post {
+  margin: 0;              /* Hyde 기본 post margin 제거 */
+}
+
+.cv-posts .post-title {
+  margin: 0 0 0.1rem 0;   /* 제목 아래 간격 */
+}
+
+.cv-posts .post-date {
+  margin: 0.1rem 0 0 0;   /* 날짜 위 간격 */
+  display: block;
+}

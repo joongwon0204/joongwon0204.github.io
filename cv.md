@@ -21,10 +21,11 @@ B.S. in **[Computer Science and Engineering](https://cse.snu.ac.kr)**, 2022–Pr
 
 ## Projects
 
+
 {% assign projects = site.categories.project | sort: "date" | reverse %}
-<ul>
+<ul class="cv-posts">
     {% for post in projects %}
-        <li style="margin-bottom: 0.6rem;">
+        <li>
             <div class="post">
                 <h3 class="post-title">
                 <a href="{{ post.url }}">
