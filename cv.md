@@ -4,7 +4,7 @@ title: CV
 ---
 
 <h1 style="font-size: 3.5rem; margin-bottom: 0.3rem;">
-  신중원 <span style="font-weight: 250;">– JoongWon SHIN</span>
+  신중원 <span style="font-size: 2rem;">– JoongWon SHIN</span>
 </h1>
 
 **SNU CSE Undergraduate**
