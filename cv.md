@@ -21,7 +21,7 @@ B.S. in **[Computer Science and Engineering](https://cse.snu.ac.kr)**, 2022–Pr
 
 ## Projects
 
-<div style="height: 48px;"></div>
+<div style="height: 12px;"></div>
 
 {% assign projects = site.categories.project | sort: "date" | reverse %}
 <ul class="cv-posts">
