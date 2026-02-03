@@ -19,21 +19,23 @@ B.S. in Computer Science and Engineering, 2022–Present (Military service: 2023
 
 ## Projects
 {% assign projects = site.categories.project | sort: "date" | reverse %}
-{% for post in projects %}
-    <li>
-        <div class="post">
-            <h1 class="post-title">
-            <a href="{{ post.url }}">
-                {{ post.title }}
-            </a>
-            </h1>
-            <p>{{ post.subtitle }}</p>
+<ul>
+    {% for post in projects %}
+        <li>
+            <div class="post">
+                <h3 class="post-title">
+                <a href="{{ post.url }}">
+                    {{ post.title }}
+                </a>
+                </h3>
+                <p>{{ post.subtitle }}</p>
 
-            <span class="post-date">{{ post.date | date_to_string }}</span>
+                <span class="post-date">{{ post.date | date_to_string }}</span>
 
-        </div>
-    </li>
-{% endfor %}
+            </div>
+        </li>
+    {% endfor %}
+</ul>
 
 ---
 
