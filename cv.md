@@ -14,7 +14,7 @@ title: CV
 ---
 
 ## Education
-**[Seoul National University](https://www.snu.ac.kr/index.html)**, [College of Engineering](https://eng.snu.ac.kr/snu/main/main.do)  
+**[Seoul National University](https://www.snu.ac.kr/index.html)**,
 B.S. in **[Computer Science and Engineering](https://cse.snu.ac.kr)**, 2022–Present (Military service: 2023–2024)
 
 ---
