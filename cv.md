@@ -3,12 +3,14 @@ layout: page
 title: CV
 ---
 
-## Shin JoongWon
+# 신중원
+# JoongWon SHIN
+
 **SNU CSE Undergraduate**
 
-Email: [leodal@snu.ac.kr](mailto:leodal@snu.ac.kr)  
-GitHub: [joongwon0204](https://github.com/joongwon0204)  
-Website: [joongwon0204.github.io](https://joongwon0204.github.io)
+**Email**: [leodal@snu.ac.kr](mailto:leodal@snu.ac.kr)  
+**GitHub**: [joongwon0204](https://github.com/joongwon0204)  
+**Website**: [joongwon0204.github.io](https://joongwon0204.github.io)
 
 ---
 
@@ -23,14 +25,14 @@ B.S. in **[Computer Science and Engineering](https://cse.snu.ac.kr)**, 2022–Pr
 {% assign projects = site.categories.project | sort: "date" | reverse %}
 <ul>
     {% for post in projects %}
-        <li>
+        <li style="margin-bottom: 0.6rem;">
             <div class="post">
                 <h3 class="post-title">
                 <a href="{{ post.url }}">
                     {{ post.title }}
                 </a>
                 </h3>
-                <p>{{ post.subtitle }}</p>
+                {{ post.subtitle }}
                 <span class="post-date">{{ post.date | date_to_string }}</span>
             </div>
         </li>
