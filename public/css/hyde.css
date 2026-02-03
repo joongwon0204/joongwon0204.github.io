@@ -260,7 +260,7 @@ a.sidebar-nav-item:focus {
 }
 
 .cv-posts .cv-post {
-  margin: 0 0 0.3rem 0;   /* 포스트(항목) 사이 간격 */
+  margin: 0 0 1rem 0;   /* 포스트(항목) 사이 간격 */
 }
 
 .cv-posts .post {
