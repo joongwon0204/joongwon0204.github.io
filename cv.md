@@ -7,17 +7,17 @@ sideBarTitle: CV
   신중원 <span style="font-size: 2rem;">– JoongWon SHIN</span>
 </h1>
 
-**SNU CSE Undergraduate**
-
-**Email**: [leodal@snu.ac.kr](mailto:leodal@snu.ac.kr)  
-**GitHub**: [joongwon0204](https://github.com/joongwon0204)  
-**Website**: [joongwon0204.github.io](https://joongwon0204.github.io)
-
 ---
 
 ## Education
 **[Seoul National University](https://www.snu.ac.kr/index.html)**,
 B.S. in **[Computer Science and Engineering](https://cse.snu.ac.kr)**, 2022–Present (Military service: 2023–2024)
+
+---
+
+## Skills
+- **Languages:** C++, Java, Python, Swift
+- **Interests:** Data / AI, Architecture
 
 ---
 
@@ -44,12 +44,14 @@ B.S. in **[Computer Science and Engineering](https://cse.snu.ac.kr)**, 2022–Pr
 
 ---
 
-## Skills
-- **Languages:** C++, Java, Python, Swift
-- **Interests:** Data / AI, Architecture
-
----
-
 ## Awards & Scholarships
 **National Science and Engineering Undergraduate Scholarship (South Korea)**  
 Merit-based national scholarship, 2022–Present
+
+---
+
+**Email**: [leodal@snu.ac.kr](mailto:leodal@snu.ac.kr)  
+**GitHub**: [joongwon0204](https://github.com/joongwon0204)  
+**Website**: [joongwon0204.github.io](https://joongwon0204.github.io)
+
+---
