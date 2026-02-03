@@ -33,7 +33,7 @@ B.S. in **[Computer Science and Engineering](https://cse.snu.ac.kr)**, 2022–Pr
                 </a>
                 </h3>
                 {{ post.subtitle }}
-                <span class="post-date">{{ post.date | "%Y.%m" }}</span>
+                <span class="post-date">{{ post.date | date: "%Y.%m" }}</span>
             </div>
         </li>
     {% endfor %}
