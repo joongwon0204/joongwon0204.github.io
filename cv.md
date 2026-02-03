@@ -1,6 +1,6 @@
 ---
 layout: page
-name: CV
+sideBarTitle: CV
 ---
 
 <h1 style="font-size: 3.5rem; margin-bottom: 0.3rem;">

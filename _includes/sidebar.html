@@ -13,11 +13,11 @@
       {% comment %}
         Pages with `layout: page` appear here
       {% endcomment %}
-      {% assign pages_list = site.pages | sort: "name" %}
+      {% assign pages_list = site.pages | sort: "sideBarTitle" %}
       {% for node in pages_list %}
-        {% if node.name and node.layout == "page" %}
+        {% if node.sideBarTitle and node.layout == "page" %}
           <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}"
-             href="{{ node.url | relative_url }}">{{ node.name }}</a>
+             href="{{ node.url | relative_url }}">{{ node.sideBarTitle }}</a>
         {% endif %}
       {% endfor %}
 
