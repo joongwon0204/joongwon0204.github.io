@@ -4,20 +4,22 @@ title: CV
 ---
 
 ## Shin JoongWon
-**SNU CSE Undergraduate**  
-Email: leodal@snu.ac.kr  
-GitHub: https://github.com/joongwon0204  
-Website: https://joongwon0204.github.io
+**SNU CSE Undergraduate**
+
+Email: [leodal@snu.ac.kr](mailto:leodal@snu.ac.kr)  
+GitHub: [joongwon0204](https://github.com/joongwon0204)  
+Website: [joongwon0204.github.io](https://joongwon0204.github.io)
 
 ---
 
 ## Education
-**Seoul National University**, College of Engineering  
-B.S. in Computer Science and Engineering, 2022–Present (Military service: 2023–2024)
+**[Seoul National University](https://www.snu.ac.kr/index.html)**, [College of Engineering](https://eng.snu.ac.kr/snu/main/main.do)  
+B.S. in **[Computer Science and Engineering](https://cse.snu.ac.kr)**, 2022–Present (Military service: 2023–2024)
 
 ---
 
 ## Projects
+
 {% assign projects = site.categories.project | sort: "date" | reverse %}
 <ul>
     {% for post in projects %}
@@ -29,9 +31,7 @@ B.S. in Computer Science and Engineering, 2022–Present (Military service: 2023
                 </a>
                 </h3>
                 <p>{{ post.subtitle }}</p>
-
                 <span class="post-date">{{ post.date | date_to_string }}</span>
-
             </div>
         </li>
     {% endfor %}
