@@ -3,8 +3,7 @@ layout: page
 title: CV
 ---
 
-# 신중원
-# JoongWon SHIN
+# 신중원 - JoongWon SHIN
 
 **SNU CSE Undergraduate**
 
