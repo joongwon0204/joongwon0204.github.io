@@ -3,35 +3,80 @@ layout: default
 title: Home
 ---
 
-<div class="posts">
+<div id="post-list">
   {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
-    <span class="post-subtitle">{{ post.subtitle }}</span>
-
-    <span class="post-date">{{ post.date | date: "%Y.%m.%d" }}</span>
-
-  </div>
+  <article class="post-preview">
+    <h1><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h1>
+    <p>{{ post.subtitle }} {{ post.date | date: "%Y.%m.%d" }}</p>
+  </article>
   {% endfor %}
 </div>
 
-<div class="pagination">
+<!-- 로딩 표시(원하면 스타일링) -->
+<div id="infinite-loading" style="display:none; margin: 1rem 0;">Loading…</div>
+
+<!-- IntersectionObserver가 보는 바닥 센티넬 -->
+<div id="infinite-sentinel" style="height: 1px;"></div>
+
+<!-- paginate는 유지하되, 버튼은 숨김(JS가 href만 읽어감) -->
+<div id="pagination" style="display:none;">
   {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
+    <a id="older-link" href="{{ paginator.next_page_path | relative_url }}">Older</a>
   {% endif %}
 </div>
+
+<script>
+(() => {
+  const postList = document.getElementById("post-list");
+  const sentinel = document.getElementById("infinite-sentinel");
+  const loading = document.getElementById("infinite-loading");
+
+  let nextUrl = (() => {
+    const older = document.getElementById("older-link");
+    return older ? older.getAttribute("href") : null;
+  })();
+
+  let isLoading = false;
+
+  async function loadNextPage() {
+    if (!nextUrl || isLoading) return;
+    isLoading = true;
+    loading.style.display = "block";
+
+    try {
+      const res = await fetch(nextUrl, { credentials: "same-origin" });
+      if (!res.ok) throw new Error("fetch failed: " + res.status);
+      const html = await res.text();
+
+      const doc = new DOMParser().parseFromString(html, "text/html");
+
+      // 다음 페이지에서 글 목록만 가져오기
+      const newList = doc.getElementById("post-list");
+      if (newList) {
+        // article 단위로 붙이기
+        const items = Array.from(newList.querySelectorAll("article.post-preview"));
+        items.forEach(el => postList.appendChild(el));
+      }
+
+      // 다음 nextUrl 업데이트 (다음 페이지의 Older 링크)
+      const nextOlder = doc.getElementById("older-link");
+      nextUrl = nextOlder ? nextOlder.getAttribute("href") : null;
+
+      // 더 이상 없으면 옵저버 끄기
+      if (!nextUrl) observer.disconnect();
+    } catch (e) {
+      console.error(e);
+      observer.disconnect(); // 무한 재시도 방지
+    } finally {
+      loading.style.display = "none";
+      isLoading = false;
+    }
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries.some(e => e.isIntersecting)) loadNextPage();
+  }, { rootMargin: "600px" }); // 바닥 600px 전에 미리 로드
+
+  observer.observe(sentinel);
+})();
+</script>
