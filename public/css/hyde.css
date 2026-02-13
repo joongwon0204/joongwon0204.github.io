@@ -250,7 +250,13 @@ a.sidebar-nav-item:focus {
 }
 
 
-
+.theme-base-10 .sidebar {
+  background-color: #4d83f8;
+}
+.theme-base-0f .content a,
+.theme-base-0f .related-posts li a:hover {
+  color: #4d83f8;
+}
 
 
 .cv-posts { 
