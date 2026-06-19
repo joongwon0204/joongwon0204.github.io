@@ -5,7 +5,8 @@ permalink: /categories/project/
 author_profile: true
 ---
 
+<ul>
 {% for post in site.categories.project %}
-  {% include archive-single.html %}
+  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
 {% endfor %}
-
+</ul>
