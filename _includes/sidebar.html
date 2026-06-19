@@ -1,59 +1,25 @@
-<div class="sidebar">
-  <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>
-        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-      </h1>
-      <p class="lead">{{ site.description }}</p>
-    </div>
+{% include base_path %}
 
-    <nav class="sidebar-nav">
-      <a class="sidebar-nav-item{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
-
-      {% comment %}
-        Pages with `layout: page` appear here
-      {% endcomment %}
-      {% assign pages_list = site.pages | sort: "sideBarTitle" %}
-      {% for node in pages_list %}
-        {% if node.sideBarTitle and node.layout == "page" %}
-          <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}"
-             href="{{ node.url | relative_url }}">{{ node.sideBarTitle }}</a>
+{% if page.author_profile or layout.author_profile or page.sidebar %}
+  <div class="sidebar sticky">
+  {% if page.author_profile or layout.author_profile %}{% include author-profile.html %}{% endif %}
+  {% if page.sidebar %}
+    {% for s in page.sidebar %}
+      {% if s.image %}
+        <img src=
+        {% if s.image contains "://" %}
+          "{{ s.image }}"
+        {% else %}
+          "{{ s.image | prepend: "/images/" | prepend: base_path }}"
         {% endif %}
-      {% endfor %}
-
-      <!-- Categories -->
-      <div class="sidebar-nav-item" style="margin-top: 1rem;">
-        <span style="opacity: .7;">Categories</span>
-        <div style="margin-top: .5rem;">
-          {% if site.data.categories %}
-            {% for c in site.data.categories %}
-              {% assign cnt = site.categories[c.key] | size %}
-              <a class="sidebar-nav-item"
-                 href="{{ '/categories/' | append: c.key | append: '/' | relative_url }}">
-                {{ c.name }}{% if cnt and cnt > 0 %} ({{ cnt }}){% endif %}
-              </a>
-            {% endfor %}
-          {% else %}
-            <span style="opacity: .7; font-size: 0.9em;">_data/categories.yml 없음</span>
-          {% endif %}
-        </div>
-      </div>
-
-      <!-- Links -->
-      <div class="sidebar-nav-item" style="margin-top: 1rem;">
-        <span style="opacity: .7;">Links</span>
-        <div style="margin-top: .5rem;">
-          {% if site.github.repo %}
-            <!-- 버튼 느낌 싫으면 sidebar-nav-item 클래스 빼기 -->
-            <a href="{{ site.github.repo }}">GitHub</a>
-          {% else %}
-            <a href="https://github.com/joongwon0204">GitHub</a>
-          {% endif %}
-        </div>
-      </div>
-    </nav>
-
-    <!-- Footer (맨 아래로 밀기: CSS에서 처리) -->
-    <p class="sidebar-footer">&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+        alt="{% if s.image_alt %}{{ s.image_alt }}{% endif %}">
+      {% endif %}
+      {% if s.title %}<h3>{{ s.title }}</h3>{% endif %}
+      {% if s.text %}{{ s.text | markdownify }}{% endif %}
+    {% endfor %}
+    {% if page.sidebar.nav %}
+      {% include nav_list nav=page.sidebar.nav %}
+    {% endif %}
+  {% endif %}
   </div>
-</div>
+{% endif %}

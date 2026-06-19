@@ -1,15 +1,31 @@
-<!DOCTYPE html>
-<html lang="en-us">
+---
+layout: compress
+---
 
-  {% include head.html %}
+{% include base_path %}
 
-  <body class = "theme-base-10">
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
 
-    {% include sidebar.html %}
+  <body>
 
-    <div class="content container">
-      {{ content }}
+    {% include browser-upgrade.html %}
+    {% include masthead.html %}
+
+    {{ content }}
+
+    <div class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include footer.html %}
+      </footer>
     </div>
+
+    {% include scripts.html %}
 
   </body>
 </html>

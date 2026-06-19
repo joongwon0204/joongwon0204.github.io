@@ -1,0 +1,11 @@
+---
+layout: archive
+title: "Project"
+permalink: /categories/project/
+author_profile: true
+---
+
+{% for post in site.categories.project %}
+  {% include archive-single.html %}
+{% endfor %}
+
