@@ -17,12 +17,3 @@ Research Interests
 * AI accelerators and efficient AI computing
 * Computer architecture and hardware systems
 * AI systems and hardware-software interfaces
-
-Recent Posts
-======
-
-<ul>
-{% for post in site.posts limit:5 %}
-  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>

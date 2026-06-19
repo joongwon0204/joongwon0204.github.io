@@ -200,7 +200,7 @@ defaults:
       author_profile: true
       read_time: true
       comments: false
-      share: true
+      share: false
       related: true
   - scope:
       path: ""
@@ -214,7 +214,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
+      share: false
       comments: false
   - scope:
       path: ""
@@ -222,7 +222,7 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
+      share: false
       comments: false
   - scope:
       path: ""
@@ -230,14 +230,14 @@ defaults:
     values:
       layout: talk
       author_profile: true
-      share: true
+      share: false
   - scope:
       path: ""
       type: teaching
     values:
       layout: single
       author_profile: true
-      share: true
+      share: false
       comments: false
 
 sass:
