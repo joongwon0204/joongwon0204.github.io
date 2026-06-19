@@ -153,10 +153,10 @@ sideBarTitle: CV
     <h2>Relevant Coursework</h2>
     <div class="cv-table">
       <strong>Systems and Architecture:</strong>
-      <span>Computer Architecture, Logic Design, System Programming (currently taking), Hardware Systems Design (currently taking)</span>
+      <span>Computer Architecture, Logic Design, System Programming, Hardware Systems Design</span>
 
-      <strong>AI and Vision:</strong>
-      <span>Computer Vision (currently taking)</span>
+      <strong>AI and Machine Learning:</strong>
+      <span>Computer Vision</span>
 
       <strong>Algorithms and Theory:</strong>
       <span>Data Structures, Algorithms, Discrete Mathematics, Automata Theory</span>
@@ -165,8 +165,20 @@ sideBarTitle: CV
       <span>Engineering Mathematics 1-2, Statistics</span>
 
       <strong>Programming and Software:</strong>
-      <span>Computer Programming, Programming Practice, Software Development Principles and Practice (currently taking)</span>
+      <span>Computer Programming, Programming Practice, Software Development Principles and Practice</span>
     </div>
+  </section>
+
+  <section class="cv-section">
+    <h2>Intern</h2>
+    <div class="cv-item-head">
+      <span>Undergraduate Research Intern, Jae W. Lee Lab, SNU</span>
+      <span class="cv-date">Summer 2026</span>
+    </div>
+    <ul>
+      <li>Joined as a full-time undergraduate research intern under Prof. Jae W. Lee.</li>
+      <li>Preparing to study computer architecture topics including AI acceleration, memory-system optimization, and processing-in-memory.</li>
+    </ul>
   </section>
 
   <section class="cv-section">
