@@ -21,7 +21,8 @@ Research Interests
 Recent Posts
 ======
 
+<ul>
 {% for post in site.posts limit:5 %}
-  {% include archive-single.html %}
+  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
 {% endfor %}
-
+</ul>
