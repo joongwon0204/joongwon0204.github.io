@@ -1,0 +1,91 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{kotex}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{tabularx}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2pt}
+
+\titleformat{\section}
+  {\large\bfseries}
+  {}
+  {0em}
+  {}
+  [\titlerule]
+
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+\newcommand{\cvitem}[2]{
+  \textbf{#1} \hfill #2
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{JoongWon SHIN}} \\
+    Seoul National University, Department of Computer Science and Engineering \\
+    Email: \href{mailto:leodal@snu.ac.kr}{leodal@snu.ac.kr}
+    \quad | \quad
+    GitHub: \href{https://github.com/joongwon0204}{github.com/joongwon0204}
+\end{center}
+
+\vspace{4pt}
+
+\section*{Education}
+
+\cvitem{Seoul National University}{Mar. 2022 -- Present} \\
+B.S. in Computer Science and Engineering \\
+3rd year, 1st semester \quad | \quad Completed Credits: 91 \\
+GPA: 4.04 / 4.30 \quad | \quad Major GPA: 4.04 / 4.30\\
+Military Service: Completed mandatory military service, May 2023 -- Oct. 2024
+
+\section*{Honors and Scholarships}
+
+\cvitem{National Scholarship for Sciences and Engineering}{Awarded 2022} \\
+Four-year full-tuition undergraduate scholarship awarded by Korea Student Aid Foundation
+
+\section*{Research Interests}
+
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item AI accelerators and efficient AI computing
+    \item Computer architecture and hardware systems
+    \item AI systems and hardware-software interfaces
+\end{itemize}
+
+\section*{Relevant Coursework}
+
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\textbf{Systems and Architecture:} & Computer Architecture, Logic Design, System Programming, Hardware Systems Design \\
+\textbf{AI and Machine Learning:} & Computer Vision \\
+\textbf{Algorithms and Theory:} & Data Structures, Algorithms, Discrete Mathematics, Automata Theory \\
+\textbf{Mathematics and Statistics:} & Engineering Mathematics 1--2, Statistics \\
+\textbf{Programming and Software:} & Computer Programming, Programming Practice, Software Development Principles and Practice \\
+\end{tabularx}
+
+\section*{Intern}
+
+\cvitem{Undergraduate Research Intern, Jae W. Lee Lab, SNU}{Summer 2026}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item Joined as a full-time undergraduate research intern under Prof. Jae W. Lee.
+    \item Preparing to study computer architecture topics including AI acceleration, memory-system optimization, and processing-in-memory.
+\end{itemize}
+
+\section*{Projects}
+
+\cvitem{Wastory, WaffleStudio Software Project}{2025}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+    \item Participated in a team-based clone coding project and gained experience with Git-based collaboration, code review, and application development.
+\end{itemize}
+
+\section*{Technical Skills}
+
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\textbf{Programming:} & C, C++, Python, Java, Swift \\
+\textbf{Hardware Description:} & Verilog, Amaranth \\
+\textbf{Tools/Frameworks:} & Git, PyTorch \\
+\end{tabularx}
+
+\end{document}

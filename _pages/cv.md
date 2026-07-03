@@ -15,8 +15,8 @@ Education
 
 **Seoul National University** <span style="float: right;">Mar. 2022 -- Present</span>  
 B.S. in Computer Science and Engineering  
-3rd year, 1st semester \| Completed Credits: 72  
-GPA: 4.04 / 4.30 \| Major GPA: 4.11 / 4.30  
+3rd year, 1st semester \| Completed Credits: 91  
+GPA: 4.04 / 4.30 \| Major GPA: 4.04 / 4.30  
 Military Service: Completed mandatory military service, May 2023 -- Oct. 2024
 
 Honors and Scholarships
@@ -62,4 +62,3 @@ Technical Skills
 **Programming:** C, C++, Python, Java, Swift  
 **Hardware Description:** Verilog, Amaranth  
 **Tools/Frameworks:** Git, PyTorch
-
