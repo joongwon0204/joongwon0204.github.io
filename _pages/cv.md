@@ -23,7 +23,7 @@ redirect_from:
         <h3><a href="https://www.snu.ac.kr/">Seoul National University</a></h3>
         <p class="cv-entry__date">Mar. 2022 &ndash; Present</p>
       </header>
-      <p class="cv-entry__subtitle">B.S. in <a href="https://cse.snu.ac.kr/">Computer Science and Engineering</a></p>
+      <p class="cv-entry__subtitle">Undergraduate Student in <a href="https://cse.snu.ac.kr/">Computer Science and Engineering</a></p>
       <div class="cv-facts" aria-label="Academic record">
         <div class="cv-fact">
           <span>Completed Credits</span>

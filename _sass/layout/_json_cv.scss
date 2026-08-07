@@ -195,6 +195,12 @@
 .cv-fact--gpa {
   cursor: help;
 
+  > span,
+  > strong,
+  .cv-gpa-value {
+    transition: none;
+  }
+
   .cv-gpa-value--converted {
     display: none;
   }
