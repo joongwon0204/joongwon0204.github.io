@@ -20,10 +20,10 @@ redirect_from:
     <h2 id="cv-education">Education</h2>
     <article class="cv-entry">
       <header class="cv-entry__header">
-        <h3>Seoul National University</h3>
+        <h3><a href="https://www.snu.ac.kr/">Seoul National University</a></h3>
         <p class="cv-entry__date">Mar. 2022 &ndash; Present</p>
       </header>
-      <p class="cv-entry__subtitle">B.S. in Computer Science and Engineering</p>
+      <p class="cv-entry__subtitle">B.S. in <a href="https://cse.snu.ac.kr/">Computer Science and Engineering</a></p>
       <div class="cv-facts" aria-label="Academic record">
         <div class="cv-fact">
           <span>Completed Credits</span>
@@ -79,7 +79,7 @@ redirect_from:
     <h2 id="cv-projects">Projects</h2>
     <article class="cv-entry">
       <header class="cv-entry__header">
-        <h3><a href="https://github.com/wafflestudio/22-5-team5-iOS">Wastory, WaffleStudio Software Project</a></h3>
+        <h3><a href="https://github.com/wafflestudio/22-5-team5-iOS">Wastory</a>, WaffleStudio Software Project</h3>
         <p class="cv-entry__date">2025</p>
       </header>
       <ul class="cv-highlights">
