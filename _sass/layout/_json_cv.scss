@@ -172,12 +172,12 @@
   border-radius: 7px;
   background: var(--cv-surface);
 
-  span,
-  strong {
+  > span,
+  > strong {
     display: block;
   }
 
-  span {
+  > span {
     margin-bottom: 0.18rem;
     font-size: 0.68rem;
     font-weight: 700;
@@ -186,9 +186,35 @@
     text-transform: uppercase;
   }
 
-  strong {
+  > strong {
     font-size: 0.9rem;
     font-weight: 750;
+  }
+}
+
+.cv-fact--gpa {
+  cursor: help;
+
+  .cv-gpa-value--converted {
+    display: none;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: var(--global-link-color);
+
+    .cv-gpa-value--original {
+      display: none;
+    }
+
+    .cv-gpa-value--converted {
+      display: block;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--cv-accent);
+    outline-offset: 2px;
   }
 }
 

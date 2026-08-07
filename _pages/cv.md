@@ -29,9 +29,12 @@ redirect_from:
           <span>Completed Credits</span>
           <strong>91</strong>
         </div>
-        <div class="cv-fact">
+        <div class="cv-fact cv-fact--gpa" tabindex="0" aria-label="Overall GPA: 4.03 out of 4.30; equivalent GPA: 3.88 out of 4.00">
           <span>Overall GPA</span>
-          <strong>4.03 / 4.30</strong>
+          <strong>
+            <span class="cv-gpa-value cv-gpa-value--original">4.03 / 4.30</span>
+            <span class="cv-gpa-value cv-gpa-value--converted" aria-hidden="true">3.88 / 4.00</span>
+          </strong>
         </div>
         <div class="cv-fact">
           <span>Major GPA</span>
@@ -68,7 +71,7 @@ redirect_from:
         <h3>Undergraduate Research Intern, <a href="https://arc.snu.ac.kr/">ARC Lab</a>, Seoul National University</h3>
         <p class="cv-entry__date">Jun. &ndash; Aug. 2026</p>
       </header>
-      <p class="cv-entry__subtitle">Advised by <a href="https://iamjaelee.github.io/www/">Prof. Jae W. Lee</a></p>
+      <p class="cv-entry__subtitle">Advised by Prof. <a href="https://iamjaelee.github.io/www/">Jae W. Lee</a></p>
       <ul class="cv-highlights">
         <li>Contributed to research on CXL-PNM-based hardware/software co-design for efficient LLM serving.</li>
       </ul>
