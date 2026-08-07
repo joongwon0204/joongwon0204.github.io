@@ -2,6 +2,12 @@
    CV PAGE
    ========================================================================== */
 
+.archive--cv > .page__title {
+  margin-bottom: 1.25rem;
+  font-size: clamp(2.5rem, 5vw, 3.25rem);
+  letter-spacing: -0.035em;
+}
+
 .cv-page {
   --cv-accent: var(--global-base-color);
   --cv-surface: rgba(47, 127, 147, 0.06);
@@ -64,7 +70,11 @@
 }
 
 .cv-section {
-  margin-bottom: 2.15rem;
+  margin-bottom: 2.9rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   h2 {
     display: flex;
@@ -202,7 +212,7 @@
 
 .cv-detail-list,
 .cv-skill-list {
-  margin: 0;
+  margin: 0 0 0 1rem;
   border-top: 1px solid var(--global-border-color);
 }
 
@@ -250,6 +260,10 @@
 }
 
 @media (max-width: 48em) {
+  .cv-section {
+    margin-bottom: 2.5rem;
+  }
+
   .cv-page__actions {
     justify-content: flex-start;
   }
