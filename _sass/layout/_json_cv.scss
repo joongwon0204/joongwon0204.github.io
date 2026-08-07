@@ -194,15 +194,24 @@
 
 .cv-fact--gpa {
   cursor: help;
+  transition: color 0.2s ease-in-out;
 
   > span,
-  > strong,
-  .cv-gpa-value {
+  > strong {
     transition: none;
   }
 
+  > strong {
+    display: grid;
+  }
+
+  .cv-gpa-value {
+    grid-area: 1 / 1;
+    transition: opacity 0.2s ease-in-out;
+  }
+
   .cv-gpa-value--converted {
-    display: none;
+    opacity: 0;
   }
 
   &:hover,
@@ -210,11 +219,11 @@
     color: var(--global-link-color);
 
     .cv-gpa-value--original {
-      display: none;
+      opacity: 0;
     }
 
     .cv-gpa-value--converted {
-      display: block;
+      opacity: 1;
     }
   }
 
