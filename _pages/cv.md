@@ -46,7 +46,7 @@ redirect_from:
     <h2 id="cv-honors">Honors and Scholarships</h2>
     <article class="cv-entry">
       <header class="cv-entry__header">
-        <h3><a href="https://www.kosaf.go.kr/ko/scholar.do?pg=scholarship05_06_01/">National Scholarship for Science and Engineering</a></h3>
+        <h3><a href="https://www.kosaf.go.kr/ko/scholar.do?pg=scholarship05_06_01">National Scholarship for Science and Engineering</a></h3>
         <p class="cv-entry__date">Awarded 2022</p>
       </header>
       <p>Four-year full-tuition undergraduate scholarship awarded by the Korea Student Aid Foundation</p>
