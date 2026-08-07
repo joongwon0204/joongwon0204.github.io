@@ -134,6 +134,10 @@
     font-size: 1.02rem;
     font-weight: 750;
     line-height: 1.45;
+
+    a {
+      font-weight: inherit;
+    }
   }
 }
 
