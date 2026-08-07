@@ -1,9 +1,9 @@
 # Basic Site Settings
 locale: "en-US"
 site_theme: "default"
-title: "JoongWon SHIN"
+title: "JoongWon Shin"
 title_separator: "-"
-name: &name "JoongWon SHIN"
+name: &name "JoongWon Shin"
 description: &description "Undergraduate student in Computer Science and Engineering at Seoul National University."
 url: "https://joongwon0204.github.io"
 baseurl: ""
@@ -12,7 +12,7 @@ repository: "joongwon0204/joongwon0204.github.io"
 # Site Author
 author:
   avatar: "profile.png"
-  name: "JoongWon SHIN"
+  name: "JoongWon Shin"
   pronouns:
   bio: "Undergraduate student in Computer Science and Engineering at Seoul National University."
   location: "Seoul, South Korea"
@@ -113,7 +113,7 @@ og_image:
 og_description:
 social:
   type: "Person"
-  name: "JoongWon SHIN"
+  name: "JoongWon Shin"
   links:
     - "https://github.com/joongwon0204"
 

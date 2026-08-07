@@ -1,4 +1,4 @@
-# JoongWon SHIN
+# JoongWon Shin
 
 Personal GitHub Pages site based on the Academic Pages Jekyll template.
 

@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "JoongWon SHIN"
+title: "JoongWon Shin"
 author_profile: true
 redirect_from:
   - /about/
