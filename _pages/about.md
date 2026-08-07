@@ -14,5 +14,5 @@ My current interests are computer architecture, AI accelerators, efficient AI co
 Research Interests
 ======
 
-* Computer architecture and hardware/software co-design for AI systems
-* AI accelerators and efficient LLM inference
+* Hardware/Software Co-Design for AI Systems
+* AI Accelerators and Efficient LLM Inference
