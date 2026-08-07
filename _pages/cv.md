@@ -56,7 +56,7 @@ redirect_from:
   <section class="cv-section" aria-labelledby="cv-interests">
     <h2 id="cv-interests">Research Interests</h2>
     <ul class="cv-interest-list">
-      <li>Hardware/Software Co-Design for AI Systems</li>
+      <li>Hardware-Software Co-Design for AI Systems</li>
       <li>AI Accelerators and Efficient LLM Inference</li>
     </ul>
   </section>

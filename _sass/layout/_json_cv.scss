@@ -21,14 +21,18 @@
   color: var(--global-text-color);
 
   a {
-    color: var(--global-link-color);
+    color: var(--global-text-color);
     font-weight: 600;
-    text-decoration: none;
+    text-decoration: underline;
     text-underline-offset: 0.18em;
 
+    &:visited {
+      color: var(--global-text-color);
+    }
+
     &:hover {
-      color: var(--global-link-color-hover);
-      text-decoration: underline;
+      color: var(--global-link-color);
+      text-decoration: none;
     }
 
     &:focus-visible {
