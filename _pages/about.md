@@ -135,15 +135,14 @@ redirect_from:
 
     <div class="signal-note-list">
       {% for post in site.posts limit:3 %}
-        <a class="signal-note-row" href="{{ post.url | relative_url }}">
-          <time class="signal-note-row__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" | upcase }}</time>
-          <span class="signal-note-row__title">
+        <a class="signal-experience-row signal-experience-row--note" href="{{ post.url | relative_url }}">
+          <time class="signal-experience-row__period" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" | upcase }}</time>
+          <span class="signal-experience-row__content">
             <h3>{{ post.title }}</h3>
             {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
           </span>
-          <span class="signal-note-row__type">{{ post.categories | first | upcase }}</span>
-          <span class="signal-note-row__time">{{ post.content | number_of_words | divided_by: site.words_per_minute | plus: 1 }} MIN</span>
-          <span class="signal-note-row__arrow" aria-hidden="true">→</span>
+          <span class="signal-experience-row__type">{{ post.categories | first | upcase }}</span>
+          <span class="signal-experience-row__arrow" aria-hidden="true">→</span>
         </a>
       {% endfor %}
     </div>
