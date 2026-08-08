@@ -37,6 +37,7 @@ html {
 
 body.signal-site {
   margin: 0;
+  padding: 0;
   min-height: 100vh;
   overflow-x: hidden;
   background:
@@ -1917,7 +1918,7 @@ body.signal-site {
   }
 
   .signal-header {
-    padding-top: .65rem;
+    padding-top: 0;
   }
 
   .signal-header__inner {
