@@ -10,8 +10,12 @@
     <span>{{ publication.thumbnail_label | default: publication_type | upcase }}</span>
   </span>
   <span class="signal-publication-row__content">
-    {% if publication.venue %}<span class="signal-publication-row__venue">{{ publication.venue }}</span>{% endif %}
-    {% if publication.highlight %}<span class="signal-publication-row__highlight">{{ publication.highlight }}</span>{% endif %}
+    {% if publication.venue or publication.highlight %}
+      <span class="signal-publication-row__meta">
+        {% if publication.venue %}<span class="signal-publication-row__venue">{{ publication.venue }}</span>{% endif %}
+        {% if publication.highlight %}<span class="signal-publication-row__highlight">{{ publication.highlight }}</span>{% endif %}
+      </span>
+    {% endif %}
     <span class="signal-publication-row__title">{{ publication.title }}</span>
     {% if publication.authors %}
       <span class="signal-publication-row__authors">

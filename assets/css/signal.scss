@@ -1232,10 +1232,15 @@ body.signal-site {
 }
 
 .signal-filter-line {
+  position: sticky;
+  z-index: 20;
+  top: 3.65rem;
   display: flex;
   gap: 2rem;
   padding: 0 0 1rem;
   border-bottom: 1px solid var(--signal-rule);
+  background: rgba(247, 248, 252, .94);
+  backdrop-filter: blur(12px) saturate(120%);
   font-family: var(--signal-ui);
   font-size: .65rem;
 }
@@ -1292,7 +1297,7 @@ body.signal-site {
 
 .signal-publication-year__head h2 {
   margin: 0;
-  color: var(--signal-blue);
+  color: var(--signal-muted);
   font-family: var(--signal-display);
   font-size: clamp(3rem, 6vw, 4.5rem);
   font-weight: 500;
@@ -1322,15 +1327,6 @@ body.signal-site {
 .signal-publication-row__highlight,
 .signal-publication-row__arrow {
   font-family: var(--signal-ui);
-}
-
-.signal-publication-row__venue {
-  display: block;
-  margin-bottom: .55rem;
-  color: var(--signal-teal);
-  font-size: .68rem;
-  line-height: 1.35;
-  text-transform: uppercase;
 }
 
 .signal-publication-row__visual {
@@ -1391,11 +1387,37 @@ body.signal-site {
   align-items: flex-start;
 }
 
+.signal-publication-row__meta {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: clamp(.75rem, 2vw, 1.5rem);
+  margin-bottom: .8rem;
+}
+
+.signal-publication-row__venue {
+  flex: 0 1 45%;
+  min-width: 0;
+  margin-bottom: 0;
+  color: var(--signal-teal);
+  font-family: var(--signal-ui);
+  font-size: .86rem;
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  text-transform: uppercase;
+}
+
 .signal-publication-row__highlight {
-  margin-bottom: .7rem;
+  flex: 1 1 55%;
+  min-width: 0;
+  margin-left: auto;
   color: var(--signal-teal);
   font-size: .68rem;
   line-height: 1.45;
+  text-align: right;
 }
 
 .signal-publication-row__title {
@@ -2277,6 +2299,7 @@ body.signal-site {
   }
 
   .signal-filter-line {
+    top: 3.25rem;
     overflow-x: auto;
     gap: 1.4rem;
     white-space: nowrap;
