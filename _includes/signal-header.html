@@ -1,18 +1,21 @@
+{% assign profile = site.data.profile %}
+{% assign is_publications = false %}
 {% assign is_experiences = false %}
 {% assign is_notes = false %}
-{% if page.url == '/projects/' %}
+{% if page.url == '/publications/' or page.collection == 'publications' %}
+  {% assign is_publications = true %}
+{% endif %}
+{% if page.url == '/projects/' or page.collection == 'experiences' %}
   {% assign is_experiences = true %}
 {% endif %}
-{% if page.url == '/year-archive/' or page.url contains '/categories/note' %}
-  {% assign is_notes = true %}
-{% elsif page.date %}
+{% if page.url == '/year-archive/' or page.collection == 'posts' %}
   {% assign is_notes = true %}
 {% endif %}
 
 <header class="signal-header" data-signal-header>
   <div class="signal-shell signal-header__inner">
-    <a class="signal-brand" href="{{ '/' | relative_url }}" aria-label="JoongWon Shin — Home">
-      <span class="signal-brand__name">JoongWon Shin</span>
+    <a class="signal-brand" href="{{ '/' | relative_url }}" aria-label="{{ profile.display_name }} — Home">
+      <span class="signal-brand__name">{{ profile.display_name }}</span>
     </a>
 
     <button class="signal-menu" type="button" aria-expanded="false" aria-controls="signal-navigation" data-signal-menu>
@@ -21,7 +24,7 @@
     </button>
 
     <nav class="signal-nav" id="signal-navigation" aria-label="Primary navigation" data-signal-nav>
-      <a href="{{ '/publications/' | relative_url }}"{% if page.url == '/publications/' %} class="is-active" aria-current="page"{% endif %}>Publications</a>
+      <a href="{{ '/publications/' | relative_url }}"{% if is_publications %} class="is-active" aria-current="page"{% endif %}>Publications</a>
       <a href="{{ '/projects/' | relative_url }}"{% if is_experiences %} class="is-active" aria-current="page"{% endif %}>Experiences</a>
       <a href="{{ '/year-archive/' | relative_url }}"{% if is_notes %} class="is-active" aria-current="page"{% endif %}>Notes</a>
       <a href="{{ '/cv/' | relative_url }}"{% if page.url == '/cv/' %} class="is-active" aria-current="page"{% endif %}>CV</a>

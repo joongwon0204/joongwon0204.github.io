@@ -1,0 +1,15 @@
+experiences:
+  - slug: "research"
+    title: "Research Experience"
+    label: "Research"
+  - slug: "honor"
+    title: "Honors and Scholarships"
+    label: "Honor"
+
+notes:
+  - slug: "project"
+    title: "Project Logs"
+    label: "Project"
+  - slug: "study"
+    title: "Study Records"
+    label: "Study"

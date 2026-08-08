@@ -8,16 +8,17 @@ redirect_from:
   - /about.html
 ---
 
+{% assign profile = site.data.profile %}
 <div class="signal-shell signal-home">
   <section class="signal-hero signal-reveal" data-signal-field aria-labelledby="home-title">
     <div class="signal-hero__copy">
-      <p class="signal-hero__eyebrow">PORTFOLIO</p>
-      <h1 id="home-title"><span>JoongWon</span><span>Shin</span></h1>
-      <p class="signal-hero__role">JoongWon Shin · 신중원</p>
-      <p class="signal-hero__intro">I am an undergraduate student in Computer Science and Engineering at Seoul National University. My current interests include hardware–software co-design for AI systems, AI accelerators, and efficient LLM inference.</p>
+      <p class="signal-hero__eyebrow">{{ profile.eyebrow | upcase }}</p>
+      <h1 id="home-title"><span>{{ profile.given_name }}</span><span>{{ profile.family_name }}</span></h1>
+      <p class="signal-hero__role">{{ profile.display_name }} · {{ profile.native_name }}</p>
+      <p class="signal-hero__intro">{{ profile.intro }}</p>
       <p class="signal-hero__meta" aria-label="Contact links">
         {% if site.author.email %}
-          <a class="signal-hero__contact" href="mailto:{{ site.author.email }}" aria-label="Email JoongWon Shin">
+          <a class="signal-hero__contact" href="mailto:{{ site.author.email }}" aria-label="Email {{ profile.display_name }}">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M3.75 5.75h16.5v12.5H3.75z" />
               <path d="m4.5 6.5 7.5 6 7.5-6" />
@@ -26,7 +27,7 @@ redirect_from:
           </a>
         {% endif %}
         {% if site.author.github %}
-          <a class="signal-hero__contact signal-hero__contact--github" href="https://github.com/{{ site.author.github }}" rel="me" aria-label="GitHub profile of JoongWon Shin">
+          <a class="signal-hero__contact signal-hero__contact--github" href="https://github.com/{{ site.author.github }}" rel="me" aria-label="GitHub profile of {{ profile.display_name }}">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 2.75a9.25 9.25 0 0 0-2.92 18.03c.46.08.63-.2.63-.45v-1.78c-2.58.56-3.12-1.1-3.12-1.1-.42-1.07-1.03-1.36-1.03-1.36-.84-.58.06-.57.06-.57.93.07 1.42.96 1.42.96.83 1.42 2.17 1.01 2.7.77.08-.6.32-1.01.59-1.24-2.06-.23-4.23-1.03-4.23-4.57 0-1.01.36-1.84.95-2.49-.1-.23-.41-1.18.09-2.46 0 0 .78-.25 2.54.95A8.8 8.8 0 0 1 12 7.07a8.8 8.8 0 0 1 2.32.31c1.76-1.2 2.53-.95 2.53-.95.51 1.28.2 2.23.1 2.46.59.65.95 1.48.95 2.49 0 3.55-2.18 4.33-4.25 4.56.34.29.63.85.63 1.72v2.67c0 .25.17.54.64.45A9.25 9.25 0 0 0 12 2.75Z" />
             </svg>
@@ -36,9 +37,9 @@ redirect_from:
       </p>
     </div>
 
-    <div class="signal-hero__visual" aria-label="Circuit-board profile graphic">
+    <div class="signal-hero__visual" aria-label="Profile graphic for {{ profile.display_name }}">
       <div class="signal-hero__image-wrap">
-        <img class="signal-hero__image" src="{{ '/images/profile.png' | relative_url }}" alt="Abstract circuit-board pattern illuminated in violet, blue, and cyan">
+        <img class="signal-hero__image" src="{{ profile.image.path | relative_url }}" alt="{{ profile.image.alt }}">
       </div>
     </div>
     {% include signal-circuit.html class="signal-hero__traces" %}
@@ -47,19 +48,15 @@ redirect_from:
   <section class="signal-section signal-research-section signal-reveal" id="research" aria-labelledby="research-title">
     <div class="signal-research">
       <div class="signal-research__copy">
-        <p class="signal-kicker">01 / RESEARCH INTEREST</p>
+        <p class="signal-kicker">01 / {{ profile.research.section_label | upcase }}</p>
         <h2 id="research-title">Research<br>Interest</h2>
-        <p class="signal-section-head__intro">My interests sit across the hardware–software boundary of modern AI systems.</p>
+        <p class="signal-section-head__intro">{{ profile.research.intro }}</p>
         <ul class="signal-research__legend" aria-label="Research interest legend">
-          <li>
-            <button type="button" data-signal-legend="codesign" aria-controls="research-codesign" aria-pressed="false"><i aria-hidden="true"></i>Hardware–Software Co-Design</button>
-          </li>
-          <li>
-            <button type="button" data-signal-legend="accelerators" aria-controls="research-accelerators" aria-pressed="false"><i aria-hidden="true"></i>AI Accelerators</button>
-          </li>
-          <li>
-            <button type="button" data-signal-legend="inference" aria-controls="research-inference" aria-pressed="false"><i aria-hidden="true"></i>Efficient LLM Inference</button>
-          </li>
+          {% for interest in profile.research.interests %}
+            <li>
+              <button type="button" data-signal-legend="{{ interest.key }}" aria-controls="research-{{ interest.key }}" aria-pressed="false"><i aria-hidden="true"></i>{{ interest.short_label }}</button>
+            </li>
+          {% endfor %}
         </ul>
       </div>
 
@@ -85,15 +82,11 @@ redirect_from:
           <circle cx="320" cy="216" r="5" />
         </svg>
 
-        <button class="signal-node signal-node--codesign" id="research-codesign" type="button" data-signal-node="codesign" aria-pressed="false">
-          <span class="signal-node__inner">Hardware–Software Co-Design</span>
-        </button>
-        <button class="signal-node signal-node--accelerators" id="research-accelerators" type="button" data-signal-node="accelerators" aria-pressed="false">
-          <span class="signal-node__inner">AI Accelerators</span>
-        </button>
-        <button class="signal-node signal-node--inference" id="research-inference" type="button" data-signal-node="inference" aria-pressed="false">
-          <span class="signal-node__inner">Efficient LLM Inference</span>
-        </button>
+        {% for interest in profile.research.interests %}
+          <button class="signal-node signal-node--{{ interest.key }}" id="research-{{ interest.key }}" type="button" data-signal-node="{{ interest.key }}" aria-pressed="false">
+            <span class="signal-node__inner">{{ interest.short_label }}</span>
+          </button>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -104,21 +97,13 @@ redirect_from:
         <p class="signal-kicker">02 / EXPERIENCES</p>
         <h2 id="experiences-title">Experiences</h2>
       </div>
-      <p class="signal-section-head__aside">RESEARCH · HONOR</p>
+      <p class="signal-section-head__aside">{% for group in site.data.content_groups.experiences %}{{ group.label | upcase }}{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
     </header>
 
     <div class="signal-experience-list">
-      {% for experience in site.data.experiences limit:3 %}
-        <a class="signal-experience-row" data-experience-type="{{ experience.type_slug }}" href="{{ experience.url | relative_url }}">
-          <span class="signal-experience-row__period">{{ experience.period }}</span>
-          <span class="signal-experience-row__content">
-            <span class="signal-experience-row__organization">{{ experience.organization }}</span>
-            <h3>{{ experience.title }}</h3>
-            <p>{{ experience.summary }}</p>
-          </span>
-          <span class="signal-experience-row__type">{{ experience.type }}</span>
-          <span class="signal-experience-row__arrow" aria-hidden="true">→</span>
-        </a>
+      {% assign sorted_experiences = site.experiences | sort: "date" | reverse %}
+      {% for experience in sorted_experiences limit:3 %}
+        {% include signal-content-row.html item=experience kind="experience" %}
       {% endfor %}
     </div>
     <a class="signal-more-link" href="{{ '/projects/' | relative_url }}">Open all experiences <span aria-hidden="true">→</span></a>
@@ -130,20 +115,12 @@ redirect_from:
         <p class="signal-kicker">03 / NOTES</p>
         <h2 id="notes-title">Notes</h2>
       </div>
-      <p class="signal-section-head__aside">PROJECT LOGS · STUDY</p>
+      <p class="signal-section-head__aside">{% for group in site.data.content_groups.notes %}{{ group.title | upcase }}{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
     </header>
 
     <div class="signal-note-list">
       {% for post in site.posts limit:3 %}
-        <a class="signal-experience-row signal-experience-row--note" href="{{ post.url | relative_url }}">
-          <time class="signal-experience-row__period" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" | upcase }}</time>
-          <span class="signal-experience-row__content">
-            <h3>{{ post.title }}</h3>
-            {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
-          </span>
-          <span class="signal-experience-row__type">{{ post.categories | first | upcase }}</span>
-          <span class="signal-experience-row__arrow" aria-hidden="true">→</span>
-        </a>
+        {% include signal-content-row.html item=post kind="note" %}
       {% endfor %}
     </div>
     <a class="signal-more-link" href="{{ '/year-archive/' | relative_url }}">Open the notes archive <span aria-hidden="true">→</span></a>

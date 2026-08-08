@@ -1,0 +1,26 @@
+display_name: "JoongWon Shin"
+given_name: "JoongWon"
+family_name: "Shin"
+native_name: "신중원"
+eyebrow: "Portfolio"
+summary: "Undergraduate student in Computer Science and Engineering at Seoul National University."
+intro: "I am an undergraduate student in Computer Science and Engineering at Seoul National University. My current interests include hardware–software co-design for AI systems, AI accelerators, and efficient LLM inference."
+
+image:
+  path: "/images/profile.png"
+  alt: "Abstract circuit-board pattern illuminated in violet, blue, and cyan"
+
+research:
+  section_label: "Research Interest"
+  heading: "Research Interest"
+  intro: "My interests sit across the hardware–software boundary of modern AI systems."
+  interests:
+    - key: "codesign"
+      short_label: "Hardware–Software Co-Design"
+      full_label: "Hardware–Software Co-Design for AI Systems"
+    - key: "accelerators"
+      short_label: "AI Accelerators"
+      full_label: "AI Accelerators"
+    - key: "inference"
+      short_label: "Efficient LLM Inference"
+      full_label: "Efficient LLM Inference"

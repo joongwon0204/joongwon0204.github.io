@@ -8,12 +8,13 @@ redirect_from:
   - /resume/
 ---
 
+{% assign profile = site.data.profile %}
 <section class="signal-shell signal-index">
   <header class="signal-index-head signal-reveal">
     <div class="signal-index-head__copy">
       <p class="signal-kicker">04 / CURRICULUM VITAE</p>
-      <h1>JoongWon<br>Shin</h1>
-      <p class="signal-index-head__intro">Undergraduate student in Computer Science and Engineering at Seoul National University.</p>
+      <h1 aria-label="{{ profile.display_name }}">{{ profile.given_name }}<br>{{ profile.family_name }}</h1>
+      <p class="signal-index-head__intro">{{ profile.summary }}</p>
     </div>
     <aside class="signal-index-head__aside">
       <a class="signal-cv-download" href="{{ '/assets/cv.pdf' | relative_url }}">Download PDF&nbsp; ↗</a>
@@ -74,9 +75,7 @@ redirect_from:
         <div class="signal-timeline__content">
           <article class="signal-cv-entry">
             <ul>
-              <li>Hardware&ndash;Software Co-Design for AI Systems</li>
-              <li>AI Accelerators</li>
-              <li>Efficient LLM Inference</li>
+              {% for interest in profile.research.interests %}<li>{{ interest.full_label }}</li>{% endfor %}
             </ul>
           </article>
         </div>

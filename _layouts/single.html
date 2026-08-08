@@ -4,9 +4,20 @@ layout: signal
 
 {% assign primary_category = page.categories | first %}
 {% assign is_note_article = false %}
-{% if primary_category == 'project' or primary_category == 'study' or primary_category == 'notes' %}
+{% if page.collection == 'posts' %}
   {% assign is_note_article = true %}
 {% endif %}
+{% assign archive_url = '/year-archive/' %}
+{% assign archive_label = 'Back to notes' %}
+{% if page.collection == 'publications' %}
+  {% assign archive_url = '/publications/' %}
+  {% assign archive_label = 'Back to publications' %}
+{% elsif page.collection == 'experiences' %}
+  {% assign archive_url = '/projects/' %}
+  {% assign archive_label = 'Back to experiences' %}
+{% endif %}
+{% if page.back_url %}{% assign archive_url = page.back_url %}{% endif %}
+{% if page.back_label %}{% assign archive_label = page.back_label %}{% endif %}
 <article class="signal-shell signal-article{% if is_note_article %} signal-article--note{% endif %}" itemscope itemtype="https://schema.org/Article">
   <header class="signal-article__head signal-reveal">
     <div class="signal-article__meta">
@@ -26,8 +37,8 @@ layout: signal
   </div>
 
   <footer class="signal-article__footer signal-reveal">
-    <a href="{{ '/year-archive/' | relative_url }}">
-      <span aria-hidden="true">←</span> Back to archive
+    <a href="{{ archive_url | relative_url }}">
+      <span aria-hidden="true">←</span> {{ archive_label }}
     </a>
   </footer>
 </article>

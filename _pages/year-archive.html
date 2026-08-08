@@ -18,38 +18,18 @@ redirect_from:
   </header>
 
   <div class="signal-notes-index">
-    <section class="signal-work-group signal-reveal" aria-labelledby="project-notes-title">
-      <h2 class="signal-work-group__title" id="project-notes-title">Project Logs</h2>
-      <div class="signal-note-list">
-        {% for post in site.categories.project %}
-          <a class="signal-experience-row signal-experience-row--note" href="{{ post.url | relative_url }}">
-            <time class="signal-experience-row__period" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" | upcase }}</time>
-            <span class="signal-experience-row__content">
-              <h3>{{ post.title }}</h3>
-              {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
-            </span>
-            <span class="signal-experience-row__type">PROJECT</span>
-            <span class="signal-experience-row__arrow" aria-hidden="true">→</span>
-          </a>
-        {% endfor %}
-      </div>
-    </section>
-
-    <section class="signal-work-group signal-reveal" aria-labelledby="study-notes-title">
-      <h2 class="signal-work-group__title" id="study-notes-title">Study Records</h2>
-      <div class="signal-note-list">
-        {% for post in site.categories.study %}
-          <a class="signal-experience-row signal-experience-row--note" href="{{ post.url | relative_url }}">
-            <time class="signal-experience-row__period" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" | upcase }}</time>
-            <span class="signal-experience-row__content">
-              <h3>{{ post.title }}</h3>
-              {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
-            </span>
-            <span class="signal-experience-row__type">STUDY</span>
-            <span class="signal-experience-row__arrow" aria-hidden="true">→</span>
-          </a>
-        {% endfor %}
-      </div>
-    </section>
+    {% for group in site.data.content_groups.notes %}
+      {% assign group_items = site.categories[group.slug] %}
+      {% if group_items.size > 0 %}
+        <section class="signal-work-group signal-reveal" aria-labelledby="{{ group.slug }}-notes-title">
+          <h2 class="signal-work-group__title" id="{{ group.slug }}-notes-title">{{ group.title }}</h2>
+          <div class="signal-note-list">
+            {% for post in group_items %}
+              {% include signal-content-row.html item=post kind="note" %}
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+    {% endfor %}
   </div>
 </section>

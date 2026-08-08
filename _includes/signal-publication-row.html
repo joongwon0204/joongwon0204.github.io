@@ -1,5 +1,6 @@
 {% assign publication = include.publication %}
 {% assign publication_type = publication.type | default: publication.category | downcase %}
+{% assign primary_author = publication.primary_author | default: site.data.profile.display_name %}
 {% if publication.paperurl %}
   {% assign publication_link = publication.paperurl %}
 {% else %}
@@ -19,7 +20,7 @@
     <span class="signal-publication-row__title">{{ publication.title }}</span>
     {% if publication.authors %}
       <span class="signal-publication-row__authors">
-        {% for author in publication.authors %}<span{% if author == publication.primary_author %} class="is-primary"{% endif %}>{{ author }}</span>{% unless forloop.last %}{% if forloop.rindex == 2 %} and {% else %}, {% endif %}{% endunless %}{% endfor %}
+        {% for author in publication.authors %}<span{% if author == primary_author %} class="is-primary"{% endif %}>{{ author }}</span>{% unless forloop.last %}{% if forloop.rindex == 2 %} and {% else %}, {% endif %}{% endunless %}{% endfor %}
       </span>
     {% endif %}
   </span>
