@@ -2,7 +2,7 @@
 layout: single
 title: "ParryFire Survivors - 바이브 코딩으로 게임 제작 시도"
 subtitle: "Unity | C# | vive coding"
-categories: [notes]
+categories: []
 ---
 
 
