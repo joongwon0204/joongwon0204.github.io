@@ -1971,6 +1971,11 @@ body.signal-site {
     gap: 1rem;
   }
 
+  .signal-research {
+    grid-template-columns: minmax(13rem, .55fr) minmax(24rem, 1.45fr);
+    gap: clamp(1.25rem, 3vw, 2rem);
+  }
+
   .signal-work-index .signal-work-row__type {
     display: none;
   }
@@ -2089,7 +2094,8 @@ body.signal-site {
 
   .signal-page-head h1,
   .signal-index-head h1 {
-    font-size: clamp(4.2rem, 22vw, 7rem);
+    max-width: 100%;
+    font-size: clamp(3.5rem, 18vw, 6.5rem);
   }
 
   .signal-page-head__circuit,
