@@ -1838,6 +1838,7 @@ body.signal-site {
 .signal-detail-list dt,
 .signal-skill-list dt {
   color: var(--signal-ink);
+  font-family: var(--signal-body);
   font-size: .75rem;
   font-weight: 600;
 }
