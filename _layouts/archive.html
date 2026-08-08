@@ -1,24 +1,17 @@
 ---
-layout: default
+layout: signal
 ---
 
-{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
-  {% include page__hero.html %}
-{% endif %}
-
-{% if page.url != "/" and site.breadcrumbs %}
-  {% unless paginator %}
-    {% include breadcrumbs.html %}
-  {% endunless %}
-{% endif %}
-
-<div id="main" role="main">
-  {% include sidebar.html %}
-
-  <div class="archive{% if page.url == '/cv/' %} archive--cv{% endif %}">
-    {% unless page.header.overlay_color or page.header.overlay_image %}
-      <h1 class="page__title">{{ page.title }}</h1>
-    {% endunless %}
+<section class="signal-shell signal-page">
+  <header class="signal-page-head signal-reveal">
+    <div>
+      <p class="signal-kicker">{{ page.kicker | default: 'ARCHIVE' }}</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.description %}<p class="signal-page-head__intro">{{ page.description }}</p>{% endif %}
+    </div>
+    {% include signal-circuit.html class="signal-page-head__circuit" %}
+  </header>
+  <div class="signal-prose signal-archive-content signal-reveal">
     {{ content }}
   </div>
-</div>
+</section>

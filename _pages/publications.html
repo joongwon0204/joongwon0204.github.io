@@ -1,26 +1,55 @@
 ---
-layout: archive
+layout: signal
 title: "Publications"
+description: "Publications by JoongWon Shin."
 permalink: /publications/
-author_profile: true
 ---
 
-{% include base_path %}
+<section class="signal-shell signal-index">
+  <header class="signal-index-head signal-reveal">
+    <div class="signal-index-head__copy">
+      <p class="signal-kicker">01 / PUBLICATIONS</p>
+      <h1>Publications</h1>
+      <p class="signal-index-head__intro">Peer-reviewed papers, preprints, and technical reports will be collected here.</p>
+    </div>
+    <aside class="signal-index-head__aside" aria-label="Publication archive summary">
+      <dl>
+        <dt>Total publications</dt><dd>{{ site.publications | size | prepend: '0' | slice: -2, 2 }}</dd>
+        <dt>Status</dt><dd>{% if site.publications.size > 0 %}Active{% else %}Empty{% endif %}</dd>
+      </dl>
+    </aside>
+    {% include signal-circuit.html class="signal-index-head__circuit" %}
+  </header>
 
-{% if site.publications.size > 0 %}
-  {% for category in site.publication_category %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category == category[0] %}
-        {% unless title_shown %}
-          <h2>{{ category[1].title }}</h2>
-          {% assign title_shown = true %}
-        {% endunless %}
-        {% include archive-single.html %}
-      {% endif %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-No publications yet.
-{% endif %}
-
+  <div class="signal-publications signal-reveal">
+    {% if site.publications.size > 0 %}
+      <div class="signal-filter-line" data-signal-filter-group data-signal-filter-target=".signal-publication-row" role="group" aria-label="Publication types">
+        <button type="button" data-signal-filter="all" aria-pressed="true">ALL</button>
+        <button type="button" data-signal-filter="conference" aria-pressed="false">CONFERENCE</button>
+        <button type="button" data-signal-filter="journal" aria-pressed="false">JOURNAL</button>
+        <button type="button" data-signal-filter="preprint" aria-pressed="false">PREPRINT</button>
+      </div>
+      {% for publication in site.publications reversed %}
+        {% assign publication_type = publication.type | default: publication.category | downcase %}
+        <article class="signal-publication-row" data-signal-category="{{ publication_type }}">
+          <span class="signal-publication-row__number">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
+          <span class="signal-publication-row__year">{{ publication.date | date: "%Y" }}</span>
+          <div>
+            <h2 class="signal-publication-row__title"><a href="{{ publication.url | relative_url }}">{{ publication.title }}</a></h2>
+            {% if publication.venue %}<p class="signal-publication-row__venue">{{ publication.venue }}</p>{% endif %}
+          </div>
+          <span class="signal-publication-row__links"><a href="{{ publication.url | relative_url }}">VIEW →</a></span>
+        </article>
+      {% endfor %}
+    {% else %}
+      <div class="signal-empty">
+        <div class="signal-empty__copy">
+          <span class="signal-empty__index">00 / NO ENTRIES</span>
+          <h2>No publications yet.</h2>
+          <p>The archive is intentionally left empty until publication data is added to this site.</p>
+        </div>
+        {% include signal-circuit.html class="signal-empty__circuit" %}
+      </div>
+    {% endif %}
+  </div>
+</section>

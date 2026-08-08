@@ -1,26 +1,67 @@
 ---
-layout: archive
+layout: signal
 permalink: /year-archive/
-title: "Blog posts"
-author_profile: true
+title: "Notes"
+description: "Project logs, study records, and writing by JoongWon Shin."
 redirect_from:
   - /wordpress/blog-posts/
 ---
 
-{% include base_path %}
-{% assign written_year = "" %}
-{% for post in site.posts %}
-  {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
-  {% if year != written_year %}
-    {% if written_year != "" %}
-      </ul>
-    {% endif %}
-    <h2 id="{{ year | slugify }}" class="archive__subtitle">{{ year }}</h2>
-    <ul>
-    {% assign written_year = year %}
-  {% endif %}
-  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-  {% if forloop.last %}
-    </ul>
-  {% endif %}
-{% endfor %}
+{% assign project_note_count = site.categories.project | size %}
+{% assign study_note_count = site.categories.study | size %}
+<section class="signal-shell signal-index">
+  <header class="signal-index-head signal-reveal">
+    <div class="signal-index-head__copy">
+      <p class="signal-kicker">03 / NOTES</p>
+      <h1>Notes</h1>
+      <p class="signal-index-head__intro">Project logs, study records, and writing currently published on this site.</p>
+    </div>
+    <aside class="signal-index-head__aside" aria-label="Notes archive summary">
+      <dl>
+        <dt>Project logs</dt><dd>{{ site.categories.project | size | prepend: '0' }}</dd>
+        <dt>Study records</dt><dd>{{ site.categories.study | size | prepend: '0' }}</dd>
+      </dl>
+    </aside>
+    {% include signal-circuit.html class="signal-index-head__circuit" %}
+  </header>
+
+  <div class="signal-notes-index">
+    <section class="signal-work-group signal-reveal" aria-labelledby="project-notes-title">
+      <h2 class="signal-work-group__title" id="project-notes-title">Project Logs <span>{{ project_note_count }} {% if project_note_count == 1 %}entry{% else %}entries{% endif %}</span></h2>
+      <div class="signal-note-list">
+        {% for post in site.categories.project %}
+          <a class="signal-note-row" href="{{ post.url | relative_url }}">
+            <span class="signal-note-row__index">{{ forloop.index | prepend: '00' | slice: -3, 3 }}</span>
+            <time class="signal-note-row__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" | upcase }}</time>
+            <span class="signal-note-row__title">
+              <h3>{{ post.title }}</h3>
+              {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
+            </span>
+            <span class="signal-note-row__type">PROJECT</span>
+            <span class="signal-note-row__time">{{ post.content | number_of_words | divided_by: site.words_per_minute | plus: 1 }} MIN</span>
+            <span class="signal-note-row__arrow" aria-hidden="true">→</span>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="signal-work-group signal-reveal" aria-labelledby="study-notes-title">
+      <h2 class="signal-work-group__title" id="study-notes-title">Study Records <span>{{ study_note_count }} {% if study_note_count == 1 %}entry{% else %}entries{% endif %}</span></h2>
+      <div class="signal-note-list">
+        {% for post in site.categories.study %}
+          <a class="signal-note-row" href="{{ post.url | relative_url }}">
+            <span class="signal-note-row__index">{{ forloop.index | prepend: '00' | slice: -3, 3 }}</span>
+            <time class="signal-note-row__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" | upcase }}</time>
+            <span class="signal-note-row__title">
+              <h3>{{ post.title }}</h3>
+              {% if post.subtitle %}<p>{{ post.subtitle }}</p>{% endif %}
+            </span>
+            <span class="signal-note-row__type">STUDY</span>
+            <span class="signal-note-row__time">{{ post.content | number_of_words | divided_by: site.words_per_minute | plus: 1 }} MIN</span>
+            <span class="signal-note-row__arrow" aria-hidden="true">→</span>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+</section>
