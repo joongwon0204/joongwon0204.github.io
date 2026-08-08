@@ -57,6 +57,10 @@ body.signal-site {
   box-sizing: border-box;
 }
 
+.signal-site [hidden] {
+  display: none !important;
+}
+
 .signal-site img {
   max-width: 100%;
   height: auto;
