@@ -9,8 +9,8 @@ highlight: "This is a temporary 2025 entry for automatic year grouping."
 thumbnail_label: "GROUP TEST"
 primary_author: "JoongWon Shin"
 authors:
-  - "JoongWon Shin"
   - "Example Collaborator"
+  - "JoongWon Shin"
 ---
 
 This temporary entry verifies that a separate year section is generated automatically.

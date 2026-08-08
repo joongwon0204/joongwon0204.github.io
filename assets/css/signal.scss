@@ -1312,9 +1312,9 @@ body.signal-site {
 .signal-publication-row {
   position: relative;
   display: grid;
-  min-height: 13rem;
+  min-height: 11rem;
   align-items: center;
-  padding: 2rem 0;
+  padding: 1.35rem 0;
   border-bottom: 1px solid var(--signal-rule);
   grid-template-columns: 10rem minmax(0, 1fr) 1.5rem;
   gap: clamp(1.2rem, 2.5vw, 2.4rem);
@@ -2311,7 +2311,7 @@ body.signal-site {
   }
 
   .signal-publication-row {
-    padding: 1.75rem 0;
+    padding: 1.25rem 0;
     grid-template-columns: minmax(0, 1fr) 1.5rem;
     gap: 1rem;
   }

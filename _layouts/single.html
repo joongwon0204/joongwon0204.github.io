@@ -7,13 +7,13 @@ layout: signal
 {% if page.collection == 'posts' %}
   {% assign is_note_article = true %}
 {% endif %}
-{% assign archive_url = '/year-archive/' %}
+{% assign archive_url = '/notes/' %}
 {% assign archive_label = 'Back to notes' %}
 {% if page.collection == 'publications' %}
   {% assign archive_url = '/publications/' %}
   {% assign archive_label = 'Back to publications' %}
 {% elsif page.collection == 'experiences' %}
-  {% assign archive_url = '/projects/' %}
+  {% assign archive_url = '/experiences/' %}
   {% assign archive_label = 'Back to experiences' %}
 {% endif %}
 {% if page.back_url %}{% assign archive_url = page.back_url %}{% endif %}

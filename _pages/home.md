@@ -1,7 +1,7 @@
 ---
 layout: signal
 permalink: /
-title: "JoongWon Shin"
+title: "Home"
 description: "Undergraduate student in Computer Science and Engineering at Seoul National University, interested in hardware–software co-design, AI accelerators, and efficient LLM inference."
 redirect_from:
   - /about/
@@ -106,7 +106,7 @@ redirect_from:
         {% include signal-content-row.html item=experience kind="experience" %}
       {% endfor %}
     </div>
-    <a class="signal-more-link" href="{{ '/projects/' | relative_url }}">Open all experiences <span aria-hidden="true">→</span></a>
+    <a class="signal-more-link" href="{{ '/experiences/' | relative_url }}">Open all experiences <span aria-hidden="true">→</span></a>
   </section>
 
   <section class="signal-section signal-reveal" aria-labelledby="notes-title">
@@ -123,6 +123,6 @@ redirect_from:
         {% include signal-content-row.html item=post kind="note" %}
       {% endfor %}
     </div>
-    <a class="signal-more-link" href="{{ '/year-archive/' | relative_url }}">Open the notes archive <span aria-hidden="true">→</span></a>
+    <a class="signal-more-link" href="{{ '/notes/' | relative_url }}">Open the notes archive <span aria-hidden="true">→</span></a>
   </section>
 </div>

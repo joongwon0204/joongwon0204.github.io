@@ -1,9 +1,10 @@
 ---
 layout: signal
-permalink: /year-archive/
+permalink: /notes/
 title: "Notes"
 description: "Project logs, study records, and writing by JoongWon Shin."
 redirect_from:
+  - /year-archive/
   - /wordpress/blog-posts/
 ---
 

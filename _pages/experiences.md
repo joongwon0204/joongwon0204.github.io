@@ -2,7 +2,9 @@
 layout: signal
 title: "Experiences"
 description: "Major academic and research experiences of JoongWon Shin."
-permalink: /projects/
+permalink: /experiences/
+redirect_from:
+  - /projects/
 ---
 
 <section class="signal-shell signal-index">
