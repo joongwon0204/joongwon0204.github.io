@@ -1402,8 +1402,9 @@ body.signal-site {
 }
 
 .signal-publication-row__venue {
-  flex: 0 1 45%;
+  flex: 0 1 auto;
   min-width: 0;
+  max-width: 28ch;
   margin-bottom: 0;
   color: var(--signal-teal);
   font-family: var(--signal-ui);
@@ -1415,7 +1416,7 @@ body.signal-site {
 }
 
 .signal-publication-row__highlight {
-  flex: 1 1 55%;
+  flex: 1 1 0;
   min-width: 0;
   margin-left: auto;
   color: var(--signal-teal);
