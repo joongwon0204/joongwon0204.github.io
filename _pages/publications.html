@@ -23,17 +23,19 @@ permalink: /publications/
         <button type="button" data-signal-filter="journal" aria-pressed="false">JOURNAL</button>
         <button type="button" data-signal-filter="preprint" aria-pressed="false">PREPRINT</button>
       </div>
-      {% for publication in site.publications reversed %}
-        {% assign publication_type = publication.type | default: publication.category | downcase %}
-        <article class="signal-publication-row" data-signal-category="{{ publication_type }}">
-          <span class="signal-publication-row__number">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span>
-          <span class="signal-publication-row__year">{{ publication.date | date: "%Y" }}</span>
-          <div>
-            <h2 class="signal-publication-row__title"><a href="{{ publication.url | relative_url }}">{{ publication.title }}</a></h2>
-            {% if publication.venue %}<p class="signal-publication-row__venue">{{ publication.venue }}</p>{% endif %}
-          </div>
-          <span class="signal-publication-row__links"><a href="{{ publication.url | relative_url }}">VIEW →</a></span>
-        </article>
+      {% assign sorted_publications = site.publications | sort: "date" | reverse %}
+      {% assign current_year = "" %}
+      {% for publication in sorted_publications %}
+        {% assign publication_year = publication.date | date: "%Y" %}
+        {% if publication_year != current_year %}
+          {% unless forloop.first %}</div></section>{% endunless %}
+          <section class="signal-publication-year" data-signal-filter-section>
+            <header class="signal-publication-year__head"><h2>{{ publication_year }}</h2></header>
+            <div class="signal-publication-year__list">
+          {% assign current_year = publication_year %}
+        {% endif %}
+        {% include signal-publication-row.html publication=publication %}
+        {% if forloop.last %}</div></section>{% endif %}
       {% endfor %}
     {% else %}
       <div class="signal-empty">

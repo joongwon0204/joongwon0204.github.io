@@ -123,6 +123,7 @@
     var scope = group.parentElement || document;
     var controls = Array.prototype.slice.call(group.querySelectorAll("[data-signal-filter]"));
     var items = selector ? Array.prototype.slice.call(scope.querySelectorAll(selector)) : [];
+    var sections = Array.prototype.slice.call(scope.querySelectorAll("[data-signal-filter-section]"));
 
     function applyFilter(value) {
       controls.forEach(function (control) {
@@ -132,6 +133,11 @@
       items.forEach(function (item) {
         var category = item.getAttribute("data-signal-category");
         item.hidden = value !== "all" && category !== value;
+      });
+
+      sections.forEach(function (section) {
+        var sectionItems = selector ? Array.prototype.slice.call(section.querySelectorAll(selector)) : [];
+        section.hidden = sectionItems.length > 0 && sectionItems.every(function (item) { return item.hidden; });
       });
     }
 
