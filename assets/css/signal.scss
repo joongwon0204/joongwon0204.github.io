@@ -632,7 +632,7 @@ body.signal-site {
 .signal-hero h1 {
   margin: 0;
   font-family: var(--signal-display);
-  font-size: clamp(5.2rem, 10.5vw, 10rem);
+  font-size: clamp(5.2rem, 10.5vw, 150px);
   font-weight: 600;
   letter-spacing: -.045em;
   line-height: .75;
