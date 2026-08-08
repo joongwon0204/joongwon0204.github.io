@@ -14,8 +14,9 @@ $paragraph-indent           : false; // true, false (default)
 $indent-var                 : 1.3em;
 
 /* Site typefaces */
-$serif                      : "Source Serif 4", Georgia, Times, serif;
-$sans-serif                 : "Source Serif 4", Georgia, Times, serif;
+$system-sans-serif          : -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+$serif                      : "Source Serif 4", $system-sans-serif;
+$sans-serif                 : "Source Serif 4", $system-sans-serif;
 $monospace                  : Monaco, Consolas, "Lucida Console", monospace;
 
 /* Sans serif typefaces */

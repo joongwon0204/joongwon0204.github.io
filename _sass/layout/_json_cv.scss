@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .archive--cv {
-  --cv-font-family: "Source Serif 4", Georgia, Times, serif;
+  --cv-font-family: #{inspect($sans-serif)};
 
   font-family: var(--cv-font-family);
 
