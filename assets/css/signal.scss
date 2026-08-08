@@ -450,6 +450,11 @@ body.signal-site {
   border-bottom: 1px solid var(--signal-rule-strong);
 }
 
+.signal-article--note .signal-article__head {
+  min-height: 0;
+  padding-bottom: 3rem;
+}
+
 .signal-article__meta {
   display: flex;
   gap: 1.4rem;

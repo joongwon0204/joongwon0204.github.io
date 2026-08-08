@@ -3,7 +3,11 @@ layout: signal
 ---
 
 {% assign primary_category = page.categories | first %}
-<article class="signal-shell signal-article" itemscope itemtype="https://schema.org/Article">
+{% assign is_note_article = false %}
+{% if primary_category == 'project' or primary_category == 'study' or primary_category == 'notes' %}
+  {% assign is_note_article = true %}
+{% endif %}
+<article class="signal-shell signal-article{% if is_note_article %} signal-article--note{% endif %}" itemscope itemtype="https://schema.org/Article">
   <header class="signal-article__head signal-reveal">
     <div class="signal-article__meta">
       <span>{{ primary_category | default: page.collection | default: 'NOTE' | upcase }}</span>
