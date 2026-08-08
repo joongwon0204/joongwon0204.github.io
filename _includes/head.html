@@ -10,6 +10,12 @@
 
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  document.documentElement.removeAttribute('data-theme');
+  try {
+    localStorage.setItem('theme', 'light');
+  } catch (error) {
+    // Light mode remains the document default when storage is unavailable.
+  }
 </script>
 
 <!-- For all browsers -->
