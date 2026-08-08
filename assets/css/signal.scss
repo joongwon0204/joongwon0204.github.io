@@ -1165,8 +1165,6 @@ body.signal-site {
 .signal-work-row__year,
 .signal-work-row__type,
 .signal-work-row__arrow,
-.signal-note-row__index,
-.signal-note-row__date,
 .signal-note-row__type,
 .signal-note-row__time,
 .signal-note-row__arrow {
@@ -1188,6 +1186,10 @@ body.signal-site {
   margin: 0;
   font-size: 1.02rem;
   line-height: 1.35;
+}
+
+.signal-note-row__title h3 {
+  font-size: 1.06rem;
 }
 
 .signal-work-row__title p,
@@ -1220,18 +1222,21 @@ body.signal-site {
 }
 
 .signal-note-row {
-  grid-template-columns: 3.5rem 7rem minmax(0, 1fr) 7rem 4rem 2rem;
+  min-height: 9rem;
+  padding: 1.35rem 0;
+  grid-template-columns: 12rem minmax(0, 1fr) 7rem 4rem 2rem;
   gap: 1.4rem;
 }
 
-.signal-note-row__index {
-  color: var(--signal-blue);
+.signal-note-row__date {
+  color: var(--signal-muted);
   font-family: var(--signal-display);
-  font-size: 2rem;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  letter-spacing: -.01em;
   line-height: 1;
+  text-transform: uppercase;
 }
 
-.signal-note-row__date,
 .signal-note-row__time {
   color: var(--signal-muted);
 }
@@ -2133,8 +2138,7 @@ body.signal-site {
   }
 
   .signal-work-row,
-  .signal-work-index .signal-work-row,
-  .signal-note-row {
+  .signal-work-index .signal-work-row {
     min-height: 0;
     padding: 1.4rem 0;
     align-items: start;
@@ -2142,18 +2146,22 @@ body.signal-site {
     gap: .8rem;
   }
 
+  .signal-note-row {
+    min-height: 0;
+    padding: 1.4rem 0;
+    align-items: start;
+    grid-template-columns: minmax(0, 1fr) 1.5rem;
+    gap: .8rem;
+  }
+
   .signal-work-row__year,
   .signal-work-row__type,
   .signal-experience-row__period,
-  .signal-experience-row__type,
-  .signal-note-row__date,
-  .signal-note-row__type,
-  .signal-note-row__time {
+  .signal-experience-row__type {
     grid-column: 2;
   }
 
-  .signal-work-row__title,
-  .signal-note-row__title {
+  .signal-work-row__title {
     grid-column: 2;
   }
 
@@ -2181,27 +2189,35 @@ body.signal-site {
     grid-column: 1;
   }
 
-  .signal-experience-row__period {
+  .signal-experience-row__period,
+  .signal-note-row__date {
     font-size: 1.45rem;
+  }
+
+  .signal-note-row__date,
+  .signal-note-row__title,
+  .signal-note-row__type,
+  .signal-note-row__time {
+    grid-column: 1;
   }
 
   .signal-work-row__media {
     display: none;
   }
 
-  .signal-work-row__arrow,
-  .signal-note-row__arrow {
+  .signal-work-row__arrow {
     grid-column: 3;
+    grid-row: 1;
+  }
+
+  .signal-note-row__arrow {
+    grid-column: 2;
     grid-row: 1;
   }
 
   .signal-experience-row__arrow {
     grid-column: 2;
     grid-row: 1;
-  }
-
-  .signal-note-row__index {
-    font-size: 1.7rem;
   }
 
   .signal-filter-line {

@@ -136,7 +136,6 @@ redirect_from:
     <div class="signal-note-list">
       {% for post in site.posts limit:3 %}
         <a class="signal-note-row" href="{{ post.url | relative_url }}">
-          <span class="signal-note-row__index">00{{ forloop.index }}</span>
           <time class="signal-note-row__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" | upcase }}</time>
           <span class="signal-note-row__title">
             <h3>{{ post.title }}</h3>
