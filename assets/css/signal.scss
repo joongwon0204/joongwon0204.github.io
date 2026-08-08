@@ -1909,6 +1909,10 @@ body.signal-site {
     grid-template-columns: 9rem minmax(0, 1fr);
   }
 
+  .signal-timeline__label h2 {
+    font-size: clamp(1.2rem, 3.1vw, 1.4rem);
+  }
+
   .signal-note-row {
     grid-template-columns: 3rem 6rem minmax(0, 1fr) 6rem 2rem;
   }
@@ -2257,6 +2261,10 @@ body.signal-site {
   .signal-timeline__label {
     margin-bottom: 1.5rem;
     padding-left: 2.5rem;
+  }
+
+  .signal-timeline__label h2 {
+    font-size: clamp(1.6rem, 7vw, 2rem);
   }
 
   .signal-timeline__label::after {
