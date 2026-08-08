@@ -1,7 +1,7 @@
-{% assign is_work = false %}
+{% assign is_experiences = false %}
 {% assign is_notes = false %}
 {% if page.url == '/projects/' %}
-  {% assign is_work = true %}
+  {% assign is_experiences = true %}
 {% endif %}
 {% if page.url == '/year-archive/' or page.url contains '/categories/note' %}
   {% assign is_notes = true %}
@@ -22,7 +22,7 @@
 
     <nav class="signal-nav" id="signal-navigation" aria-label="Primary navigation" data-signal-nav>
       <a href="{{ '/publications/' | relative_url }}"{% if page.url == '/publications/' %} class="is-active" aria-current="page"{% endif %}>Publications</a>
-      <a href="{{ '/projects/' | relative_url }}"{% if is_work %} class="is-active" aria-current="page"{% endif %}>Work</a>
+      <a href="{{ '/projects/' | relative_url }}"{% if is_experiences %} class="is-active" aria-current="page"{% endif %}>Experiences</a>
       <a href="{{ '/year-archive/' | relative_url }}"{% if is_notes %} class="is-active" aria-current="page"{% endif %}>Notes</a>
       <a href="{{ '/cv/' | relative_url }}"{% if page.url == '/cv/' %} class="is-active" aria-current="page"{% endif %}>CV</a>
     </nav>

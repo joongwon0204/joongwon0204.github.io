@@ -7,8 +7,6 @@ redirect_from:
   - /wordpress/blog-posts/
 ---
 
-{% assign project_note_count = site.categories.project | size %}
-{% assign study_note_count = site.categories.study | size %}
 <section class="signal-shell signal-index">
   <header class="signal-index-head signal-reveal">
     <div class="signal-index-head__copy">
@@ -16,18 +14,12 @@ redirect_from:
       <h1>Notes</h1>
       <p class="signal-index-head__intro">Project logs, study records, and writing currently published on this site.</p>
     </div>
-    <aside class="signal-index-head__aside" aria-label="Notes archive summary">
-      <dl>
-        <dt>Project logs</dt><dd>{{ site.categories.project | size | prepend: '0' }}</dd>
-        <dt>Study records</dt><dd>{{ site.categories.study | size | prepend: '0' }}</dd>
-      </dl>
-    </aside>
     {% include signal-circuit.html class="signal-index-head__circuit" %}
   </header>
 
   <div class="signal-notes-index">
     <section class="signal-work-group signal-reveal" aria-labelledby="project-notes-title">
-      <h2 class="signal-work-group__title" id="project-notes-title">Project Logs <span>{{ project_note_count }} {% if project_note_count == 1 %}entry{% else %}entries{% endif %}</span></h2>
+      <h2 class="signal-work-group__title" id="project-notes-title">Project Logs</h2>
       <div class="signal-note-list">
         {% for post in site.categories.project %}
           <a class="signal-note-row" href="{{ post.url | relative_url }}">
@@ -46,7 +38,7 @@ redirect_from:
     </section>
 
     <section class="signal-work-group signal-reveal" aria-labelledby="study-notes-title">
-      <h2 class="signal-work-group__title" id="study-notes-title">Study Records <span>{{ study_note_count }} {% if study_note_count == 1 %}entry{% else %}entries{% endif %}</span></h2>
+      <h2 class="signal-work-group__title" id="study-notes-title">Study Records</h2>
       <div class="signal-note-list">
         {% for post in site.categories.study %}
           <a class="signal-note-row" href="{{ post.url | relative_url }}">

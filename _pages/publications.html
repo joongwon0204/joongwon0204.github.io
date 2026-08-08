@@ -12,12 +12,6 @@ permalink: /publications/
       <h1>Publications</h1>
       <p class="signal-index-head__intro">Peer-reviewed papers, preprints, and technical reports will be collected here.</p>
     </div>
-    <aside class="signal-index-head__aside" aria-label="Publication archive summary">
-      <dl>
-        <dt>Total publications</dt><dd>{{ site.publications | size | prepend: '0' | slice: -2, 2 }}</dd>
-        <dt>Status</dt><dd>{% if site.publications.size > 0 %}Active{% else %}Empty{% endif %}</dd>
-      </dl>
-    </aside>
     {% include signal-circuit.html class="signal-index-head__circuit" %}
   </header>
 
