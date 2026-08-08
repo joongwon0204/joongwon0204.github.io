@@ -471,7 +471,7 @@ body.signal-site {
   max-width: 58rem;
   margin: 0;
   font-family: var(--signal-display);
-  font-size: clamp(4rem, 8vw, 7.5rem);
+  font-size: clamp(3rem, 5vw, 64px);
   font-weight: 600;
   letter-spacing: -.03em;
   line-height: .9;
@@ -2032,7 +2032,7 @@ body.signal-site {
   }
 
   .signal-article__head h1 {
-    font-size: clamp(3.7rem, 17vw, 6rem);
+    font-size: clamp(2.5rem, 11vw, 4rem);
   }
 
   .signal-article__circuit {
