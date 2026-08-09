@@ -2,7 +2,7 @@
 layout: single
 title: "Example Paper: to test the paper layout and adjust publication cell"
 date: 2026-01-01
-type: "conference"
+category: "conference"
 venue: "Example"
 paperurl: "https://example.com/"
 highlight: "This is not real publication, made just to check layouts."

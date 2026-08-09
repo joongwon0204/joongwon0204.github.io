@@ -2,7 +2,7 @@
 layout: single
 title: "Example Paper II: testing multiple entries in one year"
 date: 2026-07-01
-type: "preprint"
+category: "preprint"
 venue: "Example Preprint"
 paperurl: "https://example.com/"
 highlight: "This is a second temporary 2026 entry for layout testing."

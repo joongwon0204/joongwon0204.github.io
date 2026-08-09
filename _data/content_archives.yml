@@ -1,0 +1,14 @@
+experiences:
+  source: "experiences"
+  group_by: "category"
+  cell: "archive"
+
+notes:
+  source: "posts"
+  group_by: "category"
+  cell: "archive"
+
+publications:
+  source: "publications"
+  group_by: "year"
+  cell: "publication"

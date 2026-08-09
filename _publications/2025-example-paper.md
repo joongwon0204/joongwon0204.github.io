@@ -2,7 +2,7 @@
 layout: single
 title: "Example Paper III: testing automatic year grouping"
 date: 2025-06-01
-type: "journal"
+category: "journal"
 venue: "Example Journal"
 paperurl: "https://example.com/"
 highlight: "This is a temporary 2025 entry for automatic year grouping."

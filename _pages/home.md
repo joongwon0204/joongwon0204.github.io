@@ -92,6 +92,7 @@ redirect_from:
   </section>
 
   <section class="signal-section signal-reveal" id="experiences" aria-labelledby="experiences-title">
+    {% assign experiences_archive = site.data.content_archives.experiences %}
     <header class="signal-section-head">
       <div>
         <p class="signal-kicker">02 / EXPERIENCES</p>
@@ -103,13 +104,14 @@ redirect_from:
     <div class="signal-experience-list">
       {% assign sorted_experiences = site.experiences | sort: "date" | reverse %}
       {% for experience in sorted_experiences limit:3 %}
-        {% include signal-content-row.html item=experience kind="experience" %}
+        {% include signal-content-row.html item=experience cell=experiences_archive.cell key="experiences" %}
       {% endfor %}
     </div>
     <a class="signal-more-link" href="{{ '/experiences/' | relative_url }}">Open all experiences <span aria-hidden="true">→</span></a>
   </section>
 
   <section class="signal-section signal-reveal" aria-labelledby="notes-title">
+    {% assign notes_archive = site.data.content_archives.notes %}
     <header class="signal-section-head">
       <div>
         <p class="signal-kicker">03 / NOTES</p>
@@ -119,8 +121,9 @@ redirect_from:
     </header>
 
     <div class="signal-note-list">
-      {% for post in site.posts limit:3 %}
-        {% include signal-content-row.html item=post kind="note" %}
+      {% assign notes_posts = site.posts | where: "key", "notes" %}
+      {% for post in notes_posts limit:3 %}
+        {% include signal-content-row.html item=post cell=notes_archive.cell key="notes" %}
       {% endfor %}
     </div>
     <a class="signal-more-link" href="{{ '/notes/' | relative_url }}">Open the notes archive <span aria-hidden="true">→</span></a>

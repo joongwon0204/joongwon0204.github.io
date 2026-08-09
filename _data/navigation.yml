@@ -1,0 +1,11 @@
+- key: "publications"
+  label: "Publications"
+
+- key: "experiences"
+  label: "Experiences"
+
+- key: "notes"
+  label: "Notes"
+
+- key: "cv"
+  label: "CV"
