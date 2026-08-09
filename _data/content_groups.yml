@@ -2,9 +2,9 @@ experiences:
   - slug: "research"
     title: "Research Experience"
     label: "Research"
-  - slug: "honor"
+  - slug: "scholarship"
     title: "Honors and Scholarships"
-    label: "Honor"
+    label: "Scholarship"
 
 notes:
   - slug: "project"
