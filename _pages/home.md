@@ -2,7 +2,7 @@
 layout: signal
 permalink: /
 title: "Home"
-description: "Undergraduate student in Computer Science and Engineering at Seoul National University, interested in hardware–software co-design, AI accelerators, and efficient LLM inference."
+description: "Undergraduate student in Computer Science and Engineering at Seoul National University, interested in hardware–software co-design for AI systems, efficient LLM inference, and quantitative trading."
 redirect_from:
   - /about/
   - /about.html
@@ -49,9 +49,9 @@ redirect_from:
     <div class="signal-research">
       <div class="signal-research__copy">
         <p class="signal-kicker">01 / {{ profile.research.section_label | upcase }}</p>
-        <h2 id="research-title">Research<br>Interest</h2>
+        <h2 id="research-title">{{ profile.research.heading | escape }}</h2>
         <p class="signal-section-head__intro">{{ profile.research.intro }}</p>
-        <ul class="signal-research__legend" aria-label="Research interest legend">
+        <ul class="signal-research__legend" aria-label="Interest legend">
           {% for interest in profile.research.interests %}
             <li>
               <button type="button" data-signal-legend="{{ interest.key }}" aria-controls="research-{{ interest.key }}" aria-pressed="false"><i aria-hidden="true"></i>{{ interest.short_label }}</button>
@@ -67,18 +67,18 @@ redirect_from:
               <stop class="signal-route-stop--focus" offset="0" />
               <stop class="signal-route-stop--muted" offset="1" />
             </linearGradient>
-            <linearGradient id="signal-route-accelerators-fade" gradientUnits="userSpaceOnUse" x1="320" y1="216" x2="160" y2="320">
+            <linearGradient id="signal-route-inference-fade" gradientUnits="userSpaceOnUse" x1="320" y1="216" x2="160" y2="320">
               <stop class="signal-route-stop--focus" offset="0" />
               <stop class="signal-route-stop--muted" offset="1" />
             </linearGradient>
-            <linearGradient id="signal-route-inference-fade" gradientUnits="userSpaceOnUse" x1="320" y1="216" x2="480" y2="320">
+            <linearGradient id="signal-route-trading-fade" gradientUnits="userSpaceOnUse" x1="320" y1="216" x2="480" y2="320">
               <stop class="signal-route-stop--focus" offset="0" />
               <stop class="signal-route-stop--muted" offset="1" />
             </linearGradient>
           </defs>
           <path data-signal-route="codesign" d="M320 108 L320 216" />
-          <path data-signal-route="accelerators" d="M160 320 L320 216" />
-          <path data-signal-route="inference" d="M480 320 L320 216" />
+          <path data-signal-route="inference" d="M160 320 L320 216" />
+          <path data-signal-route="trading" d="M480 320 L320 216" />
           <circle cx="320" cy="216" r="5" />
         </svg>
 

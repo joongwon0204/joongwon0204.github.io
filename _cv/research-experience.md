@@ -8,3 +8,4 @@ subtitle: 'Advised by Prof. <a href="https://iamjaelee.github.io/www/">Jae W. Le
 ---
 
 - Contributed to research on CXL-PNM-based hardware/software co-design for efficient LLM serving.
+- Contributed to research on efficient inference for SSM and hybrid-attention language models.

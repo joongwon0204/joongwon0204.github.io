@@ -5,9 +5,9 @@ key:
 period: "Awarded 2022"
 category: "scholarship"
 organization: "Korea Student Aid Foundation"
-summary: "Four-year full-tuition undergraduate scholarship awarded by the Korea Student Aid Foundation."
+summary: "Selected for a four-year full-tuition scholarship from the Korea Student Aid Foundation based on Korea's College Scholastic Ability Test (CSAT) scores."
 thumbnail:
 link: "/cv/#cv-honors"
 ---
 
-Four-year full-tuition undergraduate scholarship awarded by the Korea Student Aid Foundation.
+Selected for a four-year full-tuition scholarship from the Korea Student Aid Foundation based on Korea's College Scholastic Ability Test (CSAT) scores.

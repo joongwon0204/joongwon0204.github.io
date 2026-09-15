@@ -17,7 +17,7 @@ redirect_from:
   <header class="signal-index-head signal-reveal">
     <div class="signal-index-head__copy">
       <p class="signal-kicker">04 / CURRICULUM VITAE</p>
-      <h1 aria-label="{{ page.display_name }}">{{ page.given_name }}<br>{{ page.family_name }}</h1>
+      <h1 aria-label="{{ page.display_name }}">{{ page.given_name }} {{ page.family_name }}</h1>
       <p class="signal-index-head__intro">{{ page.summary }}</p>
     </div>
     {% if site.author.cv_pdf %}

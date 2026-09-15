@@ -37,7 +37,7 @@ The generation path is:
 
 ## Update the home page
 
-Edit `_data/profile.yml` for the visible name, introduction, profile image, and the three research interests. Contact links come from `author.email` and `author.github` in `_config.yml`.
+Edit `_data/profile.yml` for the visible name, introduction, profile image, and the three interests. Contact links come from `author.email` and `author.github` in `_config.yml`.
 
 The newest Experience and Note entries are selected automatically for the home-page previews.
 
