@@ -2,7 +2,7 @@
 title: "Undergraduate Research Intern, ARC Lab, Seoul National University"
 date: 2026-06-01
 key:
-period: "Jun. – Aug. 2026"
+period: "Jun. – Sep. 2026"
 category: "research"
 organization: "Advised by Prof. Jae W. Lee"
 summary: "Research on CXL-PNM-based LLM serving and efficient inference for SSM and hybrid-attention language models."
