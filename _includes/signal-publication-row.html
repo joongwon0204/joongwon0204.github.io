@@ -7,8 +7,12 @@
   {% assign publication_link = publication.url | relative_url %}
 {% endif %}
 <a class="signal-publication-row" href="{{ publication_link }}"{% if publication.paperurl %} target="_blank" rel="noopener noreferrer"{% endif %} data-signal-archive-row data-signal-category="{{ publication_type | escape }}" aria-label="Open paper: {{ publication.title | escape }}">
-  <span class="signal-publication-row__visual" aria-hidden="true">
-    <span>{{ publication.thumbnail_label | default: publication_type | upcase }}</span>
+  <span class="signal-publication-row__visual{% if publication.thumbnail %} signal-publication-row__visual--figure{% endif %}">
+    {% if publication.thumbnail %}
+      <img src="{{ publication.thumbnail | relative_url }}" alt="{{ publication.thumbnail_alt | default: publication.title | escape }}" loading="lazy" decoding="async">
+    {% else %}
+      <span aria-hidden="true">{{ publication.thumbnail_label | default: publication_type | upcase }}</span>
+    {% endif %}
   </span>
   <span class="signal-publication-row__content">
     {% if publication.venue or publication.highlight %}
@@ -20,7 +24,7 @@
     <span class="signal-publication-row__title">{{ publication.title }}</span>
     {% if publication.authors %}
       <span class="signal-publication-row__authors">
-        {% for author in publication.authors %}<span{% if author == primary_author %} class="is-primary"{% endif %}>{{ author }}</span>{% unless forloop.last %}{% if forloop.rindex == 2 %} and {% else %}, {% endif %}{% endunless %}{% endfor %}
+        {% for author in publication.authors %}<span{% if author == primary_author %} class="is-primary"{% endif %}>{{ author }}{% include publication-author-markers.html publication=publication author=author %}</span>{% unless forloop.last %}{% if forloop.rindex == 2 %} and {% else %}, {% endif %}{% endunless %}{% endfor %}
       </span>
     {% endif %}
   </span>

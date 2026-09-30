@@ -1,0 +1,14 @@
+{% assign publications = site.publications | sort: "order" %}
+{% for publication in publications %}
+  {% assign publication_period = publication.year %}
+  {% unless publication_period %}{% assign publication_period = publication.date | date: "%Y" %}{% endunless %}
+  <article class="signal-cv-entry signal-cv-publication">
+    <header class="signal-cv-entry__head">
+      <h3>{{ publication.title }}</h3>
+      <p class="signal-cv-entry__date">{{ publication_period }}</p>
+    </header>
+    <div class="signal-cv-entry__body">
+      <p>{% for author in publication.authors %}{% unless forloop.first %}, {% endunless %}{% if author == publication.primary_author %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% include publication-author-markers.html publication=publication author=author %}{% endfor %}<br>{{ publication.venue }}{% if publication.highlight %} &middot; {{ publication.highlight }}{% endif %}</p>
+    </div>
+  </article>
+{% endfor %}

@@ -1,0 +1,5 @@
+{%- for note in include.publication.author_notes -%}
+  {%- if note.authors contains include.author -%}
+    <sup class="signal-author-marker">{{ note.marker | escape }}</sup>
+  {%- endif -%}
+{%- endfor -%}

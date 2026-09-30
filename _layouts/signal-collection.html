@@ -18,7 +18,7 @@ layout: signal
 {% endif %}
 
 <section class="signal-shell signal-index">
-  <header class="signal-index-head signal-reveal">
+  <header class="signal-index-head signal-index-head--collection signal-reveal">
     <div class="signal-index-head__copy">
       {% if page.section_number %}<p class="signal-kicker">{{ page.section_number }} / {{ page.title | upcase }}</p>{% endif %}
       <h1>{{ page.title }}</h1>
@@ -41,18 +41,19 @@ layout: signal
           </div>
         {% endif %}
 
-        {% assign current_year = "" %}
-        {% for item in archive_items %}
-          {% assign item_year = item.date | date: "%Y" %}
-          {% if item_year != current_year %}
-            {% unless forloop.first %}</div></section>{% endunless %}
-            <section class="signal-publication-year" data-signal-filter-section aria-labelledby="{{ content_key }}-{{ item_year }}-title">
-              <header class="signal-publication-year__head"><h2 id="{{ content_key }}-{{ item_year }}-title">{{ item_year }}</h2></header>
-              <div class="signal-publication-year__list">
-            {% assign current_year = item_year %}
-          {% endif %}
-          {% include signal-content-row.html item=item cell=archive_cell key=content_key %}
-          {% if forloop.last %}</div></section>{% endif %}
+        {% assign year_groups = archive_items | group_by_exp: "item", "item.year | default: item.date | append: '' | slice: 0, 4" | sort: "name" | reverse %}
+        {% for year_group in year_groups %}
+          {% assign ordered_items = year_group.items | where_exp: "item", "item.order != nil" | sort: "order" %}
+          {% assign dated_items = year_group.items | where_exp: "item", "item.order == nil" | sort: "date" | reverse %}
+          {% assign year_items = ordered_items | concat: dated_items %}
+          <section class="signal-publication-year" data-signal-filter-section aria-labelledby="{{ content_key }}-{{ year_group.name }}-title">
+            <header class="signal-publication-year__head"><h2 id="{{ content_key }}-{{ year_group.name }}-title">{{ year_group.name }}</h2></header>
+            <div class="signal-publication-year__list">
+              {% for item in year_items %}
+                {% include signal-content-row.html item=item cell=archive_cell key=content_key %}
+              {% endfor %}
+            </div>
+          </section>
         {% endfor %}
       </div>
     {% else %}

@@ -70,11 +70,16 @@ Create one Markdown file in `_publications/`:
 layout: single
 title: "Paper title"
 date: 2026-01-01
+year: 2026                 # optional display year; defaults to the year of date
+order: 10                  # optional ordering within a year; lower numbers first
+hide_date: true            # hide the exact date on the detail page
 category: "conference"
 venue: "Conference or journal"
 paperurl: "https://example.com/paper"
 highlight: "Optional note, award, or presentation type."
 thumbnail_label: "SHORT LABEL"
+thumbnail: "/images/publications/figure.png"
+thumbnail_alt: "Brief description of the figure."
 primary_author: "JoongWon Shin"
 authors:
   - "JoongWon Shin"
@@ -82,7 +87,7 @@ authors:
 ---
 ```
 
-Year sections and category filter buttons are derived automatically from `date` and `category`. No archive HTML needs to be edited.
+Year sections use `year` when provided, otherwise the year of `date`. Within each year, entries with `order` appear first in ascending order, followed by the remaining entries in reverse date order. Category filter buttons come from `category`. A `thumbnail` displays the full figure without cropping; omit it to use the default graphic. No archive HTML needs to be edited.
 
 ## Update the CV
 

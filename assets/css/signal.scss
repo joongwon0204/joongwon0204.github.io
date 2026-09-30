@@ -556,6 +556,10 @@ body.signal-site {
   z-index: 2;
 }
 
+.signal-index-head--collection {
+  border-bottom: 0;
+}
+
 .signal-index-head h1 {
   font-size: clamp(3.5rem, 8vw, 7.2rem);
   line-height: .95;
@@ -1285,15 +1289,10 @@ body.signal-site {
 }
 
 .signal-filter-line {
-  position: sticky;
-  z-index: 20;
-  top: 3.65rem;
   display: flex;
   gap: 2rem;
   padding: 0 0 1rem;
   border-bottom: 1px solid var(--signal-rule);
-  background: rgba(247, 248, 252, .94);
-  backdrop-filter: blur(12px) saturate(120%);
   font-family: var(--signal-ui);
   font-size: .65rem;
 }
@@ -1365,7 +1364,7 @@ body.signal-site {
   align-items: center;
   padding: 1.35rem 0;
   border-bottom: 1px solid var(--signal-rule);
-  grid-template-columns: 10rem minmax(0, 1fr) 1.5rem;
+  grid-template-columns: 14rem minmax(0, 1fr) 1.5rem;
   gap: clamp(1.2rem, 2.5vw, 2.4rem);
   transition: background .3s ease, transform .35s var(--signal-ease);
 }
@@ -1425,6 +1424,27 @@ body.signal-site {
   font-family: var(--signal-ui);
   font-size: .62rem;
   letter-spacing: .04em;
+}
+
+.signal-publication-row__visual--figure {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .4rem;
+  border-color: var(--signal-rule);
+  background: white;
+}
+
+.signal-publication-row__visual--figure::before,
+.signal-publication-row__visual--figure::after {
+  content: none;
+}
+
+.signal-publication-row__visual--figure img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .signal-publication-row:hover .signal-publication-row__visual,
@@ -1498,6 +1518,11 @@ body.signal-site {
 .signal-publication-row__authors .is-primary {
   color: var(--signal-ink);
   font-weight: 700;
+}
+
+.signal-author-marker {
+  margin-left: .08em;
+  font-size: .72em;
 }
 
 .signal-publication-row__arrow {
@@ -1863,8 +1888,18 @@ body.signal-site {
   transform: translateX(.35rem) scale(1.006);
 }
 
+.signal-cv-entry {
+  color: var(--signal-muted);
+  font-family: var(--signal-body);
+}
+
 .signal-cv-entry + .signal-cv-entry {
   margin-top: 1.35rem;
+}
+
+.signal-cv-publication + .signal-cv-publication {
+  padding-top: 1.35rem;
+  border-top: 1px solid var(--signal-rule);
 }
 
 .signal-cv-entry__head {
@@ -1876,6 +1911,7 @@ body.signal-site {
 
 .signal-cv-entry__head h3 {
   margin: 0;
+  color: var(--signal-ink);
   font-size: 1rem;
   line-height: 1.4;
 }
@@ -1905,6 +1941,7 @@ body.signal-site {
 
 .signal-cv-facts {
   display: grid;
+  color: var(--signal-ink);
   margin-top: 1.3rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
@@ -2050,7 +2087,7 @@ body.signal-site {
   }
 
   .signal-publication-row {
-    grid-template-columns: 8rem minmax(0, 1fr) 1.25rem;
+    grid-template-columns: 12rem minmax(0, 1fr) 1.25rem;
     gap: 1rem;
   }
 
@@ -2411,7 +2448,6 @@ body.signal-site {
   }
 
   .signal-filter-line {
-    top: 3.25rem;
     overflow-x: auto;
     gap: 1.4rem;
     white-space: nowrap;
