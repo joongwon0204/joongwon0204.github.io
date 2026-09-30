@@ -1369,7 +1369,7 @@ body.signal-site {
   align-items: center;
   padding: 1.35rem 0;
   border-bottom: 1px solid var(--signal-rule);
-  grid-template-columns: 14rem minmax(0, 1fr) 1.5rem;
+  grid-template-columns: 10rem minmax(0, 1fr) 1.5rem;
   gap: clamp(1.2rem, 2.5vw, 2.4rem);
   transition: background .3s ease, transform .35s var(--signal-ease);
 }
@@ -2092,7 +2092,7 @@ body.signal-site {
   }
 
   .signal-publication-row {
-    grid-template-columns: 12rem minmax(0, 1fr) 1.25rem;
+    grid-template-columns: 9rem minmax(0, 1fr) 1.25rem;
     gap: 1rem;
   }
 
@@ -2470,8 +2470,9 @@ body.signal-site {
   }
 
   .signal-publication-row__visual {
-    height: 9rem;
-    aspect-ratio: auto;
+    width: min(10rem, 100%);
+    height: auto;
+    aspect-ratio: 4 / 3;
   }
 
   .signal-publication-row__arrow {
