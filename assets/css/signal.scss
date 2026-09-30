@@ -659,7 +659,7 @@ body.signal-site {
 .signal-hero h1 {
   margin: 0;
   font-family: var(--signal-display);
-  font-size: clamp(5.2rem, 10.5vw, 150px);
+  font-size: clamp(4.8rem, 9.5vw, 135px);
   font-weight: 600;
   letter-spacing: -.045em;
   line-height: .75;
@@ -2070,7 +2070,7 @@ body.signal-site {
   }
 
   .signal-hero h1 {
-    font-size: clamp(5rem, 13vw, 8rem);
+    font-size: clamp(4.5rem, 11.5vw, 7rem);
   }
 
   .signal-hero__image-wrap {
@@ -2291,7 +2291,7 @@ body.signal-site {
   }
 
   .signal-hero h1 {
-    font-size: clamp(4.25rem, 22vw, 8rem);
+    font-size: clamp(3.8rem, 19vw, 6.75rem);
   }
 
   .signal-hero__meta {
