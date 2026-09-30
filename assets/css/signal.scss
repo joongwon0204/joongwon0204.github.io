@@ -1482,7 +1482,7 @@ body.signal-site {
   margin-bottom: 0;
   color: var(--signal-teal);
   font-family: var(--signal-ui);
-  font-size: .86rem;
+  font-size: .66rem;
   font-weight: 700;
   line-height: 1.35;
   overflow-wrap: anywhere;
@@ -1494,14 +1494,14 @@ body.signal-site {
   min-width: 0;
   margin-left: auto;
   color: var(--signal-teal);
-  font-size: .68rem;
+  font-size: .66rem;
   line-height: 1.45;
   text-align: right;
 }
 
 .signal-publication-row__title {
   font-family: var(--signal-body);
-  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-size: 1.06rem;
   font-weight: 700;
   line-height: 1.22;
   transition: color .3s ease;
@@ -1516,7 +1516,7 @@ body.signal-site {
   margin-top: .8rem;
   color: var(--signal-muted);
   font-family: var(--signal-body);
-  font-size: .86rem;
+  font-size: .84rem;
   line-height: 1.55;
 }
 
@@ -1532,7 +1532,7 @@ body.signal-site {
 
 .signal-publication-row__arrow {
   justify-self: end;
-  font-size: .78rem;
+  font-size: .66rem;
   transition: color .3s ease, transform .3s var(--signal-ease);
 }
 
