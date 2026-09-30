@@ -561,7 +561,7 @@ body.signal-site {
 }
 
 .signal-index-head h1 {
-  font-size: clamp(3.5rem, 8vw, 7.2rem);
+  font-size: clamp(3rem, 7vw, 6.2rem);
   line-height: .95;
 }
 
@@ -713,7 +713,8 @@ body.signal-site {
   stroke-width: 1.55;
 }
 
-.signal-hero__contact--github svg {
+.signal-hero__contact--github svg,
+.signal-hero__contact--linkedin svg {
   fill: currentColor;
   stroke: none;
 }
@@ -778,7 +779,7 @@ body.signal-site {
 .signal-section-head h2 {
   margin: 0;
   font-family: var(--signal-display);
-  font-size: clamp(3.6rem, 6.5vw, 6.2rem);
+  font-size: clamp(3rem, 5.5vw, 5.2rem);
   font-weight: 600;
   letter-spacing: -.035em;
   line-height: .87;
@@ -818,7 +819,7 @@ body.signal-site {
   max-width: 18rem;
   margin: .65rem 0 0;
   font-family: var(--signal-display);
-  font-size: clamp(3.6rem, 6.5vw, 6.2rem);
+  font-size: clamp(3rem, 5.5vw, 5.2rem);
   font-weight: 600;
   letter-spacing: -.035em;
   line-height: .87;
@@ -1288,6 +1289,10 @@ body.signal-site {
   padding: 1.75rem 0 0;
 }
 
+.signal-publication-list {
+  border-top: 1px solid var(--signal-rule);
+}
+
 .signal-filter-line {
   display: flex;
   gap: 2rem;
@@ -1534,7 +1539,7 @@ body.signal-site {
 .signal-publication-row:hover .signal-publication-row__arrow,
 .signal-publication-row:focus-visible .signal-publication-row__arrow {
   color: var(--signal-blue);
-  transform: translate(.25rem, -.25rem);
+  transform: translateX(.35rem);
 }
 
 .signal-empty {
@@ -2212,7 +2217,7 @@ body.signal-site {
 
   .signal-page-head h1 {
     max-width: 100%;
-    font-size: clamp(3.5rem, 18vw, 6.5rem);
+    font-size: clamp(3rem, 16vw, 5.5rem);
   }
 
   .signal-index {
@@ -2227,7 +2232,7 @@ body.signal-site {
 
   .signal-index-head h1 {
     max-width: 100%;
-    font-size: clamp(2.75rem, 10vw, 4.5rem);
+    font-size: clamp(2.5rem, 9vw, 4rem);
   }
 
   .signal-page-head__circuit,
@@ -2313,7 +2318,7 @@ body.signal-site {
   }
 
   .signal-section-head h2 {
-    font-size: clamp(3.8rem, 18vw, 6rem);
+    font-size: clamp(3.1rem, 15vw, 5rem);
   }
 
   .signal-section-head__aside {
@@ -2331,7 +2336,7 @@ body.signal-site {
 
   .signal-research__copy h2 {
     max-width: none;
-    font-size: clamp(3.8rem, 18vw, 6rem);
+    font-size: clamp(3.1rem, 15vw, 5rem);
   }
 
   .signal-research__copy .signal-section-head__intro {

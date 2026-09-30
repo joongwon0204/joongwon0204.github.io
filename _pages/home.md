@@ -34,6 +34,14 @@ redirect_from:
             <span>GitHub</span>
           </a>
         {% endif %}
+        {% if site.author.linkedin %}
+          <a class="signal-hero__contact signal-hero__contact--linkedin" href="https://www.linkedin.com/in/{{ site.author.linkedin }}" rel="me" aria-label="LinkedIn profile of {{ profile.display_name }}">
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708C16 15.487 15.474 16 14.825 16H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.225 2.4 3.934c0 .694.521 1.248 1.327 1.248zm3.052 8.212h2.4V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.4V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5 5 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        {% endif %}
       </p>
     </div>
 
@@ -110,11 +118,30 @@ redirect_from:
     <a class="signal-more-link" href="{{ '/experiences/' | relative_url }}">Open all experiences <span aria-hidden="true">→</span></a>
   </section>
 
+  <section class="signal-section signal-reveal" id="publications" aria-labelledby="publications-title">
+    {% assign publications_archive = site.data.content_archives.publications %}
+    <header class="signal-section-head">
+      <div>
+        <p class="signal-kicker">03 / PUBLICATIONS</p>
+        <h2 id="publications-title">Publications</h2>
+      </div>
+      <p class="signal-section-head__aside">RESEARCH PAPERS · MANUSCRIPTS</p>
+    </header>
+
+    <div class="signal-publication-list">
+      {% assign sorted_publications = site.publications | sort: "date" | reverse %}
+      {% for publication in sorted_publications limit:3 %}
+        {% include signal-content-row.html item=publication cell=publications_archive.cell key="publications" %}
+      {% endfor %}
+    </div>
+    <a class="signal-more-link" href="{{ '/publications/' | relative_url }}">Open all publications <span aria-hidden="true">→</span></a>
+  </section>
+
   <section class="signal-section signal-reveal" aria-labelledby="notes-title">
     {% assign notes_archive = site.data.content_archives.notes %}
     <header class="signal-section-head">
       <div>
-        <p class="signal-kicker">03 / NOTES</p>
+        <p class="signal-kicker">04 / NOTES</p>
         <h2 id="notes-title">Notes</h2>
       </div>
       <p class="signal-section-head__aside">{% for group in site.data.content_groups.notes %}{{ group.title | upcase }}{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
