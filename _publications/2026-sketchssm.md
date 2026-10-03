@@ -20,10 +20,15 @@ authors:
   - "Kurt Keutzer"
   - "Sehoon Kim"
   - "Jae W. Lee"
+author_notes:
+  - marker: "*"
+    authors:
+      - "Sehoon Kim"
+      - "Jae W. Lee"
 ---
 
 **arXiv preprint. Under review.**
 
-Omin Kwon, **JoongWon Shin**, Minseo Kim, Kurt Keutzer, Sehoon Kim, and Jae W. Lee.
+Omin Kwon, **JoongWon Shin**, Minseo Kim, Kurt Keutzer, Sehoon Kim<sup>*</sup>, and Jae W. Lee<sup>*</sup>.
 
 [arXiv:2609.33051](https://arxiv.org/abs/2609.33051)
