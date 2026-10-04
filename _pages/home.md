@@ -10,10 +10,11 @@ redirect_from:
 
 {% assign profile = site.data.profile %}
 <div class="signal-shell signal-home">
-  <section class="signal-hero signal-reveal" data-signal-field aria-labelledby="home-title">
+  <section class="signal-hero signal-reveal" aria-labelledby="home-title">
+    <div class="signal-hero__avatar" aria-hidden="true">{{ profile.given_name | slice: 0 }}{{ profile.family_name | slice: 0 }}</div>
     <div class="signal-hero__copy">
       <p class="signal-hero__eyebrow">{{ profile.eyebrow | upcase }}</p>
-      <h1 id="home-title"><span>{{ profile.given_name }}</span><span>{{ profile.family_name }}</span></h1>
+      <h1 id="home-title">{{ profile.display_name }}</h1>
       <p class="signal-hero__role">{{ profile.display_name }} · {{ profile.native_name }}</p>
       <p class="signal-hero__intro">{{ profile.intro }}</p>
       <p class="signal-hero__meta" aria-label="Contact links">
@@ -45,12 +46,6 @@ redirect_from:
       </p>
     </div>
 
-    <div class="signal-hero__visual" aria-label="Profile graphic for {{ profile.display_name }}">
-      <div class="signal-hero__image-wrap">
-        <img class="signal-hero__image" src="{{ profile.image.path | relative_url }}" alt="{{ profile.image.alt }}">
-      </div>
-    </div>
-    {% include signal-circuit.html class="signal-hero__traces" %}
   </section>
 
   <section class="signal-section signal-research-section signal-reveal" id="research" aria-labelledby="research-title">
@@ -68,7 +63,7 @@ redirect_from:
         </ul>
       </div>
 
-      <div class="signal-research__map" data-signal-field>
+      <div class="signal-research__map">
         <svg class="signal-research__routes" viewBox="0 0 640 430" aria-hidden="true">
           <defs>
             <linearGradient id="signal-route-codesign-fade" gradientUnits="userSpaceOnUse" x1="320" y1="216" x2="320" y2="108">

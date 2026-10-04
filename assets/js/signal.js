@@ -7,18 +7,6 @@
 
   var menuButton = document.querySelector("[data-signal-menu]");
   var navigation = document.querySelector("[data-signal-nav]");
-  var siteHeader = document.querySelector("[data-signal-header]");
-
-  function updateHeaderSurface() {
-    if (!siteHeader) return;
-    siteHeader.classList.toggle("is-scrolled", window.scrollY > 12);
-  }
-
-  if (siteHeader) {
-    window.addEventListener("scroll", updateHeaderSurface, { passive: true });
-    updateHeaderSurface();
-  }
-
   function closeMenu() {
     if (!menuButton || !navigation) return;
     menuButton.setAttribute("aria-expanded", "false");
@@ -40,15 +28,6 @@
       if (event.key === "Escape") closeMenu();
     });
   }
-
-  var fields = Array.prototype.slice.call(document.querySelectorAll("[data-signal-field]"));
-  fields.forEach(function (field) {
-    field.addEventListener("pointermove", function (event) {
-      var bounds = field.getBoundingClientRect();
-      field.style.setProperty("--signal-x", event.clientX - bounds.left + "px");
-      field.style.setProperty("--signal-y", event.clientY - bounds.top + "px");
-    });
-  });
 
   var signalNodes = Array.prototype.slice.call(document.querySelectorAll("[data-signal-node]"));
   var signalRoutes = Array.prototype.slice.call(document.querySelectorAll("[data-signal-route]"));

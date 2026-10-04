@@ -1,6 +1,6 @@
 {% assign profile = site.data.profile %}
 
-<header class="signal-header" data-signal-header>
+<header class="signal-header">
   <div class="signal-shell signal-header__inner">
     <a class="signal-brand" href="{{ '/' | relative_url }}" aria-label="{{ profile.display_name }} — Home">
       <span class="signal-brand__name">{{ profile.display_name }}</span>
@@ -28,5 +28,4 @@
       {% endfor %}
     </nav>
   </div>
-  <div class="signal-header__rule" aria-hidden="true"><i></i></div>
 </header>

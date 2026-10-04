@@ -25,7 +25,6 @@ redirect_from:
         <a class="signal-cv-download" href="{{ site.author.cv_pdf | relative_url }}" download aria-label="Download CV as PDF">Download CV PDF&nbsp; ↓</a>
       </aside>
     {% endif %}
-    {% include signal-circuit.html class="signal-index-head__circuit" %}
   </header>
 
   <div class="signal-cv">
