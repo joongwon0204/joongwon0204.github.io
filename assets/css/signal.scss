@@ -322,6 +322,10 @@ body.signal-site {
   margin-top: .12em;
 }
 
+.signal-repetition__given-part {
+  display: inline;
+}
+
 .signal-hero__body {
   display: grid;
   align-items: start;
@@ -563,42 +567,18 @@ body.signal-site {
 
 .signal-home .signal-experience-list,
 .signal-home .signal-note-list {
-  counter-reset: entry;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 1.25rem;
   padding-top: .75rem;
 }
 
-.signal-home .signal-note-list {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
 .signal-home .signal-experience-row {
-  display: flex;
-  min-height: 0;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: .75rem;
-  padding: 1.5rem 1.25rem 1.25rem;
-  counter-increment: entry;
+  gap: 1.25rem;
+  padding: 1rem;
 }
 
-.signal-home .signal-experience-row::before {
-  position: absolute;
-  top: -.65rem;
-  right: 1rem;
-  padding-inline: .2rem;
-  background: var(--signal-paper);
-  color: var(--signal-ink);
-  content: counter(entry, decimal-leading-zero);
-  font-size: var(--signal-type-number);
-  font-weight: 800;
-  letter-spacing: -.06em;
-  line-height: 1;
-}
-
-.signal-home .signal-experience-row__content {
-  flex: 1;
+.signal-home .signal-note-list .signal-experience-row--with-thumbnail {
+  grid-template-columns: 8rem 9rem minmax(0, 1fr) 5rem 1.5rem;
 }
 
 .signal-home .signal-experience-row__organization {
@@ -612,13 +592,10 @@ body.signal-site {
 
 .signal-home .signal-experience-row__visual {
   max-height: 10rem;
-  aspect-ratio: 12 / 5;
+  aspect-ratio: 4 / 3;
 }
 
 .signal-home .signal-experience-row__arrow {
-  position: absolute;
-  right: 1rem;
-  bottom: .9rem;
   font-size: calc(1.125rem + 2pt);
 }
 
@@ -1299,6 +1276,14 @@ body.signal-site {
     grid-template-columns: 6rem 6rem minmax(0, 1fr) 1.5rem;
   }
 
+  .signal-home .signal-experience-row--with-thumbnail {
+    grid-template-columns: 6rem 6rem minmax(0, 1fr) 5rem 1.5rem;
+  }
+
+  .signal-home .signal-note-list .signal-experience-row--with-thumbnail {
+    grid-template-columns: 6rem 9rem minmax(0, 1fr) 5rem 1.5rem;
+  }
+
   .signal-index .signal-experience-row--with-thumbnail .signal-experience-row__type {
     display: none;
   }
@@ -1311,12 +1296,6 @@ body.signal-site {
     align-items: flex-start;
     flex-direction: column;
     gap: .5rem;
-  }
-}
-
-@media (max-width: 900px) {
-  .signal-home .signal-note-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1392,9 +1371,21 @@ body.signal-site {
 
   .signal-repetition {
     margin-bottom: 2.5rem;
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+
+  .signal-repetition__given-part {
+    display: block;
+  }
+
+  .signal-repetition__given-part + .signal-repetition__given-part {
+    margin-top: .12em;
   }
 
   .signal-hero__body {
+    position: relative;
+    z-index: 1;
     grid-template-columns: 1fr;
     gap: 1.5rem;
     min-height: 0;
@@ -1454,7 +1445,9 @@ body.signal-site {
   }
 
   .signal-experience-row,
-  .signal-experience-row--with-thumbnail {
+  .signal-experience-row--with-thumbnail,
+  .signal-home .signal-experience-row--with-thumbnail,
+  .signal-home .signal-note-list .signal-experience-row--with-thumbnail {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 1.5rem;
     align-items: start;
@@ -1480,6 +1473,10 @@ body.signal-site {
 
   .signal-home .signal-experience-row__visual {
     max-width: none;
+  }
+
+  .signal-home .signal-note-list .signal-experience-row__visual {
+    max-width: 8rem;
   }
 
   .signal-publication-row {

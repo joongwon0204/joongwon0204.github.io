@@ -15,7 +15,7 @@ redirect_from:
     <div class="signal-repetition" data-signal-repetition>
       <h1 id="home-title" class="signal-repetition__title" aria-label="{{ profile.display_name | escape }}">
         <span class="signal-repetition__line" aria-hidden="true">
-          <span class="signal-repetition__layer" data-repetition-main><span class="signal-repetition__name-part">{{ profile.given_name | upcase }}</span> <span class="signal-repetition__name-part">{{ profile.family_name | upcase }}</span></span>
+          <span class="signal-repetition__layer" data-repetition-main><span class="signal-repetition__name-part"><span class="signal-repetition__given-part">{{ profile.given_name | slice: 0, 5 | upcase }}</span><span class="signal-repetition__given-part">{{ profile.given_name | slice: 5, 3 | upcase }}</span></span> <span class="signal-repetition__name-part">{{ profile.family_name | upcase }}</span></span>
         </span>
       </h1>
     </div>

@@ -21,13 +21,20 @@ if (container) {
     let frame = 0;
     let disposed = false;
     let measuredWidth = 0;
+    let measuredHeight = 0;
+    let mobileLayoutActive = false;
+    const mobileLayout = window.matchMedia("(max-width: 760px)");
     const clamp = value => Math.min(1, Math.max(0, value));
 
     function fitTitle() {
       const width = container.clientWidth;
       if (!width) return;
       // Measure the rendered glyphs, including the actual loaded font and tracking.
-      const parts = [...main.querySelectorAll(".signal-repetition__name-part")];
+      mobileLayoutActive = mobileLayout.matches;
+
+      const parts = [...main.querySelectorAll(mobileLayoutActive
+        ? ".signal-repetition__given-part, .signal-repetition__name-part:last-child"
+        : ".signal-repetition__name-part")];
       const fontSize = parseFloat(getComputedStyle(title).fontSize);
       const textWidth = Math.max(...parts.map(part => {
         const range = document.createRange();
@@ -36,6 +43,7 @@ if (container) {
       }));
       if (textWidth > 0) title.style.fontSize = `${fontSize * width * 0.94 / textWidth}px`;
       measuredWidth = width;
+      measuredHeight = container.clientHeight;
       scheduleRender();
     }
 
@@ -60,7 +68,7 @@ if (container) {
     }
 
     function onResize() {
-      if (container.clientWidth !== measuredWidth) fitTitle();
+      if (container.clientWidth !== measuredWidth || container.clientHeight !== measuredHeight || mobileLayout.matches !== mobileLayoutActive) fitTitle();
       else scheduleRender();
     }
 
