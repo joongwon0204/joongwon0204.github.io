@@ -28,15 +28,15 @@
   --signal-ui: var(--signal-body);
   --signal-code: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   /* Shared sizes by content role; 1rem = 16px. */
-  --signal-type-meta: 1rem;
-  --signal-type-label: 1.25rem;
-  --signal-type-body: 1.25rem;
-  --signal-type-title: 1.5rem;
-  --signal-type-group: 2rem;
-  --signal-type-section: clamp(2.25rem, 3.5vw, 3rem);
-  --signal-type-page: clamp(2.5rem, 5vw, 4.5rem);
-  --signal-type-article-title: clamp(2rem, 3.5vw, 3.25rem);
-  --signal-type-number: 3rem;
+  --signal-type-meta: .875rem;
+  --signal-type-label: 1rem;
+  --signal-type-body: 1.125rem;
+  --signal-type-title: 1.375rem;
+  --signal-type-group: 1.5rem;
+  --signal-type-section: clamp(1.75rem, 2.8vw, 2.25rem);
+  --signal-type-page: clamp(2rem, 4vw, 3rem);
+  --signal-type-article-title: clamp(1.75rem, 3vw, 2.5rem);
+  --signal-type-number: 2rem;
   --signal-footer-gap: clamp(8rem, 16vw, 12rem);
   --signal-ease: cubic-bezier(.22, 1, .36, 1);
   --signal-inset: clamp(1.25rem, 3.4vw, 3rem);
@@ -154,11 +154,11 @@ body.signal-site {
 
 .signal-header__inner {
   display: flex;
-  min-height: 8rem;
+  min-height: 6.5rem;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.5rem var(--signal-outer-inset);
+  padding: 1.25rem var(--signal-outer-inset);
   border-bottom: 3px solid var(--signal-rule);
 }
 
@@ -166,7 +166,7 @@ body.signal-site {
   display: inline-flex;
   align-items: baseline;
   min-width: 0;
-  font-size: clamp(1.4rem, 4.5vw, 3.75rem);
+  font-size: clamp(1.4rem, 3.25vw, 2.75rem);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.1;
@@ -175,8 +175,8 @@ body.signal-site {
 
 .signal-grid-marker {
   flex: 0 0 auto;
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 1.25rem;
+  height: 1.25rem;
   background: var(--signal-ink);
 }
 
@@ -185,7 +185,7 @@ body.signal-site {
   align-items: center;
   flex-wrap: wrap;
   gap: .5rem 2.5rem;
-  padding: .9rem var(--signal-outer-inset);
+  padding: .75rem var(--signal-outer-inset);
   border-bottom: 3px solid var(--signal-rule);
 }
 
@@ -233,7 +233,7 @@ body.signal-site {
 
 /* Home */
 .signal-hero {
-  padding: 3.5rem var(--signal-outer-inset);
+  padding: 3rem var(--signal-outer-inset);
   border-bottom: 3px solid var(--signal-rule);
 }
 
@@ -255,9 +255,9 @@ body.signal-site {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  margin: 0 0 3.5rem;
+  margin: 0 0 3rem;
   font-family: var(--signal-display);
-  font-size: clamp(4rem, 13.4vw, 12.5rem);
+  font-size: clamp(4rem, 12vw, 11.25rem);
   font-weight: 400;
   letter-spacing: -.025em;
   line-height: .94;
@@ -279,7 +279,7 @@ body.signal-site {
   align-self: flex-end;
   margin: -.03em clamp(1rem, 10vw, 9rem) 0 0;
   padding: .025em .1em .065em;
-  font-size: 1.32em;
+  font-size: 1.25em;
   background: var(--signal-ink);
   color: var(--signal-paper);
   transform: rotate(-2deg) skewX(-3deg);
@@ -428,8 +428,8 @@ body.signal-site {
   align-items: flex-end;
   justify-content: space-between;
   gap: 1.5rem;
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
   border-bottom: 2px solid var(--signal-rule);
 }
 
@@ -575,7 +575,7 @@ body.signal-site {
 
 .signal-home .signal-experience-row::before {
   position: absolute;
-  top: -1.4rem;
+  top: -.9rem;
   right: 1rem;
   padding-inline: .2rem;
   background: var(--signal-paper);
@@ -844,7 +844,7 @@ body.signal-site {
 
 .signal-timeline__section {
   display: grid;
-  grid-template-columns: 18rem minmax(0, 1fr);
+  grid-template-columns: 14rem minmax(0, 1fr);
   gap: 2.5rem;
   padding-block: 2rem;
   border-bottom: 2px solid var(--signal-rule);
@@ -1185,7 +1185,7 @@ body.signal-site {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.5rem var(--signal-inset);
+  padding: 1.25rem var(--signal-inset);
   border-right: 2px solid var(--signal-paper);
   font-size: var(--signal-type-label);
   font-weight: 700;
@@ -1240,9 +1240,9 @@ body.signal-site {
 
 @media (max-width: 760px) {
   :root {
-    --signal-type-group: 1.75rem;
-    --signal-type-section: 2rem;
-    --signal-type-page: clamp(2rem, 7vw, 3rem);
+    --signal-type-group: 1.375rem;
+    --signal-type-section: 1.75rem;
+    --signal-type-page: clamp(1.75rem, 6vw, 2.5rem);
   }
 
   .signal-header__inner {
@@ -1288,14 +1288,14 @@ body.signal-site {
   }
 
   .signal-hero h1 {
-    font-size: clamp(2.8rem, 12vw, 5.7rem);
+    font-size: clamp(2.8rem, 11.5vw, 5.25rem);
     margin-bottom: 2.5rem;
   }
 
   .signal-name--family {
     margin-right: .2em;
     margin-top: .04em;
-    font-size: 1.35em;
+    font-size: 1.28em;
   }
 
   .signal-hero__body {
@@ -1472,7 +1472,7 @@ body.signal-site {
   }
 
   .signal-hero h1 {
-    font-size: 2.85rem;
+    font-size: 2.7rem;
   }
 
   .signal-hero__meta {
