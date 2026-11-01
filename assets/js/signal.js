@@ -7,17 +7,23 @@
 
   var menuButton = document.querySelector("[data-signal-menu]");
   var navigation = document.querySelector("[data-signal-nav]");
+  var mobileNavigation = window.matchMedia("(max-width: 760px)");
+  function setMenuOpen(isOpen) {
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+    document.body.classList.toggle("signal-nav-open", isOpen);
+    // Collapsing links should stop accepting focus as soon as closing starts.
+    navigation.inert = mobileNavigation.matches && !isOpen;
+  }
+
   function closeMenu() {
     if (!menuButton || !navigation) return;
-    menuButton.setAttribute("aria-expanded", "false");
-    document.body.classList.remove("signal-nav-open");
+    setMenuOpen(false);
   }
 
   if (menuButton && navigation) {
     menuButton.addEventListener("click", function () {
       var isOpen = menuButton.getAttribute("aria-expanded") === "true";
-      menuButton.setAttribute("aria-expanded", String(!isOpen));
-      document.body.classList.toggle("signal-nav-open", !isOpen);
+      setMenuOpen(!isOpen);
     });
 
     navigation.addEventListener("click", function (event) {
@@ -27,6 +33,9 @@
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape") closeMenu();
     });
+
+    mobileNavigation.addEventListener("change", closeMenu);
+    closeMenu();
   }
 
   var filterGroups = Array.prototype.slice.call(document.querySelectorAll("[data-signal-filter-group]"));

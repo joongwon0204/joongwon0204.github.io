@@ -2,6 +2,7 @@
 layout: signal
 permalink: /
 title: "Home"
+repetition_name: true
 description: "Undergraduate student in Computer Science and Engineering at Seoul National University, interested in hardware–software co-design for AI systems, efficient LLM inference, and quantitative trading."
 redirect_from:
   - /about/
@@ -11,11 +12,13 @@ redirect_from:
 {% assign profile = site.data.profile %}
 <div class="signal-shell signal-home">
   <section class="signal-hero signal-reveal" aria-labelledby="home-title">
-    <div class="signal-hero__eyebrow-space" aria-hidden="true"></div>
-    <h1 id="home-title" aria-label="{{ profile.display_name | escape }}">
-      <span class="signal-name signal-name--given" aria-hidden="true"><span class="signal-name__text" data-text="{{ profile.given_name | escape }}">{{ profile.given_name }}</span></span>
-      <span class="signal-name signal-name--family" aria-hidden="true"><span class="signal-name__text" data-text="{{ profile.family_name | escape }}">{{ profile.family_name }}</span></span>
-    </h1>
+    <div class="signal-repetition" data-signal-repetition>
+      <h1 id="home-title" class="signal-repetition__title" aria-label="{{ profile.display_name | escape }}">
+        <span class="signal-repetition__line" aria-hidden="true">
+          <span class="signal-repetition__layer" data-repetition-main><span class="signal-repetition__name-part">{{ profile.given_name | upcase }}</span> <span class="signal-repetition__name-part">{{ profile.family_name | upcase }}</span></span>
+        </span>
+      </h1>
+    </div>
     <div class="signal-hero__body">
       <div class="signal-hero__portrait">
         <img src="{{ profile.image.path | relative_url }}" alt="{{ profile.image.alt | escape }}" width="460" height="460" fetchpriority="high">

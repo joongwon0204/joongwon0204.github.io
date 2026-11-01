@@ -18,6 +18,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Archivo Black";
+  src: url("{{ '/assets/fonts/ArchivoBlack-Regular.ttf' | relative_url }}") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --signal-paper: #ffffff;
   --signal-ink: #000000;
@@ -237,12 +245,6 @@ body.signal-site {
   border-bottom: 3px solid var(--signal-rule);
 }
 
-.signal-hero__eyebrow-space {
-  /* Keep the removed eyebrow's original line box. */
-  height: 1.8rem;
-  margin-bottom: 1rem;
-}
-
 .signal-kicker {
   margin: 0 0 1rem;
   font-size: var(--signal-type-meta);
@@ -251,92 +253,78 @@ body.signal-site {
   text-transform: uppercase;
 }
 
-.signal-hero h1 {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  margin: 0 0 3rem;
-  font-family: var(--signal-display);
-  font-size: clamp(4rem, 12vw, 11.25rem);
+.signal-repetition {
+  position: relative;
+  /* Let the enlarged name use the full viewport width. */
+  margin-inline: calc(-1 * var(--signal-outer-inset));
+  margin-bottom: 3rem;
+  overflow: hidden;
+  background: transparent;
+  color: var(--signal-ink);
+}
+
+/* Global theme transitions would lag behind scrolling and font measurements. */
+.signal-repetition__title,
+.signal-repetition__title span {
+  transition: none;
+}
+
+.signal-hero .signal-repetition__title {
+  position: relative;
+  display: grid;
+  place-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  margin: 0;
+  /* Reserve enough room for the furthest outlined layers at full expansion. */
+  padding-block: 1em;
+  font-family: "Archivo Black", var(--signal-body);
+  font-size: 14vw;
   font-weight: 400;
+  line-height: .82;
   letter-spacing: -.025em;
-  line-height: .94;
-  text-transform: none;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.signal-name {
-  --signal-name-paper: var(--signal-paper);
-  --signal-name-ink: var(--signal-ink);
-  position: relative;
-  display: block;
+.signal-repetition__line {
+  display: grid;
+  width: 94%;
+  min-width: 0;
   isolation: isolate;
+}
+
+.signal-repetition__layer {
+  grid-area: 1 / 1;
+  display: block;
+  min-width: 0;
   white-space: nowrap;
+  background: transparent;
 }
 
-.signal-name--family {
-  --signal-name-paper: var(--signal-ink);
-  --signal-name-ink: var(--signal-paper);
-  align-self: flex-end;
-  margin: -.03em clamp(1rem, 10vw, 9rem) 0 0;
-  padding: .025em .1em .065em;
-  font-size: 1.25em;
-  background: var(--signal-ink);
-  color: var(--signal-paper);
-  transform: rotate(-2deg) skewX(-3deg);
+.signal-repetition__layer:not([data-repetition-main]) {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--signal-ink);
+  opacity: 0;
+  will-change: transform, opacity;
 }
 
-.signal-name__text {
+.signal-repetition__layer[data-repetition-main] {
   position: relative;
+  z-index: 1;
+}
+
+.signal-repetition__name-part {
   display: block;
 }
 
-/* Twenty fine, irregular bands replace the two broad displaced strips. */
-.signal-name__text::before,
-.signal-name__text::after {
-  position: absolute;
-  inset: 0;
-  background: var(--signal-name-paper);
-  color: var(--signal-name-ink);
-  content: attr(data-text);
-  pointer-events: none;
-  transition: transform .25s var(--signal-ease);
-}
-
-.signal-name__text::before {
-  mask-image: linear-gradient(to bottom,
-    transparent 0% 9%, #000 9% 10%, transparent 10% 18%,
-    #000 18% 19.2%, transparent 19.2% 27%, #000 27% 28%,
-    transparent 28% 36%, #000 36% 37.3%, transparent 37.3% 45%,
-    #000 45% 46%, transparent 46% 53%, #000 53% 54.2%,
-    transparent 54.2% 62%, #000 62% 63%, transparent 63% 71%,
-    #000 71% 72.3%, transparent 72.3% 81%, #000 81% 82%,
-    transparent 82% 91%, #000 91% 92%, transparent 92% 100%);
-  transform: translateX(clamp(1px, .012em, 3px));
-}
-
-.signal-name__text::after {
-  mask-image: linear-gradient(to bottom,
-    transparent 0% 13%, #000 13% 14.2%, transparent 14.2% 23%,
-    #000 23% 24%, transparent 24% 31%, #000 31% 32.3%,
-    transparent 32.3% 40%, #000 40% 41%, transparent 41% 49%,
-    #000 49% 50.2%, transparent 50.2% 58%, #000 58% 59%,
-    transparent 59% 67%, #000 67% 68.2%, transparent 68.2% 76%,
-    #000 76% 77%, transparent 77% 86%, #000 86% 87.3%,
-    transparent 87.3% 95%, #000 95% 96%, transparent 96% 100%);
-  transform: translateX(clamp(-4px, -.016em, -1px));
-}
-
-.signal-hero h1:hover .signal-name__text::before {
-  transform: translateX(clamp(2px, .017em, 4px));
-}
-
-.signal-hero h1:hover .signal-name__text::after {
-  transform: translateX(clamp(-5px, -.021em, -2px));
+.signal-repetition__name-part + .signal-repetition__name-part {
+  margin-top: .12em;
 }
 
 .signal-hero__body {
   display: grid;
-  align-items: stretch;
+  align-items: start;
   grid-template-columns: clamp(13rem, 25vw, 18rem) minmax(0, 1fr);
   gap: 2.5rem;
   min-height: 14rem;
@@ -344,6 +332,8 @@ body.signal-site {
 
 .signal-hero__portrait {
   position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
   min-height: 0;
   overflow: hidden;
   border: 3px solid var(--signal-rule);
@@ -360,14 +350,16 @@ body.signal-site {
 .signal-hero__copy {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   min-width: 0;
+  container-type: inline-size;
 }
 
 .signal-hero__intro {
-  max-width: 62ch;
-  margin-bottom: 1.5rem;
-  font-size: var(--signal-type-body);
+  max-width: none;
+  margin-bottom: .75rem;
+  font-size: 1rem;
+  font-size: clamp(1rem, calc(.75rem + 1.2cqi), 1.5rem);
   line-height: 1.45;
 }
 
@@ -417,6 +409,14 @@ body.signal-site {
 .signal-section {
   padding: 3rem var(--signal-outer-inset);
   border-bottom: 3px solid var(--signal-rule);
+}
+
+/* Enlarge home content while preserving the hero, archive links, and footer scale. */
+.signal-home > .signal-section {
+  --signal-type-meta: calc(.875rem + 2pt);
+  --signal-type-body: calc(1.125rem + 2pt);
+  --signal-type-section: calc(clamp(1.75rem, 2.8vw, 2.25rem) + 2pt);
+  font-size: var(--signal-type-body);
 }
 
 .signal-home > .signal-section:last-child {
@@ -554,10 +554,10 @@ body.signal-site {
 /* Summary cards use a quieter scale beneath the section headings. */
 .signal-home .signal-experience-row,
 .signal-home .signal-publication-row {
-  --signal-type-title: 1.125rem;
-  --signal-type-body: 1rem;
-  --signal-type-meta: .8125rem;
-  --signal-type-number: 1.5rem;
+  --signal-type-title: calc(1.125rem + 2pt);
+  --signal-type-body: calc(1rem + 2pt);
+  --signal-type-meta: calc(.8125rem + 2pt);
+  --signal-type-number: calc(1.5rem + 2pt);
   border-width: 2px;
 }
 
@@ -619,7 +619,7 @@ body.signal-site {
   position: absolute;
   right: 1rem;
   bottom: .9rem;
-  font-size: 1.125rem;
+  font-size: calc(1.125rem + 2pt);
 }
 
 .signal-home .signal-publication-row {
@@ -635,6 +635,15 @@ body.signal-site {
 .signal-home .signal-publication-row__authors {
   margin-top: .625rem;
   line-height: 1.5;
+}
+
+.signal-home .signal-publication-row__arrow {
+  font-size: calc(1.25rem + 2pt);
+}
+
+.signal-home .signal-author-marker {
+  /* The parent already grew by 2pt; add the remainder after its .72em scaling. */
+  font-size: calc(.72em + .56pt);
 }
 
 .signal-more-link {
@@ -889,7 +898,6 @@ body.signal-site {
 
 .signal-timeline__section:last-child {
   border-bottom: 0;
-  padding-bottom: 0;
 }
 
 .signal-timeline__label {
@@ -1250,6 +1258,42 @@ body.signal-site {
   transform: translateY(0);
 }
 
+/* Keep hover motion after reveal rules so both effects can share the transform. */
+.signal-cv .signal-timeline__section {
+  position: relative;
+  z-index: 0;
+  background: var(--signal-paper);
+  color: var(--signal-ink);
+  transition: opacity .75s var(--signal-ease), transform .3s var(--signal-ease), background-color .2s ease, color .2s ease;
+}
+
+.signal-cv .signal-timeline__section::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0 -1rem;
+  background: var(--signal-paper);
+  content: "";
+  transition: background-color .2s ease, box-shadow .3s var(--signal-ease);
+}
+
+/* Inherit the section color without cascading delays; keep the GPA crossfade. */
+.signal-cv .signal-timeline__section :not(.signal-gpa-toggle__original, .signal-gpa-toggle__converted) {
+  transition: none;
+}
+
+.signal-cv .signal-timeline__section:is(:hover, :focus-within) {
+  /* Invert shared colors so links, dividers, and GPA details stay readable too. */
+  --signal-paper: #000000;
+  --signal-ink: #ffffff;
+  --signal-rule: #ffffff;
+  z-index: 1;
+  transform: translateY(-4px);
+}
+
+.signal-cv .signal-timeline__section:is(:hover, :focus-within)::before {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+}
+
 @media (max-width: 1100px) {
   .signal-experience-row--with-thumbnail {
     grid-template-columns: 6rem 6rem minmax(0, 1fr) 1.5rem;
@@ -1305,12 +1349,33 @@ body.signal-site {
     font-size: var(--signal-type-label);
   }
 
-  .signal-js .signal-nav {
-    display: none;
+  .signal-js .signal-nav-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    visibility: hidden;
+    transition: grid-template-rows .32s var(--signal-ease), visibility 0s linear .32s;
   }
 
-  .signal-nav-open .signal-nav {
-    display: flex;
+  .signal-js .signal-nav-clip {
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .signal-js .signal-nav {
+    opacity: 0;
+    transform: translateY(-.5rem);
+    transition: opacity .2s ease, transform .32s var(--signal-ease);
+  }
+
+  .signal-js .signal-nav-open .signal-nav-panel {
+    grid-template-rows: 1fr;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  .signal-js .signal-nav-open .signal-nav {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .signal-nav-open .signal-menu__icon i:first-child {
@@ -1325,15 +1390,8 @@ body.signal-site {
     padding-block: 2.5rem;
   }
 
-  .signal-hero h1 {
-    font-size: clamp(2.8rem, 11.5vw, 5.25rem);
+  .signal-repetition {
     margin-bottom: 2.5rem;
-  }
-
-  .signal-name--family {
-    margin-right: .2em;
-    margin-top: .04em;
-    font-size: 1.28em;
   }
 
   .signal-hero__body {
@@ -1344,11 +1402,7 @@ body.signal-site {
 
   .signal-hero__portrait {
     width: min(100%, 16rem);
-    aspect-ratio: 1;
-  }
-
-  .signal-hero__intro {
-    font-size: var(--signal-type-body);
+    justify-self: center;
   }
 
   .signal-section {
@@ -1519,10 +1573,6 @@ body.signal-site {
     font-size: 1.6rem;
   }
 
-  .signal-hero h1 {
-    font-size: 2.7rem;
-  }
-
   .signal-hero__meta {
     gap: .5rem;
   }
@@ -1536,6 +1586,10 @@ body.signal-site {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .signal-cv .signal-timeline__section:is(:hover, :focus-within) {
+    transform: none;
   }
 
   .signal-site *,

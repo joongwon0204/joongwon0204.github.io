@@ -13,6 +13,10 @@ The Signal-specific pages load the following typefaces from public CDNs:
 
 Review the respective font licenses before changing the delivery method or redistributing font files.
 
+## Repeated name animation
+
+The homepage's layered name animation adapts demo 3 of [codrops/TextRepetitionEffect](https://github.com/codrops/TextRepetitionEffect) (MIT). See `third_party/README.md` and `third_party/text-repetition-effect-LICENSE.txt` for attribution and license terms. The locally served Archivo Black typeface retains its license in `assets/fonts/ArchivoBlack-OFL.txt`.
+
 ## Favicon
 
 The academic-cap favicon is derived from `OOjs UI icon academic-progressive.svg`, made available under CC0 1.0 on Wikimedia Commons:
