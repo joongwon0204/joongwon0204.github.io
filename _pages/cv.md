@@ -14,7 +14,7 @@ redirect_from:
 ---
 
 <section class="signal-shell signal-index">
-  <header class="signal-index-head signal-reveal">
+  <header class="signal-index-head signal-index-head--cv signal-reveal">
     <div class="signal-index-head__copy">
       <p class="signal-kicker">04 /</p>
       <h1 aria-label="{{ page.display_name }}">{{ page.given_name }} {{ page.family_name }}</h1>

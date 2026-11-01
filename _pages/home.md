@@ -74,7 +74,6 @@ redirect_from:
         <p class="signal-kicker">02 /</p>
         <h2 id="experiences-title">Experiences</h2>
       </div>
-      <p class="signal-section-head__aside">{% for group in site.data.content_groups.experiences %}{{ group.label | upcase }}{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
     </header>
 
     <div class="signal-experience-list">
@@ -111,7 +110,6 @@ redirect_from:
         <p class="signal-kicker">04 /</p>
         <h2 id="notes-title">Notes</h2>
       </div>
-      <p class="signal-section-head__aside">{% for group in site.data.content_groups.notes %}{{ group.title | upcase }}{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
     </header>
 
     <div class="signal-note-list">

@@ -27,6 +27,17 @@
   --signal-display: "Rubik Glitch", var(--signal-body);
   --signal-ui: var(--signal-body);
   --signal-code: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  /* Shared sizes by content role; 1rem = 16px. */
+  --signal-type-meta: 1.125rem;
+  --signal-type-label: 1.25rem;
+  --signal-type-body: 1.5rem;
+  --signal-type-title: 1.75rem;
+  --signal-type-group: 2rem;
+  --signal-type-section: clamp(2.25rem, 3.5vw, 3rem);
+  --signal-type-page: clamp(2.5rem, 5vw, 4.5rem);
+  --signal-type-article-title: clamp(2rem, 3.5vw, 3.25rem);
+  --signal-type-number: 3rem;
+  --signal-footer-gap: clamp(8rem, 16vw, 12rem);
   --signal-ease: cubic-bezier(.22, 1, .36, 1);
   --signal-inset: clamp(1.25rem, 3.4vw, 3rem);
   color-scheme: light;
@@ -43,11 +54,10 @@ body.signal-site {
   min-height: 100vh;
   margin: 0 auto;
   padding: 0;
-  border-inline: 3px solid var(--signal-rule);
   background: var(--signal-paper);
   color: var(--signal-ink);
   font-family: var(--signal-body);
-  font-size: 20px;
+  font-size: var(--signal-type-body);
   line-height: 1.6;
 }
 
@@ -109,6 +119,7 @@ body.signal-site {
 
 .signal-main {
   min-height: 55vh;
+  border-inline: 3px solid var(--signal-rule);
 }
 
 .signal-highlight {
@@ -130,7 +141,7 @@ body.signal-site {
   transform: translateY(-180%);
   background: var(--signal-ink);
   color: var(--signal-paper) !important;
-  font-size: .85rem;
+  font-size: var(--signal-type-label);
 }
 
 .signal-skip:focus {
@@ -140,6 +151,7 @@ body.signal-site {
 /* Masthead */
 .signal-header {
   background: var(--signal-paper);
+  border-inline: 3px solid var(--signal-rule);
 }
 
 .signal-header__inner {
@@ -181,7 +193,7 @@ body.signal-site {
 
 .signal-nav a {
   padding: .1rem .2rem;
-  font-size: 1.2rem;
+  font-size: var(--signal-type-label);
   font-weight: 700;
   text-transform: uppercase;
   transition: background .2s ease, color .2s ease;
@@ -202,7 +214,7 @@ body.signal-site {
   border: 2px solid var(--signal-rule);
   background: var(--signal-paper);
   color: var(--signal-ink);
-  font-size: .75rem !important;
+  font-size: var(--signal-type-label) !important;
   font-weight: 700 !important;
   text-transform: uppercase;
   cursor: pointer;
@@ -229,7 +241,7 @@ body.signal-site {
 
 .signal-kicker {
   margin: 0 0 1rem;
-  font-size: .9rem;
+  font-size: var(--signal-type-meta);
   font-weight: 700;
   letter-spacing: .06em;
   text-transform: uppercase;
@@ -333,7 +345,7 @@ body.signal-site {
 .signal-hero__intro {
   max-width: 62ch;
   margin-bottom: 1.5rem;
-  font-size: 1.3rem;
+  font-size: var(--signal-type-body);
   line-height: 1.45;
 }
 
@@ -352,7 +364,7 @@ body.signal-site {
   min-height: 2.75rem;
   padding: .5rem .75rem;
   border: 2px solid var(--signal-rule);
-  font-size: .95rem;
+  font-size: var(--signal-type-label);
   font-weight: 700;
   text-transform: uppercase;
   transition: color .25s ease, background .25s ease, transform .25s var(--signal-ease);
@@ -385,6 +397,10 @@ body.signal-site {
   border-bottom: 3px solid var(--signal-rule);
 }
 
+.signal-home > .signal-section:last-child {
+  border-bottom: 0;
+}
+
 .signal-section-head {
   display: flex;
   align-items: flex-end;
@@ -402,23 +418,11 @@ body.signal-site {
 .signal-section-head h2 {
   margin: 0;
   font-family: var(--signal-display);
-  font-size: clamp(1.7rem, 3.5vw, 2.7rem);
+  font-size: var(--signal-type-section);
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.1;
   text-transform: uppercase;
-}
-
-.signal-section-head__intro,
-.signal-section-head__aside {
-  max-width: 30rem;
-  margin: 0;
-  font-size: .95rem;
-  line-height: 1.6;
-}
-
-.signal-section-head__aside {
-  text-align: right;
 }
 
 .signal-interest-list {
@@ -427,7 +431,7 @@ body.signal-site {
   gap: .7rem 2.5rem;
   margin: 0;
   padding-left: 1.2rem;
-  font-size: 1.25rem;
+  font-size: var(--signal-type-body);
 }
 
 /* Shared content lists and home cards */
@@ -458,7 +462,7 @@ body.signal-site {
 .signal-experience-row__period,
 .signal-experience-row__organization,
 .signal-experience-row__type {
-  font-size: .9rem;
+  font-size: var(--signal-type-meta);
   line-height: 1.6;
 }
 
@@ -475,14 +479,14 @@ body.signal-site {
 
 .signal-experience-row__content h3 {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: var(--signal-type-title);
   font-weight: 700;
   line-height: 1.4;
 }
 
 .signal-experience-row__content p {
   margin: .75rem 0 0;
-  font-size: 1.05rem;
+  font-size: var(--signal-type-body);
   line-height: 1.65;
 }
 
@@ -555,7 +559,7 @@ body.signal-site {
   background: var(--signal-paper);
   color: var(--signal-ink);
   content: counter(entry, decimal-leading-zero);
-  font-size: 2.8rem;
+  font-size: var(--signal-type-number);
   font-weight: 800;
   letter-spacing: -.06em;
   line-height: 1;
@@ -582,7 +586,7 @@ body.signal-site {
   min-height: 2.75rem;
   margin-top: 1.5rem;
   border-bottom: 2px solid currentColor;
-  font-size: 1rem;
+  font-size: var(--signal-type-label);
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -600,7 +604,6 @@ body.signal-site {
 .signal-page,
 .signal-article {
   padding: 3rem var(--signal-inset);
-  border-bottom: 3px solid var(--signal-rule);
 }
 
 .signal-index-head,
@@ -621,7 +624,7 @@ body.signal-site {
 .signal-page-head h1 {
   margin: 0;
   font-family: var(--signal-display);
-  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-size: var(--signal-type-page);
   font-weight: 400;
   letter-spacing: -.01em;
   line-height: 1.05;
@@ -629,11 +632,15 @@ body.signal-site {
   text-transform: uppercase;
 }
 
+.signal-index-head--cv h1 {
+  text-transform: none;
+}
+
 .signal-index-head__intro,
 .signal-page-head__intro {
   max-width: 65ch;
   margin: 1.5rem 0 0;
-  font-size: 1.15rem;
+  font-size: var(--signal-type-body);
 }
 
 .signal-index-head__aside {
@@ -660,7 +667,7 @@ body.signal-site {
   border-radius: 0;
   background: var(--signal-paper);
   color: var(--signal-ink);
-  font-size: .95rem;
+  font-size: var(--signal-type-label);
   font-weight: 700;
   cursor: pointer;
   transition: color .2s ease, background .2s ease;
@@ -680,14 +687,14 @@ body.signal-site {
 .signal-publication-year__head h2,
 .signal-work-group__title {
   margin: 0 0 1.25rem;
-  font-size: 1.3rem;
+  font-size: var(--signal-type-group);
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .signal-work-group__title {
   font-family: var(--signal-display);
-  font-size: 1.5rem;
+  font-size: var(--signal-type-group);
   font-weight: 400;
 }
 
@@ -716,7 +723,7 @@ body.signal-site {
 }
 
 .signal-publication-row__visual > span {
-  font-size: .75rem;
+  font-size: var(--signal-type-meta);
   font-weight: 700;
 }
 
@@ -741,7 +748,7 @@ body.signal-site {
   flex-wrap: wrap;
   gap: .5rem 1rem;
   margin-bottom: 1rem;
-  font-size: .9rem;
+  font-size: var(--signal-type-meta);
 }
 
 .signal-publication-row__venue {
@@ -751,14 +758,14 @@ body.signal-site {
 }
 
 .signal-publication-row__title {
-  font-size: 1.4rem;
+  font-size: var(--signal-type-title);
   font-weight: 700;
   line-height: 1.4;
 }
 
 .signal-publication-row__authors {
   margin-top: 1rem;
-  font-size: 1rem;
+  font-size: var(--signal-type-body);
   line-height: 1.7;
 }
 
@@ -778,18 +785,18 @@ body.signal-site {
 }
 
 .signal-empty__index {
-  font-size: .75rem;
+  font-size: var(--signal-type-meta);
 }
 
 .signal-empty h2 {
   margin: 1rem 0;
-  font-size: 1.5rem;
+  font-size: var(--signal-type-title);
   text-transform: uppercase;
 }
 
 /* CV */
 .signal-cv {
-  font-size: 1.25rem;
+  font-size: var(--signal-type-body);
   line-height: 1.55;
 }
 
@@ -801,7 +808,7 @@ body.signal-site {
   border: 2px solid var(--signal-rule);
   background: var(--signal-ink);
   color: var(--signal-paper) !important;
-  font-size: 1rem;
+  font-size: var(--signal-type-label);
   font-weight: 700;
   text-transform: uppercase;
   transition: background .25s ease, color .25s ease;
@@ -814,7 +821,7 @@ body.signal-site {
 
 .signal-timeline__section {
   display: grid;
-  grid-template-columns: 14rem minmax(0, 1fr);
+  grid-template-columns: 18rem minmax(0, 1fr);
   gap: 2.5rem;
   padding-block: 2rem;
   border-bottom: 2px solid var(--signal-rule);
@@ -833,14 +840,14 @@ body.signal-site {
 .signal-timeline__number {
   display: block;
   margin-bottom: .5rem;
-  font-size: .95rem;
+  font-size: var(--signal-type-meta);
   font-weight: 700;
 }
 
 .signal-timeline__label h2 {
   margin: 0;
   font-family: var(--signal-display);
-  font-size: 1.35rem;
+  font-size: var(--signal-type-group);
   font-weight: 400;
   line-height: 1.4;
   text-transform: uppercase;
@@ -868,7 +875,7 @@ body.signal-site {
 
 .signal-cv-entry__head h3 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: var(--signal-type-title);
   font-weight: 700;
   line-height: 1.5;
 }
@@ -877,18 +884,18 @@ body.signal-site {
 .signal-cv-entry__head time {
   flex: 0 0 auto;
   margin: 0;
-  font-size: 1.05rem;
+  font-size: var(--signal-type-meta);
 }
 
 .signal-cv-entry__subtitle {
   margin: .5rem 0 0;
-  font-size: 1.25rem;
+  font-size: var(--signal-type-body);
 }
 
 .signal-cv-entry ul {
   margin: 1rem 0 0;
   padding-left: 1.1rem;
-  font-size: 1.25rem;
+  font-size: var(--signal-type-body);
 }
 
 .signal-cv-entry a,
@@ -912,14 +919,14 @@ body.signal-site {
 
 .signal-cv-facts span {
   display: block;
-  font-size: .95rem;
+  font-size: var(--signal-type-label);
   text-transform: uppercase;
 }
 
 .signal-cv-facts strong {
   display: block;
   margin-top: .4rem;
-  font-size: 1.3rem;
+  font-size: var(--signal-type-body);
 }
 
 .signal-gpa-toggle {
@@ -974,14 +981,14 @@ body.signal-site {
 
 .signal-detail-list dt,
 .signal-skill-list dt {
-  font-size: 1.15rem;
+  font-size: var(--signal-type-label);
   font-weight: 700;
 }
 
 .signal-detail-list dd,
 .signal-skill-list dd {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: var(--signal-type-body);
 }
 
 /* Articles */
@@ -995,7 +1002,7 @@ body.signal-site {
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 1.5rem;
-  font-size: .75rem;
+  font-size: var(--signal-type-meta);
   font-weight: 700;
 }
 
@@ -1003,7 +1010,7 @@ body.signal-site {
   max-width: 30ch;
   margin: 0;
   font-family: var(--signal-body);
-  font-size: clamp(1.7rem, 3.5vw, 3rem);
+  font-size: var(--signal-type-article-title);
   font-weight: 800;
   letter-spacing: -.045em;
   line-height: 1.2;
@@ -1013,12 +1020,12 @@ body.signal-site {
 .signal-article__subtitle {
   max-width: 70ch;
   margin: 1.5rem 0 0;
-  font-size: 1rem;
+  font-size: var(--signal-type-body);
 }
 
 .signal-article__reading {
   margin: 1rem 0 0;
-  font-size: .75rem;
+  font-size: var(--signal-type-meta);
 }
 
 .signal-article__body {
@@ -1030,7 +1037,7 @@ body.signal-site {
 
 .signal-prose {
   font-family: var(--signal-korean);
-  font-size: 1.15rem;
+  font-size: var(--signal-type-body);
   line-height: 1.85;
 }
 
@@ -1046,12 +1053,12 @@ body.signal-site {
   margin: 3rem 0 1.25rem;
   padding-top: 1.25rem;
   border-top: 2px solid var(--signal-rule);
-  font-size: 1.5rem;
+  font-size: var(--signal-type-title);
 }
 
 .signal-prose h3 {
   margin: 2rem 0 1rem;
-  font-size: 1.15rem;
+  font-size: var(--signal-type-title);
 }
 
 .signal-prose a {
@@ -1114,7 +1121,7 @@ body.signal-site {
   overflow-x: auto;
   border-collapse: collapse;
   background: var(--signal-paper);
-  font-size: .85rem;
+  font-size: var(--signal-type-body);
 }
 
 .signal-prose th,
@@ -1129,7 +1136,7 @@ body.signal-site {
   margin-top: 3rem;
   padding-top: 1.5rem;
   border-top: 2px solid var(--signal-rule);
-  font-size: .8rem;
+  font-size: var(--signal-type-label);
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -1140,13 +1147,12 @@ body.signal-site {
 
 /* Compact contact footer. */
 .signal-footer {
-  margin-top: clamp(2rem, 4vw, 3rem);
+  margin-top: var(--signal-footer-gap);
 }
 
 .signal-footer__links {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-bottom: 3px solid var(--signal-rule);
   background: var(--signal-ink);
   color: var(--signal-paper);
 }
@@ -1158,7 +1164,7 @@ body.signal-site {
   gap: 1rem;
   padding: 1.5rem var(--signal-inset);
   border-right: 2px solid var(--signal-paper);
-  font-size: 1rem;
+  font-size: var(--signal-type-label);
   font-weight: 700;
   text-transform: uppercase;
   transition: background .2s ease, color .2s ease;
@@ -1199,7 +1205,6 @@ body.signal-site {
   }
 
   .signal-timeline__section {
-    grid-template-columns: 12.5rem minmax(0, 1fr);
     gap: 2rem;
   }
 
@@ -1211,9 +1216,16 @@ body.signal-site {
 }
 
 @media (max-width: 760px) {
+  :root {
+    --signal-type-group: 1.75rem;
+    --signal-type-section: 2rem;
+    --signal-type-page: clamp(2rem, 7vw, 3rem);
+  }
+
   .signal-header__inner {
     min-height: 5rem;
     padding-block: 1.25rem;
+    gap: .75rem;
   }
 
   .signal-grid-marker {
@@ -1229,7 +1241,7 @@ body.signal-site {
   }
 
   .signal-nav a {
-    font-size: .85rem;
+    font-size: var(--signal-type-label);
   }
 
   .signal-js .signal-nav {
@@ -1275,7 +1287,7 @@ body.signal-site {
   }
 
   .signal-hero__intro {
-    font-size: 1.2rem;
+    font-size: var(--signal-type-body);
   }
 
   .signal-section {
@@ -1288,14 +1300,10 @@ body.signal-site {
     gap: 1rem;
   }
 
-  .signal-section-head__aside {
-    text-align: left;
-  }
-
   .signal-interest-list {
     display: grid;
     gap: .75rem;
-    font-size: 1.15rem;
+    font-size: var(--signal-type-body);
   }
 
   .signal-home .signal-experience-list,
@@ -1327,7 +1335,7 @@ body.signal-site {
 
   .signal-index-head h1,
   .signal-page-head h1 {
-    font-size: clamp(1.7rem, 7vw, 3rem);
+    font-size: var(--signal-type-page);
   }
 
   .signal-experience-row,
@@ -1383,7 +1391,7 @@ body.signal-site {
   }
 
   .signal-publication-row__title {
-    font-size: 1.05rem;
+    font-size: var(--signal-type-title);
   }
 
   .signal-timeline__section {
@@ -1392,14 +1400,12 @@ body.signal-site {
   }
 
   .signal-timeline__label {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
+    display: block;
   }
 
   .signal-timeline__number {
     flex: 0 0 auto;
-    margin: 0;
+    margin-bottom: .5rem;
   }
 
   .signal-cv-facts {
@@ -1414,11 +1420,11 @@ body.signal-site {
   }
 
   .signal-article__head h1 {
-    font-size: 1.6rem;
+    font-size: var(--signal-type-article-title);
   }
 
   .signal-prose {
-    font-size: 1.05rem;
+    font-size: var(--signal-type-body);
   }
 
   .signal-footer__links {
@@ -1451,7 +1457,7 @@ body.signal-site {
   }
 
   .signal-hero__contact {
-    font-size: .85rem;
+    font-size: var(--signal-type-label);
     padding-inline: .55rem;
   }
 }
