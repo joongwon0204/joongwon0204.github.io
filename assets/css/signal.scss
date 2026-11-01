@@ -47,6 +47,7 @@
   --signal-type-number: 2rem;
   --signal-footer-gap: clamp(8rem, 16vw, 12rem);
   --signal-ease: cubic-bezier(.22, 1, .36, 1);
+  --signal-hover-fade: .2s ease;
   --signal-inset: clamp(1.25rem, 3.4vw, 3rem);
   --signal-outer-inset: max(var(--signal-inset), calc((100% - 1440px) / 2 + var(--signal-inset)));
   color-scheme: light;
@@ -478,7 +479,7 @@ body.signal-site {
   padding: 1.5rem;
   border: 3px solid var(--signal-rule);
   background: var(--signal-paper);
-  transition: background .25s ease, color .25s ease, transform .3s var(--signal-ease);
+  transition: background-color var(--signal-hover-fade), color var(--signal-hover-fade), transform .3s var(--signal-ease);
 }
 
 .signal-experience-row--with-thumbnail {
@@ -542,12 +543,18 @@ body.signal-site {
   object-fit: cover;
 }
 
+.signal-site .signal-experience-row,
+.signal-site .signal-publication-row {
+  --signal-item-ink: var(--signal-ink);
+  color: var(--signal-item-ink);
+}
+
 .signal-experience-row:hover,
 .signal-experience-row:focus-visible,
 .signal-publication-row:hover,
 .signal-publication-row:focus-visible {
   background: var(--signal-ink);
-  color: var(--signal-paper);
+  --signal-item-ink: var(--signal-paper);
 }
 
 .signal-experience-row:hover .signal-experience-row__arrow,
@@ -751,7 +758,7 @@ body.signal-site {
   padding: 1.5rem;
   border: 3px solid var(--signal-rule);
   background: var(--signal-paper);
-  transition: color .25s ease, background .25s ease;
+  transition: background-color var(--signal-hover-fade), color var(--signal-hover-fade);
 }
 
 .signal-publication-row__visual {
@@ -1241,7 +1248,7 @@ body.signal-site {
   z-index: 0;
   background: var(--signal-paper);
   color: var(--signal-ink);
-  transition: opacity .75s var(--signal-ease), transform .3s var(--signal-ease), background-color .2s ease, color .2s ease;
+  transition: opacity .75s var(--signal-ease), transform .3s var(--signal-ease), background-color var(--signal-hover-fade), color var(--signal-hover-fade), border-color var(--signal-hover-fade);
 }
 
 .signal-cv .signal-timeline__section::before {
@@ -1250,12 +1257,36 @@ body.signal-site {
   inset: 0 -1rem;
   background: var(--signal-paper);
   content: "";
-  transition: background-color .2s ease, box-shadow .3s var(--signal-ease);
+  transition: background-color var(--signal-hover-fade), box-shadow .3s var(--signal-ease);
 }
 
-/* Inherit the section color without cascading delays; keep the GPA crossfade. */
-.signal-cv .signal-timeline__section :not(.signal-gpa-toggle__original, .signal-gpa-toggle__converted) {
-  transition: none;
+/* Give each label the final color directly. Animating inherited `color` can
+   restart child transitions as the parent's intermediate color changes. */
+.signal-cv .signal-timeline__section *,
+.signal-experience-row *,
+.signal-publication-row * {
+  color: var(--signal-item-ink, var(--signal-ink));
+  transition: color var(--signal-hover-fade);
+}
+
+.signal-cv .signal-cv-facts > div,
+.signal-cv .signal-cv-publication + .signal-cv-publication {
+  transition: color var(--signal-hover-fade), border-color var(--signal-hover-fade);
+}
+
+.signal-experience-row .signal-experience-row__arrow,
+.signal-publication-row .signal-publication-row__arrow {
+  transition: color var(--signal-hover-fade), transform .3s var(--signal-ease);
+}
+
+.signal-cv .signal-gpa-toggle strong span {
+  transition: color var(--signal-hover-fade), opacity .25s ease, transform .3s var(--signal-ease);
+}
+
+/* Keep publication thumbnails and their placeholder labels on a white surface. */
+.signal-publication-row .signal-publication-row__visual,
+.signal-publication-row .signal-publication-row__visual * {
+  color: var(--signal-ink);
 }
 
 .signal-cv .signal-timeline__section:is(:hover, :focus-within) {
