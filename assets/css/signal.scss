@@ -2,13 +2,21 @@
 ---
 
 /* Adapted from steelzzeu/brutalistfolio; see third_party/ for its MIT notice. */
+@font-face {
+  font-family: "Rubik Glitch";
+  src: url("{{ '/assets/fonts/RubikGlitch-Regular.ttf' | relative_url }}") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --signal-paper: #ffffff;
   --signal-ink: #000000;
   --signal-rule: #000000;
   --signal-body: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", "Pretendard", monospace;
   --signal-korean: var(--signal-body);
-  --signal-display: var(--signal-body);
+  --signal-display: "Rubik Glitch", var(--signal-body);
   --signal-ui: var(--signal-body);
   --signal-ease: cubic-bezier(.22, 1, .36, 1);
   --signal-inset: clamp(1.25rem, 3.4vw, 3rem);
@@ -82,7 +90,7 @@ body.signal-site {
 .signal-site h2,
 .signal-site h3,
 .signal-site h4 {
-  font-family: var(--signal-display);
+  font-family: var(--signal-body);
 }
 
 .signal-shell {
@@ -221,11 +229,11 @@ body.signal-site {
 .signal-hero h1 {
   margin: 0 0 2.5rem;
   font-family: var(--signal-display);
-  font-size: clamp(2rem, 5.8vw, 5.5rem);
-  font-weight: 800;
-  letter-spacing: -.055em;
+  font-size: clamp(3.25rem, 9.6vw, 8.6rem);
+  font-weight: 400;
+  letter-spacing: -.025em;
   line-height: 1.05;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .signal-hero h1 > span {
@@ -336,9 +344,10 @@ body.signal-site {
 
 .signal-section-head h2 {
   margin: 0;
+  font-family: var(--signal-display);
   font-size: clamp(1.7rem, 3.5vw, 2.7rem);
-  font-weight: 800;
-  letter-spacing: -.045em;
+  font-weight: 400;
+  letter-spacing: 0;
   line-height: 1.1;
   text-transform: uppercase;
 }
@@ -556,8 +565,8 @@ body.signal-site {
   margin: 0;
   font-family: var(--signal-display);
   font-size: clamp(2rem, 5vw, 4.5rem);
-  font-weight: 800;
-  letter-spacing: -.06em;
+  font-weight: 400;
+  letter-spacing: -.01em;
   line-height: 1.05;
   overflow-wrap: anywhere;
   text-transform: uppercase;
@@ -617,6 +626,12 @@ body.signal-site {
   font-size: 1.3rem;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.signal-work-group__title {
+  font-family: var(--signal-display);
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .signal-publication-row {
@@ -762,8 +777,9 @@ body.signal-site {
 
 .signal-timeline__label h2 {
   margin: 0;
+  font-family: var(--signal-display);
   font-size: 1.1rem;
-  font-weight: 800;
+  font-weight: 400;
   line-height: 1.4;
   text-transform: uppercase;
 }
@@ -924,7 +940,7 @@ body.signal-site {
 .signal-article__head h1 {
   max-width: 30ch;
   margin: 0;
-  font-family: var(--signal-display);
+  font-family: var(--signal-body);
   font-size: clamp(1.7rem, 3.5vw, 3rem);
   font-weight: 800;
   letter-spacing: -.045em;
@@ -959,7 +975,7 @@ body.signal-site {
 .signal-prose h2,
 .signal-prose h3,
 .signal-prose h4 {
-  font-family: var(--signal-display);
+  font-family: var(--signal-body);
   font-weight: 700;
   line-height: 1.4;
 }
@@ -1103,9 +1119,10 @@ body.signal-site {
 
 .signal-footer__contact h2 {
   margin: 0 0 1.5rem;
+  font-family: var(--signal-display);
   font-size: clamp(2rem, 4vw, 3.75rem);
-  font-weight: 800;
-  letter-spacing: -.05em;
+  font-weight: 400;
+  letter-spacing: 0;
   line-height: 1.05;
   text-transform: uppercase;
 }
@@ -1237,7 +1254,7 @@ body.signal-site {
   }
 
   .signal-hero h1 {
-    font-size: clamp(1.8rem, 7.1vw, 3.3rem);
+    font-size: clamp(2.8rem, 10.5vw, 5.5rem);
     margin-bottom: 2rem;
   }
 
@@ -1434,7 +1451,7 @@ body.signal-site {
   }
 
   .signal-hero h1 {
-    font-size: 1.6rem;
+    font-size: 2.7rem;
   }
 
   .signal-hero__meta {

@@ -12,7 +12,7 @@ redirect_from:
 <div class="signal-shell signal-home">
   <section class="signal-hero signal-reveal" aria-labelledby="home-title">
     <p class="signal-kicker">{{ profile.eyebrow | upcase }} / {{ profile.native_name }}</p>
-    <h1 id="home-title">{{ profile.given_name }}<br><span>{{ profile.family_name }}</span></h1>
+    <h1 id="home-title" aria-label="{{ profile.display_name | escape }}">{{ profile.given_name }}<br><span>{{ profile.family_name }}</span></h1>
     <div class="signal-hero__body">
       <div class="signal-hero__portrait">
         <img src="{{ profile.image.path | relative_url }}" alt="{{ profile.image.alt | escape }}" width="460" height="460" fetchpriority="high">
