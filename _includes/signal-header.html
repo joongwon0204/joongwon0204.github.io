@@ -3,14 +3,17 @@
 <header class="signal-header">
   <div class="signal-shell signal-header__inner">
     <a class="signal-brand" href="{{ '/' | relative_url }}" aria-label="{{ profile.display_name }} — Home">
-      <span class="signal-brand__name">{{ profile.display_name }}</span>
+      <span>{{ profile.given_name }}</span><span class="signal-highlight">{{ profile.family_name }}</span>
     </a>
 
+    <span class="signal-grid-marker" aria-hidden="true"></span>
     <button class="signal-menu" type="button" aria-expanded="false" aria-controls="signal-navigation" data-signal-menu>
       <span class="signal-menu__label">Menu</span>
       <span class="signal-menu__icon" aria-hidden="true"><i></i><i></i></span>
     </button>
 
+  </div>
+  <div class="signal-shell">
     <nav class="signal-nav" id="signal-navigation" aria-label="Primary navigation" data-signal-nav>
       {% for nav_item in site.data.navigation %}
         {% assign nav_target = site.pages | where: "key", nav_item.key | first %}
