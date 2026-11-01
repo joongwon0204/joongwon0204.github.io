@@ -1,18 +1,6 @@
 <footer class="signal-footer">
-  <div class="signal-footer__top">
-    <nav class="signal-footer__nav" aria-label="Footer navigation">
-      {% for nav_item in site.data.navigation %}
-        {% assign nav_target = site.pages | where: "key", nav_item.key | first %}
-        {% if nav_target %}<a href="{{ nav_target.url | relative_url }}">{{ nav_item.label }} <span aria-hidden="true">↗</span></a>{% endif %}
-      {% endfor %}
-    </nav>
-    <div class="signal-footer__contact">
-      <p class="signal-footer__label">LET'S CONNECT</p>
-      <h2>Get in touch<span aria-hidden="true">.</span></h2>
-      {% if site.author.email %}<a class="signal-footer__email" href="mailto:{{ site.author.email }}">{{ site.author.email }} <span aria-hidden="true">↗</span></a>{% endif %}
-    </div>
-  </div>
   <nav class="signal-footer__links" aria-label="Contact links">
+    {% if site.author.email %}<a href="mailto:{{ site.author.email }}">Email <span aria-hidden="true">↗</span></a>{% endif %}
     {% if site.author.github %}<a href="https://github.com/{{ site.author.github }}">GitHub <span aria-hidden="true">↗</span></a>{% endif %}
     {% if site.author.linkedin %}<a href="https://www.linkedin.com/in/{{ site.author.linkedin }}">LinkedIn <span aria-hidden="true">↗</span></a>{% endif %}
     <a href="{{ '/cv/' | relative_url }}">Curriculum vitae <span aria-hidden="true">↗</span></a>
