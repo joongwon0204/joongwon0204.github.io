@@ -18,7 +18,6 @@ redirect_from:
     <div class="signal-index-head__copy">
       <p class="signal-kicker">04 /</p>
       <h1 aria-label="{{ page.display_name }}">{{ page.given_name }} {{ page.family_name }}</h1>
-      <p class="signal-index-head__intro">{{ page.summary }}</p>
     </div>
     {% if site.author.cv_pdf %}
       <aside class="signal-index-head__aside">
