@@ -13,6 +13,11 @@ layout: compress
   <head>
     {% include head.html %}
     {% include head/custom.html %}
+    <link rel="preload" href="{{ '/assets/fonts/Iceland-Regular.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="{{ '/assets/fonts/RubikGlitch-Regular.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
+    {% if page.repetition_name %}
+      <link rel="preload" href="{{ '/assets/fonts/ArchivoBlack-Regular.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
+    {% endif %}
     <link rel="stylesheet" href="{{ '/assets/css/signal.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   </head>
   <body class="signal-site signal-site--{{ signal_body_modifier }}">
@@ -25,5 +30,8 @@ layout: compress
 
     {% include signal-footer.html %}
     <script src="{{ '/assets/js/signal.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
+    {% if page.repetition_name %}
+      <script type="module" src="{{ '/assets/js/signal-repetition.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+    {% endif %}
   </body>
 </html>

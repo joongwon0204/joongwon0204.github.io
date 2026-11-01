@@ -20,11 +20,10 @@ layout: signal
 <section class="signal-shell signal-index">
   <header class="signal-index-head signal-index-head--collection signal-reveal">
     <div class="signal-index-head__copy">
-      {% if page.section_number %}<p class="signal-kicker">{{ page.section_number }} / {{ page.title | upcase }}</p>{% endif %}
+      {% if page.section_number %}<p class="signal-kicker">{{ page.section_number }} /</p>{% endif %}
       <h1>{{ page.title }}</h1>
       {% if archive_intro %}<p class="signal-index-head__intro">{{ archive_intro }}</p>{% endif %}
     </div>
-    {% include signal-circuit.html class="signal-index-head__circuit" %}
   </header>
 
   {% if archive_items.size > 0 %}
@@ -80,7 +79,6 @@ layout: signal
         <h2>No entries yet.</h2>
         <p>Add Markdown entries to the source configured for this archive.</p>
       </div>
-      {% include signal-circuit.html class="signal-empty__circuit" %}
     </div>
   {% endif %}
 </section>

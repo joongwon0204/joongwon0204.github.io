@@ -35,9 +35,11 @@ The generation path is:
 4. `_layouts/signal-collection.html` groups and sorts entries, then dispatches each row through `_includes/signal-content-row.html`.
 5. `signal.scss` and `signal.js` provide the responsive layout and interaction layer.
 
+The interface uses a GitHub-inspired light theme: white content surfaces, a gray header, bordered lists, compact headings, and system fonts. The violet (`#7657ff`), blue (`#3578f6`), and cyan (`#25c9c3`) accents remain shared across the research diagram, navigation, and CV timeline. Decorative circuit graphics are removed.
+
 ## Update the home page
 
-Edit `_data/profile.yml` for the visible name, introduction, profile image, and the three interests. Contact links come from `author.email` and `author.github` in `_config.yml`.
+Edit `_data/profile.yml` for the visible name, introduction, and the three interests. The home avatar uses the initials of the configured given and family names. Contact links come from `author.email` and `author.github` in `_config.yml`.
 
 The newest Experience and Note entries are selected automatically for the home-page previews.
 

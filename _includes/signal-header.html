@@ -1,32 +1,36 @@
 {% assign profile = site.data.profile %}
 
-<header class="signal-header" data-signal-header>
+<header class="signal-header">
   <div class="signal-shell signal-header__inner">
     <a class="signal-brand" href="{{ '/' | relative_url }}" aria-label="{{ profile.display_name }} — Home">
-      <span class="signal-brand__name">{{ profile.display_name }}</span>
+      <span>{{ profile.given_name }}</span><span class="signal-highlight">{{ profile.family_name }}</span>
     </a>
 
+    <span class="signal-grid-marker" aria-hidden="true"></span>
     <button class="signal-menu" type="button" aria-expanded="false" aria-controls="signal-navigation" data-signal-menu>
       <span class="signal-menu__label">Menu</span>
       <span class="signal-menu__icon" aria-hidden="true"><i></i><i></i></span>
     </button>
 
-    <nav class="signal-nav" id="signal-navigation" aria-label="Primary navigation" data-signal-nav>
-      {% for nav_item in site.data.navigation %}
-        {% assign nav_target = site.pages | where: "key", nav_item.key | first %}
-        {% if nav_target %}
-          {% assign is_active = false %}
-          {% if page.url == nav_target.url %}
-            {% assign is_active = true %}
-          {% elsif page.key == nav_item.key %}
-            {% assign is_active = true %}
-          {% elsif page.collection == nav_item.key %}
-            {% assign is_active = true %}
-          {% endif %}
-          <a href="{{ nav_target.url | relative_url }}"{% if is_active %} class="is-active" aria-current="page"{% endif %}>{{ nav_item.label }}</a>
-        {% endif %}
-      {% endfor %}
-    </nav>
   </div>
-  <div class="signal-header__rule" aria-hidden="true"><i></i></div>
+  <div class="signal-shell signal-nav-panel">
+    <div class="signal-nav-clip">
+      <nav class="signal-nav" id="signal-navigation" aria-label="Primary navigation" data-signal-nav>
+        {% for nav_item in site.data.navigation %}
+          {% assign nav_target = site.pages | where: "key", nav_item.key | first %}
+          {% if nav_target %}
+            {% assign is_active = false %}
+            {% if page.url == nav_target.url %}
+              {% assign is_active = true %}
+            {% elsif page.key == nav_item.key %}
+              {% assign is_active = true %}
+            {% elsif page.collection == nav_item.key %}
+              {% assign is_active = true %}
+            {% endif %}
+            <a href="{{ nav_target.url | relative_url }}"{% if is_active %} class="is-active" aria-current="page"{% endif %}>{{ nav_item.label }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+    </div>
+  </div>
 </header>
