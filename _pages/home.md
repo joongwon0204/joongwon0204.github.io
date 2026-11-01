@@ -11,10 +11,10 @@ redirect_from:
 {% assign profile = site.data.profile %}
 <div class="signal-shell signal-home">
   <section class="signal-hero signal-reveal" aria-labelledby="home-title">
-    <p class="signal-kicker">{{ profile.eyebrow | upcase }} / {{ profile.native_name }}</p>
+    <div class="signal-hero__eyebrow-space" aria-hidden="true"></div>
     <h1 id="home-title" aria-label="{{ profile.display_name | escape }}">
-      <span class="signal-name signal-name--given" data-text="{{ profile.given_name | escape }}" aria-hidden="true">{{ profile.given_name }}</span>
-      <span class="signal-name signal-name--family" data-text="{{ profile.family_name | escape }}" aria-hidden="true">{{ profile.family_name }}</span>
+      <span class="signal-name signal-name--given" aria-hidden="true"><span class="signal-name__text" data-text="{{ profile.given_name | escape }}">{{ profile.given_name }}</span></span>
+      <span class="signal-name signal-name--family" aria-hidden="true"><span class="signal-name__text" data-text="{{ profile.family_name | escape }}">{{ profile.family_name }}</span></span>
     </h1>
     <div class="signal-hero__body">
       <div class="signal-hero__portrait">

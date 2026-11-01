@@ -28,10 +28,10 @@
   --signal-ui: var(--signal-body);
   --signal-code: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
   /* Shared sizes by content role; 1rem = 16px. */
-  --signal-type-meta: 1.125rem;
+  --signal-type-meta: 1rem;
   --signal-type-label: 1.25rem;
-  --signal-type-body: 1.5rem;
-  --signal-type-title: 1.75rem;
+  --signal-type-body: 1.25rem;
+  --signal-type-title: 1.5rem;
   --signal-type-group: 2rem;
   --signal-type-section: clamp(2.25rem, 3.5vw, 3rem);
   --signal-type-page: clamp(2.5rem, 5vw, 4.5rem);
@@ -40,6 +40,7 @@
   --signal-footer-gap: clamp(8rem, 16vw, 12rem);
   --signal-ease: cubic-bezier(.22, 1, .36, 1);
   --signal-inset: clamp(1.25rem, 3.4vw, 3rem);
+  --signal-outer-inset: max(var(--signal-inset), calc((100% - 1440px) / 2 + var(--signal-inset)));
   color-scheme: light;
 }
 
@@ -50,7 +51,6 @@ html {
 }
 
 body.signal-site {
-  max-width: 1440px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 0;
@@ -119,7 +119,6 @@ body.signal-site {
 
 .signal-main {
   min-height: 55vh;
-  border-inline: 3px solid var(--signal-rule);
 }
 
 .signal-highlight {
@@ -151,7 +150,6 @@ body.signal-site {
 /* Masthead */
 .signal-header {
   background: var(--signal-paper);
-  border-inline: 3px solid var(--signal-rule);
 }
 
 .signal-header__inner {
@@ -160,7 +158,7 @@ body.signal-site {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.5rem var(--signal-inset);
+  padding: 1.5rem var(--signal-outer-inset);
   border-bottom: 3px solid var(--signal-rule);
 }
 
@@ -187,7 +185,7 @@ body.signal-site {
   align-items: center;
   flex-wrap: wrap;
   gap: .5rem 2.5rem;
-  padding: .9rem var(--signal-inset);
+  padding: .9rem var(--signal-outer-inset);
   border-bottom: 3px solid var(--signal-rule);
 }
 
@@ -235,8 +233,14 @@ body.signal-site {
 
 /* Home */
 .signal-hero {
-  padding: 3.5rem var(--signal-inset);
+  padding: 3.5rem var(--signal-outer-inset);
   border-bottom: 3px solid var(--signal-rule);
+}
+
+.signal-hero__eyebrow-space {
+  /* Keep the removed eyebrow's original line box. */
+  height: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 .signal-kicker {
@@ -281,12 +285,16 @@ body.signal-site {
   transform: rotate(-2deg) skewX(-3deg);
 }
 
-/* Offset slices are static; the only motion is the existing level of hover feedback. */
-.signal-name::before,
-.signal-name::after {
+.signal-name__text {
+  position: relative;
+  display: block;
+}
+
+/* Twenty fine, irregular bands replace the two broad displaced strips. */
+.signal-name__text::before,
+.signal-name__text::after {
   position: absolute;
   inset: 0;
-  padding: inherit;
   background: var(--signal-name-paper);
   color: var(--signal-name-ink);
   content: attr(data-text);
@@ -294,22 +302,36 @@ body.signal-site {
   transition: transform .25s var(--signal-ease);
 }
 
-.signal-name::before {
-  clip-path: inset(24% 0 65% 0);
-  transform: translateX(.045em);
+.signal-name__text::before {
+  mask-image: linear-gradient(to bottom,
+    transparent 0% 9%, #000 9% 10%, transparent 10% 18%,
+    #000 18% 19.2%, transparent 19.2% 27%, #000 27% 28%,
+    transparent 28% 36%, #000 36% 37.3%, transparent 37.3% 45%,
+    #000 45% 46%, transparent 46% 53%, #000 53% 54.2%,
+    transparent 54.2% 62%, #000 62% 63%, transparent 63% 71%,
+    #000 71% 72.3%, transparent 72.3% 81%, #000 81% 82%,
+    transparent 82% 91%, #000 91% 92%, transparent 92% 100%);
+  transform: translateX(clamp(1px, .012em, 3px));
 }
 
-.signal-name::after {
-  clip-path: inset(62% 0 30% 0);
-  transform: translateX(-.06em);
+.signal-name__text::after {
+  mask-image: linear-gradient(to bottom,
+    transparent 0% 13%, #000 13% 14.2%, transparent 14.2% 23%,
+    #000 23% 24%, transparent 24% 31%, #000 31% 32.3%,
+    transparent 32.3% 40%, #000 40% 41%, transparent 41% 49%,
+    #000 49% 50.2%, transparent 50.2% 58%, #000 58% 59%,
+    transparent 59% 67%, #000 67% 68.2%, transparent 68.2% 76%,
+    #000 76% 77%, transparent 77% 86%, #000 86% 87.3%,
+    transparent 87.3% 95%, #000 95% 96%, transparent 96% 100%);
+  transform: translateX(clamp(-4px, -.016em, -1px));
 }
 
-.signal-hero h1:hover .signal-name::before {
-  transform: translateX(.06em);
+.signal-hero h1:hover .signal-name__text::before {
+  transform: translateX(clamp(2px, .017em, 4px));
 }
 
-.signal-hero h1:hover .signal-name::after {
-  transform: translateX(-.075em);
+.signal-hero h1:hover .signal-name__text::after {
+  transform: translateX(clamp(-5px, -.021em, -2px));
 }
 
 .signal-hero__body {
@@ -393,7 +415,7 @@ body.signal-site {
 }
 
 .signal-section {
-  padding: 3rem var(--signal-inset);
+  padding: 3rem var(--signal-outer-inset);
   border-bottom: 3px solid var(--signal-rule);
 }
 
@@ -603,6 +625,7 @@ body.signal-site {
 .signal-index,
 .signal-page,
 .signal-article {
+  max-width: 1440px;
   padding: 3rem var(--signal-inset);
 }
 
