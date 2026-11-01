@@ -12,9 +12,11 @@ redirect_from:
 <div class="signal-shell signal-home">
   <section class="signal-hero signal-reveal" aria-labelledby="home-title">
     <p class="signal-kicker">{{ profile.eyebrow | upcase }} / {{ profile.native_name }}</p>
-    <h1 id="home-title">Computer science.<br><span>AI systems.</span></h1>
+    <h1 id="home-title">{{ profile.given_name }}<br><span>{{ profile.family_name }}</span></h1>
     <div class="signal-hero__body">
-      <div class="signal-hero__stamp" aria-hidden="true"><span>SNU</span><span>CSE<span class="signal-hero__stamp-dot">.</span></span></div>
+      <div class="signal-hero__portrait">
+        <img src="{{ profile.image.path | relative_url }}" alt="{{ profile.image.alt | escape }}" width="460" height="460" fetchpriority="high">
+      </div>
       <div class="signal-hero__copy">
         <p class="signal-hero__intro">{{ profile.intro }}</p>
         <p class="signal-hero__meta" aria-label="Contact links">
@@ -51,10 +53,9 @@ redirect_from:
   <section class="signal-section signal-reveal" id="research" aria-labelledby="research-title">
     <header class="signal-section-head">
       <div>
-        <p class="signal-kicker">01 / {{ profile.research.section_label | upcase }}</p>
+        <p class="signal-kicker">01 /</p>
         <h2 id="research-title">{{ profile.research.heading | escape }}</h2>
       </div>
-      <p class="signal-section-head__intro">{{ profile.research.intro }}</p>
     </header>
     <ul class="signal-interest-list">
       {% for interest in profile.research.interests %}
@@ -67,7 +68,7 @@ redirect_from:
     {% assign experiences_archive = site.data.content_archives.experiences %}
     <header class="signal-section-head">
       <div>
-        <p class="signal-kicker">02 / EXPERIENCES</p>
+        <p class="signal-kicker">02 /</p>
         <h2 id="experiences-title">Experiences</h2>
       </div>
       <p class="signal-section-head__aside">{% for group in site.data.content_groups.experiences %}{{ group.label | upcase }}{% unless forloop.last %} · {% endunless %}{% endfor %}</p>
@@ -86,10 +87,9 @@ redirect_from:
     {% assign publications_archive = site.data.content_archives.publications %}
     <header class="signal-section-head">
       <div>
-        <p class="signal-kicker">03 / PUBLICATIONS</p>
+        <p class="signal-kicker">03 /</p>
         <h2 id="publications-title">Publications</h2>
       </div>
-      <p class="signal-section-head__aside">RESEARCH PAPERS · MANUSCRIPTS</p>
     </header>
 
     <div class="signal-publication-list">
@@ -105,7 +105,7 @@ redirect_from:
     {% assign notes_archive = site.data.content_archives.notes %}
     <header class="signal-section-head">
       <div>
-        <p class="signal-kicker">04 / NOTES</p>
+        <p class="signal-kicker">04 /</p>
         <h2 id="notes-title">Notes</h2>
       </div>
       <p class="signal-section-head__aside">{% for group in site.data.content_groups.notes %}{{ group.title | upcase }}{% unless forloop.last %} · {% endunless %}{% endfor %}</p>

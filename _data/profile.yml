@@ -7,8 +7,8 @@ summary: "Undergraduate student in Computer Science and Engineering at Seoul Nat
 intro: "I am an undergraduate student in Computer Science and Engineering at Seoul National University. My current interests include hardware–software co-design for AI systems, efficient LLM inference, and quantitative trading."
 
 image:
-  path: "/images/profile.png"
-  alt: "Abstract circuit-board pattern illuminated in violet, blue, and cyan"
+  path: "/images/github-profile.jpg"
+  alt: "JoongWon Shin's GitHub profile photo"
 
 research:
   section_label: "Interests"
