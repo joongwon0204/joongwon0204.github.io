@@ -13,6 +13,7 @@ layout: compress
   <head>
     {% include head.html %}
     {% include head/custom.html %}
+    <link rel="preload" href="{{ '/assets/fonts/Iceland-Regular.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="{{ '/assets/fonts/RubikGlitch-Regular.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="{{ '/assets/css/signal.css' | relative_url }}?v={{ site.time | date: '%s' }}">
   </head>

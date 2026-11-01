@@ -5,3 +5,5 @@ The portfolio's layout and CSS adapt the typography, framed grid, and footer pat
 The content, Jekyll templates, pure black/white palette, and reduced interaction set are specific to this site.
 
 Display headings use [Rubik Glitch](https://github.com/google/fonts/tree/main/ofl/rubikglitch), served locally. Its SIL Open Font License and copyright notice are included in `assets/fonts/RubikGlitch-OFL.txt`.
+
+Body and interface text use [Iceland](https://github.com/google/fonts/tree/main/ofl/iceland), served locally. Its SIL Open Font License and copyright notice are included in `assets/fonts/Iceland-OFL.txt`.
