@@ -19,9 +19,7 @@ The homepage's layered name animation adapts demo 3 of [codrops/TextRepetitionEf
 
 ## Favicon
 
-The academic-cap favicon is derived from `OOjs UI icon academic-progressive.svg`, made available under CC0 1.0 on Wikimedia Commons:
-
-https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_academic-progressive.svg
+The JW monogram favicon uses outlined Archivo Black lettering. Its font license is retained in `assets/fonts/ArchivoBlack-OFL.txt`.
 
 ## Demo artwork
 
