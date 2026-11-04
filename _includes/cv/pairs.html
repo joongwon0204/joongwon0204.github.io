@@ -2,7 +2,7 @@
 <div class="signal-cv-entry">
   <dl class="signal-detail-list">
     {% for item in cell.items %}
-      <div><dt>{{ item.label }}</dt><dd>{{ item.value }}</dd></div>
+      <div><dt>{{ item.label }}</dt><dd>{{ item.value }}{% if item.in_progress.size > 0 %}<br><em>In progress:</em> {{ item.in_progress | join: ', ' | escape }}{% endif %}</dd></div>
     {% endfor %}
   </dl>
 </div>

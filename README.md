@@ -97,7 +97,7 @@ Year sections use `year` when provided, otherwise the year of `date`. Within eac
 CV section order and labels live in `_data/cv_sections.yml`. Each file in `_cv/` belongs to one section and selects one reusable cell:
 
 - `template: entry` — heading, link, period, subtitle, facts, note, and Markdown body.
-- `template: pairs` — compact label/value lists for coursework and skills.
+- `template: pairs` — compact label/value lists for coursework and skills. An optional `in_progress` course-name list on each item displays current courses on a separate line.
 
 Multiple cells can share one `section`; their `order` values control placement and they are separated by compact spacing rather than new timeline markers.
 
