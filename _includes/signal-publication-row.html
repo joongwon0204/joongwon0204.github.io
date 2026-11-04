@@ -1,6 +1,12 @@
 {% assign publication = include.publication %}
 {% assign publication_type = publication.category | default: publication.type | downcase %}
 {% assign primary_author = publication.primary_author | default: site.data.profile.display_name %}
+{% assign publication_status = publication.status | strip %}
+{% assign status_last_character = publication_status | slice: -1, 1 %}
+{% if status_last_character == '.' %}
+  {% assign status_length = publication_status | size | minus: 1 %}
+  {% assign publication_status = publication_status | slice: 0, status_length %}
+{% endif %}
 {% if publication.paperurl %}
   {% assign publication_link = publication.paperurl %}
 {% else %}
@@ -18,8 +24,11 @@
     {% if publication.venue or publication.highlight or publication.status %}
       <span class="signal-publication-row__meta">
         {% if publication.venue %}<span class="signal-publication-row__venue">{{ publication.venue }}</span>{% endif %}
-        {% if publication.highlight %}<span class="signal-publication-row__highlight">{{ publication.highlight }}</span>{% endif %}
-        {% if publication.status %}<span class="signal-publication-row__status">{{ publication.status | escape }}</span>{% endif %}
+        {% if publication.highlight %}
+          <span class="signal-publication-row__highlight">{{ publication.highlight }}{% if publication_status != empty %} ({{ publication_status | escape }}){% endif %}</span>
+        {% elsif publication.status %}
+          <span class="signal-publication-row__status">{{ publication.status | escape }}</span>
+        {% endif %}
       </span>
     {% endif %}
     <span class="signal-publication-row__title">{{ publication.title }}</span>
