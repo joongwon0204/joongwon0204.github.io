@@ -3,7 +3,7 @@ layout: signal
 permalink: /
 title: "Home"
 repetition_name: true
-description: "Undergraduate student in Computer Science and Engineering at Seoul National University, interested in hardware–software co-design for AI systems, efficient LLM inference, and quantitative trading."
+description: "Undergraduate student in Computer Science and Engineering at Seoul National University, interested in hardware–software co-design for AI systems, efficient LLM inference, and AI accelerators."
 redirect_from:
   - /about/
   - /about.html
