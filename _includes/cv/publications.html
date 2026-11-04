@@ -8,7 +8,7 @@
       <p class="signal-cv-entry__date">{{ publication_period }}</p>
     </header>
     <div class="signal-cv-entry__body">
-      <p>{% for author in publication.authors %}{% unless forloop.first %}, {% endunless %}{% if author == publication.primary_author %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% include publication-author-markers.html publication=publication author=author %}{% endfor %}<br>{{ publication.venue }}{% if publication.highlight %} &middot; {{ publication.highlight }}{% endif %}</p>
+      <p>{% for author in publication.authors %}{% unless forloop.first %}, {% endunless %}{% if author == publication.primary_author %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% include publication-author-markers.html publication=publication author=author %}{% endfor %}<br><em>{{ publication.venue }}</em>{% if publication.highlight %} (<strong>{{ publication.highlight }}</strong>){% endif %}{% if publication.status %}<br>{{ publication.status | escape }}{% endif %}</p>
     </div>
   </article>
 {% endfor %}

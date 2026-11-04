@@ -5,9 +5,10 @@ date: 2026-09-27
 year: 2026
 order: 10
 hide_date: true
-category: "preprint"
-venue: "arXiv preprint"
-highlight: "Under review"
+category: "workshop"
+venue: "NeurIPS 2026 LCFM Workshop"
+highlight: "Oral"
+status: "Extended version under review."
 paperurl: "https://arxiv.org/abs/2609.33051"
 thumbnail_label: "SketchSSM"
 thumbnail: "/images/publications/sketchssm-figure4.png"
@@ -27,7 +28,8 @@ author_notes:
       - "Jae W. Lee"
 ---
 
-**arXiv preprint. Under review.**
+*NeurIPS 2026 LCFM Workshop* (**Oral**) <br>
+Extended version under review.
 
 Omin Kwon, **JoongWon Shin**, Minseo Kim, Kurt Keutzer, Sehoon Kim<sup>*</sup>, and Jae W. Lee<sup>*</sup>.
 

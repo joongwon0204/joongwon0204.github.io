@@ -809,6 +809,14 @@ body.signal-site {
   text-transform: uppercase;
 }
 
+.signal-publication-row__highlight {
+  font-weight: 700;
+}
+
+.signal-publication-row__status {
+  flex-basis: 100%;
+}
+
 .signal-publication-row__title {
   font-size: var(--signal-type-title);
   font-weight: 700;
