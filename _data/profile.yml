@@ -4,7 +4,7 @@ family_name: "Shin"
 native_name: "신중원"
 eyebrow: "Portfolio"
 summary: "Undergraduate student in Computer Science and Engineering at Seoul National University."
-intro: "I am an undergraduate student in Computer Science and Engineering at Seoul National University. My current interests include hardware–software co-design for AI systems, efficient LLM inference, and AI accelerators."
+intro: "I am an undergraduate student in Computer Science and Engineering at Seoul National University. My current interests include hardware–software co-design for AI systems, AI accelerators, and efficient LLM inference."
 
 image:
   path: "/images/github-profile.jpg"
@@ -13,14 +13,14 @@ image:
 research:
   section_label: "Interests"
   heading: "Interests"
-  intro: "My interests include hardware–software co-design for AI systems, efficient LLM inference, and AI accelerators."
+  intro: "My interests include hardware–software co-design for AI systems, AI accelerators, and efficient LLM inference."
   interests:
     - key: "codesign"
       short_label: "Hardware–Software Co-Design"
       full_label: "Hardware–Software Co-Design for AI Systems"
-    - key: "inference"
-      short_label: "Efficient LLM Inference"
-      full_label: "Efficient LLM Inference"
     - key: "accelerators"
       short_label: "AI Accelerators"
       full_label: "AI Accelerators"
+    - key: "inference"
+      short_label: "Efficient LLM Inference"
+      full_label: "Efficient LLM Inference"

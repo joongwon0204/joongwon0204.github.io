@@ -5,5 +5,5 @@ order: 10
 ---
 
 - Hardware–Software Co-Design for AI Systems
-- Efficient LLM Inference
 - AI Accelerators
+- Efficient LLM Inference
