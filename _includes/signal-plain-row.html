@@ -10,7 +10,7 @@
   {% endif %}
   {% if thumbnail %}
     <span class="signal-experience-row__visual" aria-hidden="true">
-      <img src="{% if thumbnail_is_external %}{{ thumbnail }}{% else %}{{ thumbnail | relative_url }}{% endif %}" alt="" loading="lazy">
+      <img src="{% if thumbnail_is_external %}{{ thumbnail }}{% else %}{{ thumbnail | relative_url }}{% endif %}" alt="" loading="lazy"{% if item.thumbnail_fit == 'contain' %} style="object-fit: contain;"{% endif %}>
     </span>
   {% endif %}
   <span class="signal-experience-row__content">
