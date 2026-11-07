@@ -563,9 +563,10 @@ body.signal-site {
   transform: translateX(.25rem);
 }
 
-/* Summary cards use a quieter scale beneath the section headings. */
+/* Keep home summaries and Notes archive items at the same compact scale. */
 .signal-home .signal-experience-row,
-.signal-home .signal-publication-row {
+.signal-home .signal-publication-row,
+.signal-note-list--compact .signal-experience-row {
   --signal-type-title: calc(1.125rem + 2pt);
   --signal-type-body: calc(1rem + 2pt);
   --signal-type-meta: calc(.8125rem + 2pt);
@@ -574,36 +575,41 @@ body.signal-site {
 }
 
 .signal-home .signal-experience-list,
-.signal-home .signal-note-list {
+.signal-note-list--compact {
   grid-template-columns: minmax(0, 1fr);
   gap: 1.25rem;
   padding-top: .75rem;
 }
 
-.signal-home .signal-experience-row {
+.signal-home .signal-experience-row,
+.signal-note-list--compact .signal-experience-row {
   gap: 1.25rem;
   padding: 1rem;
 }
 
-.signal-home .signal-note-list .signal-experience-row--with-thumbnail {
+.signal-note-list--compact .signal-experience-row--with-thumbnail {
   grid-template-columns: 8rem 9rem minmax(0, 1fr) 5rem 1.5rem;
 }
 
-.signal-home .signal-experience-row__organization {
+.signal-home .signal-experience-row__organization,
+.signal-note-list--compact .signal-experience-row__organization {
   margin-bottom: .375rem;
 }
 
-.signal-home .signal-experience-row__content p {
+.signal-home .signal-experience-row__content p,
+.signal-note-list--compact .signal-experience-row__content p {
   margin-top: .5rem;
   line-height: 1.5;
 }
 
-.signal-home .signal-experience-row__visual {
+.signal-home .signal-experience-row__visual,
+.signal-note-list--compact .signal-experience-row__visual {
   max-height: 10rem;
   aspect-ratio: 4 / 3;
 }
 
-.signal-home .signal-experience-row__arrow {
+.signal-home .signal-experience-row__arrow,
+.signal-note-list--compact .signal-experience-row__arrow {
   font-size: calc(1.125rem + 2pt);
 }
 
@@ -1320,12 +1326,16 @@ body.signal-site {
     grid-template-columns: 6rem 6rem minmax(0, 1fr) 5rem 1.5rem;
   }
 
-  .signal-home .signal-note-list .signal-experience-row--with-thumbnail {
+  .signal-note-list--compact .signal-experience-row--with-thumbnail {
     grid-template-columns: 6rem 9rem minmax(0, 1fr) 5rem 1.5rem;
   }
 
   .signal-index .signal-experience-row--with-thumbnail .signal-experience-row__type {
     display: none;
+  }
+
+  .signal-note-list--compact .signal-experience-row--with-thumbnail .signal-experience-row__type {
+    display: block;
   }
 
   .signal-timeline__section {
@@ -1453,16 +1463,18 @@ body.signal-site {
   }
 
   .signal-home .signal-experience-list,
-  .signal-home .signal-note-list {
+  .signal-note-list--compact {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .signal-home .signal-experience-row {
+  .signal-home .signal-experience-row,
+  .signal-note-list--compact .signal-experience-row {
     min-height: 0;
     padding: 1rem;
   }
 
-  .signal-home .signal-experience-row__type {
+  .signal-home .signal-experience-row__type,
+  .signal-note-list--compact .signal-experience-row__type {
     display: block;
     margin-top: .5rem;
   }
@@ -1487,7 +1499,7 @@ body.signal-site {
   .signal-experience-row,
   .signal-experience-row--with-thumbnail,
   .signal-home .signal-experience-row--with-thumbnail,
-  .signal-home .signal-note-list .signal-experience-row--with-thumbnail {
+  .signal-note-list--compact .signal-experience-row--with-thumbnail {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 1.5rem;
     align-items: start;
@@ -1511,11 +1523,12 @@ body.signal-site {
     max-width: 12rem;
   }
 
-  .signal-home .signal-experience-row__visual {
+  .signal-home .signal-experience-row__visual,
+  .signal-note-list--compact .signal-experience-row__visual {
     max-width: none;
   }
 
-  .signal-home .signal-note-list .signal-experience-row__visual {
+  .signal-note-list--compact .signal-experience-row__visual {
     max-width: 8rem;
   }
 

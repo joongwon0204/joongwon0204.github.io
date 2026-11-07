@@ -62,7 +62,7 @@ layout: signal
           {% if group_items.size > 0 %}
             <section class="signal-work-group signal-reveal" aria-labelledby="{{ group.slug }}-{{ content_key }}-title">
               <h2 class="signal-work-group__title" id="{{ group.slug }}-{{ content_key }}-title">{{ group.title }}</h2>
-              <div class="signal-note-list">
+              <div class="signal-note-list{% if content_key == 'notes' %} signal-note-list--compact{% endif %}">
                 {% for item in group_items %}
                   {% include signal-content-row.html item=item cell=archive_cell key=content_key %}
                 {% endfor %}

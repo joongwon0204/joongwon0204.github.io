@@ -115,7 +115,7 @@ redirect_from:
       </div>
     </header>
 
-    <div class="signal-note-list">
+    <div class="signal-note-list signal-note-list--compact">
       {% assign notes_posts = site.posts | where: "key", "notes" %}
       {% for post in notes_posts limit:3 %}
         {% include signal-content-row.html item=post cell=notes_archive.cell key="notes" %}
