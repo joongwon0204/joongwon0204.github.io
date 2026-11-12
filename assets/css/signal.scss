@@ -330,7 +330,7 @@ body.signal-site {
 .signal-hero__body {
   display: grid;
   align-items: start;
-  grid-template-columns: clamp(13rem, 25vw, 18rem) minmax(0, 1fr);
+  grid-template-columns: clamp(9.75rem, 18.75vw, 13.5rem) minmax(0, 1fr);
   gap: 2.5rem;
   min-height: 14rem;
 }
@@ -1442,7 +1442,7 @@ body.signal-site {
   }
 
   .signal-hero__portrait {
-    width: min(100%, 16rem);
+    width: min(75%, 12rem);
     justify-self: center;
   }
 
