@@ -21,7 +21,7 @@ redirect_from:
     </div>
     <div class="signal-hero__body">
       <div class="signal-hero__portrait">
-        <img src="{{ profile.image.path | relative_url }}" alt="{{ profile.image.alt | escape }}" width="460" height="460" fetchpriority="high">
+        <img src="{{ profile.image.path | relative_url }}" alt="{{ profile.image.alt | escape }}" width="482" height="482" fetchpriority="high">
       </div>
       <div class="signal-hero__copy">
         <p class="signal-hero__intro">{{ profile.intro }}</p>
